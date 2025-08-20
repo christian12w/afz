@@ -1,0 +1,515 @@
+{
+  "org-name": "Albinism Foundation Zambia",
+  "org-tagline": "Advocating for Rights, Building Awareness, Creating Change",
+  
+  "nav-home": "Home",
+  "nav-about": "About Us",
+  "nav-programs": "Programs",
+  "nav-resources": "Resources",
+  "nav-advocacy": "Advocacy",
+  "nav-contact": "Contact",
+  "nav-donate": "Donate",
+  "nav-events": "Events",
+  "nav-member-portal": "Member Portal",
+  
+  "hero-title": "Empowering Lives, Protecting Rights",
+  "hero-description": "The Albinism Foundation Zambia is dedicated to advocating for the rights of individuals with albinism, promoting awareness, and building an inclusive society where everyone can thrive.",
+  "cta-donate-main": "Donate Now",
+  "cta-get-involved": "Get Involved",
+  "cta-learn-more": "Learn More",
+  
+  "mission-heading": "Our Mission",
+  "mission-statement": "To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs.",
+  "stat-members": "Members Supported",
+  "stat-programs": "Active Programs",
+  "stat-provinces": "Provinces Reached",
+  
+  "focus-heading": "Our Focus Areas",
+  "focus-rights": "Rights Advocacy",
+  "focus-rights-desc": "Championing policy changes and legal protections to ensure equal rights and opportunities for all persons with albinism.",
+  "focus-awareness": "Awareness Campaigns",
+  "focus-awareness-desc": "Educating communities about albinism to combat myths, misconceptions, and discrimination through targeted outreach programs.",
+  "focus-support": "Support Services",
+  "focus-support-desc": "Providing essential services including sunscreen distribution, protective clothing, and healthcare access coordination.",
+  "focus-education": "Education Access",
+  "focus-education-desc": "Ensuring children with albinism have access to quality education with appropriate accommodations and support systems.",
+  
+  "news-heading": "Latest News & Updates",
+  "news-1-title": "AFZ Launches Nationwide Awareness Campaign",
+  "news-1-excerpt": "Our comprehensive awareness campaign reaches rural communities across Zambia to combat discrimination and promote understanding.",
+  "news-2-title": "Policy Victory: New Protection Measures Approved",
+  "news-2-excerpt": "Government approves new legislative measures to protect persons with albinism from violence and discrimination.",
+  "news-3-title": "Educational Support Program Expansion",
+  "news-3-excerpt": "AFZ extends educational support programs to include 200 additional students with albinism across all provinces.",
+  "read-more": "Read More",
+  
+  "cta-title": "Join Our Movement",
+  "cta-description": "Together, we can create a Zambia where persons with albinism live with dignity, equality, and opportunity.",
+  "cta-donate": "Donate Now",
+  "cta-volunteer": "Volunteer",
+  "cta-contact": "Contact Us",
+  
+  "footer-contact": "Contact Information",
+  "address-label": "Address:",
+  "address": "[AFZ Office Address - To be replaced with actual address]",
+  "phone-label": "Phone:",
+  "email-label": "Email:",
+  "footer-links": "Quick Links",
+  "footer-about": "About Us",
+  "footer-programs": "Our Programs",
+  "footer-resources": "Resources",
+  "footer-contact-page": "Contact",
+  "footer-support": "Support Us",
+  "footer-donate": "Make a Donation",
+  "footer-volunteer": "Volunteer",
+  "footer-partner": "Become a Partner",
+  "footer-social": "Follow Us",
+  "copyright": "© 2024 Albinism Foundation Zambia. All rights reserved.",
+  "privacy-policy": "Privacy Policy",
+  "terms-service": "Terms of Service",
+  
+  "awareness-title": "Raising Awareness on Albinism",
+  "awareness-description": "Together, we break the silence and shatter misconceptions about albinism. Through education, advocacy, and community support, we create a world where every person with albinism can live with dignity, equality, and hope.",
+  "awareness-stat-1-number": "1 in 20,000",
+  "awareness-stat-1-desc": "People worldwide are born with albinism",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "Zambians living with albinism",
+  "awareness-cta-learn": "Learn About Albinism",
+  "awareness-cta-support": "Join Our Cause",
+  
+  "donate-page-title": "Support Our Mission",
+  "donate-page-description": "Your donation helps us advocate for the rights, dignity, and inclusion of persons with albinism in Zambia. Every contribution makes a difference in building a more inclusive society.",
+  "donation-impact-title": "Your Impact",
+  "impact-title-sunscreen": "Sunscreen Support",
+  "impact-desc-sunscreen": "Provides sunscreen for one person with albinism for 3 months",
+  "impact-title-workshop": "Community Workshop",
+  "impact-desc-workshop": "Funds awareness workshop in one community",
+  "impact-title-education": "Educational Support",
+  "impact-desc-education": "Supports educational materials for 10 students with albinism",
+  
+  "donation-form-title": "Make a Donation",
+  "donation-type-label": "Donation Type",
+  "donation-type-once": "One-time Donation",
+  "donation-type-monthly": "Monthly Donation",
+  "donation-amount-label": "Donation Amount (ZMW)",
+  "custom-amount": "Custom",
+  "custom-amount-input-label": "Enter custom amount",
+  "enter-amount": "Enter amount",
+  
+  "personal-info-label": "Personal Information",
+  "first-name-label": "First Name *",
+  "last-name-label": "Last Name *",
+  "email-label": "Email Address *",
+  "phone-label": "Phone Number",
+  "phone-help": "Optional - for donation receipt",
+  
+  "payment-method-label": "Payment Method",
+  "payment-mobile-money": "Mobile Money (Airtel/MTN)",
+  "payment-bank-transfer": "Bank Transfer",
+  "payment-paypal": "PayPal/International Card",
+  
+  "anonymous-donation": "Make this donation anonymous",
+  "newsletter-signup": "Subscribe to our newsletter for updates",
+  "dedication-label": "Dedication Message (Optional)",
+  "dedication-placeholder": "In memory of... or In honor of...",
+  
+  "donate-submit-btn": "Proceed to Payment",
+  "security-note": "🔒 Your donation is secure and encrypted. You will be redirected to our secure payment processor.",
+  
+  "alternative-donations-title": "Other Ways to Help",
+  "alternative-volunteer-title": "Volunteer Your Time",
+  "alternative-volunteer-desc": "Join our team of volunteers and contribute your skills to make a direct impact.",
+  "alternative-volunteer-btn": "Learn More",
+  "alternative-corporate-title": "Corporate Partnership",
+  "alternative-corporate-desc": "Partner with us for employee engagement, CSR initiatives, and community impact.",
+  "alternative-corporate-btn": "Get In Touch",
+  "alternative-supplies-title": "Donate Supplies",
+  "alternative-supplies-desc": "Donate sunscreen, protective clothing, educational materials, or other needed items.",
+  "alternative-supplies-btn": "Contact Us",
+  
+  "footer-home": "Home",
+  
+  "accessibility": {
+    "skip_to_content": "Skip to content"
+  },
+
+  "events": {
+    "title": "Events - Albinism Foundation Zambia",
+    "hero": {
+      "title": "Events & Activities",
+      "subtitle": "Join us in our advocacy events, workshops, and community activities across Zambia",
+      "create_event": "Create Event",
+      "upcoming": "View Upcoming"
+    },
+    "view": {
+      "calendar": "Calendar",
+      "list": "List"
+    },
+    "filter": {
+      "all_categories": "All Categories",
+      "workshops": "Workshops",
+      "advocacy": "Advocacy",
+      "awareness": "Awareness",
+      "support": "Support Groups",
+      "fundraising": "Fundraising",
+      "all_locations": "All Locations",
+      "online": "Online",
+      "search_placeholder": "Search events..."
+    },
+    "calendar": {
+      "today": "Today",
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "no_events": {
+      "title": "No Events Found",
+      "message": "There are no events matching your current filters.",
+      "clear_filters": "Clear Filters"
+    },
+    "create": {
+      "title": "Create New Event",
+      "title_label": "Event Title*",
+      "title_placeholder": "Enter event title",
+      "category_label": "Category*",
+      "category_placeholder": "Select category",
+      "date_label": "Date*",
+      "time_label": "Time*",
+      "location_label": "Location*",
+      "location_placeholder": "Enter event location",
+      "capacity_label": "Capacity",
+      "capacity_placeholder": "Maximum number of attendees",
+      "description_label": "Description*",
+      "description_placeholder": "Provide details about the event",
+      "cancel": "Cancel",
+      "submit": "Create Event"
+    }
+  },
+
+  "common": {
+    "loading": "Loading..."
+  },
+
+  "resources": {
+    "title": "Resource Library - Albinism Foundation Zambia",
+    "hero": {
+      "title": "Resource Library & Education Center",
+      "subtitle": "Access comprehensive educational materials, guides, and resources to support the albinism community",
+      "browse": "Browse Resources",
+      "upload": "Upload Resource"
+    },
+    "categories": {
+      "title": "Resource Categories",
+      "educational": "Educational Materials",
+      "educational_desc": "Guides, fact sheets, and educational content about albinism",
+      "medical": "Medical Information",
+      "medical_desc": "Healthcare guides, skin care tips, and medical resources",
+      "legal": "Legal Rights",
+      "legal_desc": "Know your rights, legal protections, and advocacy resources",
+      "support": "Support Guides",
+      "support_desc": "Community support, counseling resources, and family guides",
+      "resources": "resources"
+    },
+    "search": {
+      "placeholder": "Search resources..."
+    },
+    "filters": {
+      "all_categories": "All Categories",
+      "all_types": "All Types",
+      "documents": "Documents",
+      "videos": "Videos",
+      "audio": "Audio",
+      "images": "Images",
+      "links": "External Links",
+      "all_languages": "All Languages",
+      "clear": "Clear Filters"
+    },
+    "results": {
+      "showing": "Showing All Resources"
+    },
+    "sort": {
+      "label": "Sort by:",
+      "newest": "Newest First",
+      "oldest": "Oldest First",
+      "alphabetical": "A-Z",
+      "popular": "Most Popular"
+    },
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "no_results": {
+      "title": "No Resources Found",
+      "message": "Try adjusting your search criteria or browse different categories.",
+      "clear_search": "Clear Search"
+    },
+    "featured": {
+      "title": "Featured Resources"
+    },
+    "upload": {
+      "title": "Upload Resource",
+      "title_label": "Resource Title*",
+      "title_placeholder": "Enter resource title",
+      "category_label": "Category*",
+      "category_placeholder": "Select category",
+      "type_label": "Resource Type*",
+      "type_placeholder": "Select type",
+      "language_label": "Language*",
+      "description_label": "Description*",
+      "description_placeholder": "Provide details about the resource",
+      "file_label": "File or URL",
+      "drag_drop": "Drag and drop a file here, or click to select",
+      "file_types": "Supported formats: PDF, DOC, MP4, MP3, JPG, PNG",
+      "url_placeholder": "Or enter a URL",
+      "tags_label": "Tags",
+      "tags_placeholder": "Enter tags separated by commas",
+      "cancel": "Cancel",
+      "submit": "Upload Resource"
+    },
+      "footer": {
+    "about": {
+      "title": "Albinism Foundation Zambia",
+      "description": "Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform."
+    },
+    "quick_links": {
+      "title": "Quick Links"
+    },
+    "contact": {
+      "title": "Contact Info"
+    },
+    "support": {
+      "title": "Support Our Cause",
+      "description": "Help us advocate for persons with albinism in Zambia.",
+      "donate": "Donate Now"
+    },
+    "copyright": "&copy; 2024 Albinism Foundation Zambia. All rights reserved.",
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter"
+    }
+  },
+  
+  "language": {
+    "label": "Language",
+    "select": "Select language",
+    "international": "International",
+    "african_heritage": "African Heritage"
+  },
+  
+  "slideshow": {
+    "community_outreach": {
+      "title": "Community Outreach",
+      "description": "AFZ reaches out to communities across Zambia, providing education and support to persons with albinism and their families."
+    },
+    "education_awareness": {
+      "title": "Education and Awareness",
+      "description": "Our educational programs help break down barriers and create understanding about albinism in schools and communities."
+    },
+    "healthcare_support": {
+      "title": "Healthcare Support",
+      "description": "We provide essential healthcare support including sunscreen, protective clothing, and medical coordination for persons with albinism."
+    },
+    "advocacy_rights": {
+      "title": "Advocacy and Rights",
+      "description": "Working with policymakers and communities to ensure the rights and dignity of persons with albinism are protected and respected."
+    },
+    "previous": "Previous slide",
+    "next": "Next slide"
+  },
+  
+  "community_photos": {
+    "title": "AFZ in Action",
+    "intro": "Discover the impact of AFZ's work through our community engagements, outreach programs, and awareness campaigns across Zambia.",
+    "events": {
+      "title": "Community Events",
+      "description": "Participating in local events and celebrations to promote albinism awareness and inclusion."
+    },
+    "outreach": {
+      "title": "Outreach Programs",
+      "description": "Bringing education and support directly to communities, schools, and healthcare facilities across Zambia."
+    },
+    "campaigns": {
+      "title": "Awareness Campaigns",
+      "description": "Running targeted campaigns to educate communities about albinism and combat discrimination and myths."
+    },
+    "stories": {
+      "title": "Success Stories",
+      "description": "Celebrating the achievements and positive impact of our programs on individuals and communities."
+    }
+  },
+  
+  "get_involved": {
+    "title": "Get Involved in Our Mission",
+    "description": "Join us in creating a more inclusive society for persons with albinism in Zambia.",
+    "volunteer": "Volunteer with Us",
+    "support": "Support Our Cause",
+    "events": "View Our Events",
+    "learn_about": "Learn About Albinism",
+    "join_cause": "Join Our Cause"
+  },
+  
+  "awareness": {
+    "title": "Breaking the silence on Albinism",
+    "description": "The Albinism Foundation Zambia is dedicated to advocating for the rights of individuals with albinism, promoting awareness, and building an inclusive society where everyone can thrive.",
+    "learn_more": "Learn More"
+  },
+  
+  "footer_sections": {
+    "about": {
+      "title": "Albinism Foundation of Zambia - AFZ",
+      "description": "Advocating for the rights, dignity, and inclusion of persons with albinism in Zambia through education, support, and policy reform."
+    },
+    "quick_links": {
+      "title": "Quick Links"
+    },
+    "contact": {
+      "title": "Contact Info"
+    },
+    "support": {
+      "title": "Support Our Cause",
+      "description": "Help us advocate for persons with albinism in Zambia. Your support makes a difference in building a more inclusive society.",
+      "donate": "Make a Donation"
+    },
+    "copyright": "© 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  
+  "about_page": {
+    "title": "About AFZ",
+    "description": "Learn about our mission, vision, values, and the dedicated team working to advocate for persons with albinism in Zambia.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "A Zambia where persons with albinism live with dignity, equality, and full participation in all aspects of society."
+    },
+    "values": {
+      "title": "Our Values",
+      "text": "Compassion, integrity, inclusivity, advocacy, and community empowerment guide everything we do."
+    },
+    "stats": {
+      "title": "Our Impact",
+      "members": "Members Supported",
+      "programs": "Active Programs",
+      "provinces": "Provinces Reached",
+      "years": "Years of Service"
+    },
+    "history": {
+      "title": "Our Journey",
+      "2016": {
+        "title": "Foundation Established",
+        "desc": "AFZ was founded with a vision to advocate for persons with albinism in Zambia."
+      },
+      "2018": {
+        "title": "First Major Campaign",
+        "desc": "Launched our first nationwide awareness campaign reaching 5 provinces."
+      },
+      "2020": {
+        "title": "Policy Advocacy Success",
+        "desc": "Successfully advocated for inclusion of albinism rights in national policies."
+      },
+      "2022": {
+        "title": "Program Expansion",
+        "desc": "Extended our programs to cover all 10 provinces of Zambia."
+      },
+      "2024": {
+        "title": "Digital Transformation",
+        "desc": "Launched digital platforms to reach more communities and provide online support."
+      }
+    },
+    "team": {
+      "title": "Leadership Team",
+      "ceo": {
+        "role": "Chief Executive Officer",
+        "bio": "Leading AFZ's mission with over 15 years of experience in human rights advocacy."
+      },
+      "programs": {
+        "role": "Programs Director",
+        "bio": "Overseeing the development and implementation of all AFZ programs and initiatives."
+      },
+      "advocacy": {
+        "role": "Advocacy Coordinator",
+        "bio": "Coordinating policy advocacy efforts and government relations."
+      },
+      "community": {
+        "role": "Community Outreach Manager",
+        "bio": "Managing community engagement and outreach programs across Zambia."
+      }
+    }
+  },
+  
+  "accessibility": {
+    "skip_link": "Skip to main content",
+    "toggle_navigation": "Toggle navigation",
+    "close_menu": "Close menu",
+    "menu_open": "Menu open",
+    "menu_closed": "Menu closed"
+  },
+  
+  "contact": {
+    "email_label": "Email:",
+    "phone_label": "Phone:",
+    "address_label": "Address:"
+  },
+  
+  "social": {
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube"
+  },
+  "events": {
+    "page_title": "Events & Activities",
+    "page_subtitle": "Join us in our advocacy events, workshops, and community activities across Zambia",
+    "categories_title": "Event Categories",
+    "upcoming_title": "Upcoming Events",
+    "filters": {
+      "today": "Today",
+      "previous": "Previous",
+      "next": "Next",
+      "category": "Category:",
+      "location": "Location:",
+      "search": "Search:",
+      "all_categories": "All Categories",
+      "all_locations": "All Locations",
+      "workshop": "Workshops",
+      "advocacy": "Advocacy",
+      "support": "Support Groups",
+      "fundraising": "Fundraising",
+      "clear_filters": "Clear Filters"
+    },
+    "calendar": {
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "today": "Today"
+    },
+    "no_events": {
+      "title": "No Events Found",
+      "message": "There are no events matching your current filters.",
+      "clear_filters": "Clear Filters"
+    },
+    "actions": {
+      "view_all": "View All Events",
+      "member_portal": "Member Portal",
+      "register": "Register",
+      "details": "Details",
+      "view_list": "View Events List"
+    }
+  }
+}

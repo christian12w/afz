@@ -1,0 +1,196 @@
+{
+  "org-name": "Ubungano bwa Albinism bwa Zambia - AFZ",
+  "org-tagline": "Ukubula Ubwiko pa Albinism",
+  
+  "nav-home": "Ng'anda",
+  "nav-about": "Ifyo Fili Naku Bushe",
+  "nav-programs": "Imipango",
+  "nav-resources": "Ifikingilo",
+  "nav-advocacy": "Ukulwila",
+  "nav-contact": "Ukwangalila",
+  "nav-donate": "Ukupa",
+  "nav-events": "Ificitike",
+  "nav-member-portal": "Icalo ca Baumfwi",
+  
+  "hero-title": "Ukulwila Ubumi, Ukwikala Amalungelo",
+  "hero-description": "Ubungano bwa Albinism bwa Zambia bwaishimikisha ukulwila amalungelo ya bantu abakwata albinism, ukulwila ukumona, no kumaka icalo cali bwino apo bonse bapona ukucita bwino.",
+  "cta-donate-main": "Upeni Nomba",
+  "cta-get-involved": "Shitani Ubushiku",
+  "cta-learn-more": "Mwiishileni Ukucila",
+  
+  "mission-heading": "Icifungo Cetu",
+  "mission-statement": "Ukulwila amalungelo, icine, no kukwatania kwa bantu abakwata albinism ku Zambia ukupitila mu mipango ya ukumona, ukulwila milandu, incito sha kubafwa, no kukweza icalo.",
+  "stat-members": "Abaumfwi Abashintwa",
+  "stat-programs": "Imipango Ikwenda",
+  "stat-provinces": "Amashiwi Afikilwe",
+  
+  "focus-heading": "Imishimo Yetu Ifunikile",
+  "focus-rights": "Ukulwila Amalungelo",
+  "focus-rights-desc": "Ukulwila ukucinja kwa milandu no kwikala kuti bantu bonse abakwata albinism bakwate amulandu yafwana.",
+  "focus-awareness": "Imipango Ya Ukumona",
+  "focus-awareness-desc": "Ukumanyisha amako aya albinism pamo no kulwana ne fyo bafwaya, ifyo baletontonkanya, no ubwikashi ukupitila mu mipango ya ukumona.",
+  "focus-support": "Incito Sha Kubafwa",
+  "focus-support-desc": "Ukupa incito shifunikile ukuti kugawana imilombe ya kwikala ku calo, inyanja sha kwikala, no kubeleshesha ukufikila ku mabilingi.",
+  "focus-education": "Amulandu Ya Kwishila",
+  "focus-education-desc": "Ukubonako ukuti abaana abakwata albinism bafikila amashilo ayafwanene pamo no kubafwa okwanisha.",
+  
+  "news-heading": "Amashiwi Ayasanu Nama Sintha",
+  "news-1-title": "AFZ Yatamfya Ukusalila Ukumona Mu Calo Conse",
+  "news-1-excerpt": "Ukusalila kwesu ukumona ukufika kumyushi ya kumafulo mu Zambia yonse ukulwana ubwikashi no kulwila ukumfwana.",
+  "news-2-title": "Ukupambana Kumilandu: Amacito Ayasanu Ayakwikala Yamineeshwa",
+  "news-2-excerpt": "Ubusumbu bwaminesha amacito ayasanu ayamilandu ayakwikala abantu abakwata albinism kubukali no bwikashi.",
+  "news-3-title": "Ukwandafya Ukusala Amashilo",
+  "news-3-excerpt": "AFZ yawandafye ukusala amashilo ukupapata abantwana ba 200 abonjezeko abakwata albinism kumashiwi yonse.",
+  "read-more": "Balengeni Ukucila",
+  
+  "cta-title": "Shitanina Naife",
+  "cta-description": "Pamo, twingapange Zambia apo abantu abakwata albinism baleikala nakucingilwa, ubufwanane, nama mulandu.",
+  "cta-donate": "Upeni Nomba",
+  "cta-volunteer": "Ikalani Umufwikishi",
+  "cta-contact": "Mutulumikile",
+  
+  "footer-contact": "Amashiwi Ayokwangalana",
+  "address-label": "Icalo:",
+  "address": "[Icalo ca Ofesi ya AFZ - Calanduka ukusintafya]",
+  "phone-label": "Foni:",
+  "email-label": "Imelo:",
+  "footer-links": "Imilambilo Eyaluzilo",
+  "footer-about": "Ifyo Fili Naku Bushe",
+  "footer-programs": "Imipango Yesu",
+  "footer-resources": "Ifikingilo",
+  "footer-contact-page": "Ukwangalila",
+  "footer-support": "Mutubafishe",
+  "footer-donate": "Mupeni",
+  "footer-volunteer": "Ikalani Umufwikishi",
+  "footer-partner": "Ikalani Umushirika",
+  "footer-social": "Mutusatalile",
+  "privacy-policy": "Umulandu Wakucindika",
+  "terms-service": "Imilandu Yamibombele",
+  
+  "awareness-title": "Ukumona pa Albinism",
+  "awareness-description": "Pamo, tulephula ubwiko no kumona amasango alakwisha pa albinism. Ukupitila mu kushila, ukusala, nama bafwikishi ba lukuta, tulapanga isonde apo umuntu uliyonse akwata albinism akonka ukulikala nakucingilwa, ubufwanane, nama kuteminika.",
+  "awareness-stat-1-number": "1 mu 20,000",
+  "awareness-stat-1-desc": "Abantu mu calo conse balabyalwa na albinism",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "Aba-Zambia abakwata albinism",
+  "awareness-cta-learn": "Ishileni pa Albinism",
+  "awareness-cta-support": "Shitanina na Lukuta Lwesu",
+  
+  "donate-page-title": "Bafisheni Icifungo Cesu",
+  "donate-page-description": "Icipoboshi cenu cilabafisha ukulwila amalungelo, ukucingilwa, nama kupapata kwa bantu abakwata albinism mu Zambia. Icipoboshi ciliyonse cilasandulika mu kumaka icalo cipapukane.",
+  "donation-impact-title": "Icipoboshi Cenu",
+  "impact-title-sunscreen": "Ukubafya Amafuta Yakwikala ku Isuba",
+  "impact-desc-sunscreen": "Ukupa amafuta yakwikala ku isuba ku muntu ukwata albinism ukwashika amyeshi 3",
+  "impact-title-workshop": "Amashilo ya Mulukuta",
+  "impact-desc-workshop": "Ukulipila amashilo yakumona mu lukuta lumwi",
+  "impact-title-education": "Ukubafya Amashilo",
+  "impact-desc-education": "Ukubafya ifyuma fyamashilo ku baana ba 10 abakwata albinism",
+  
+  "donation-form-title": "Mupeni Icipoboshi",
+  "donation-type-label": "Ubushiku bwa Cipoboshi",
+  "donation-type-once": "Icipoboshi ca Kamwi",
+  "donation-type-monthly": "Icipoboshi ca Mweshi Wonse",
+  "donation-amount-label": "Amapondo ya Cipoboshi (USD)",
+  "custom-amount": "Ukusala",
+  "custom-amount-input-label": "Lembeni amapondo yamwine mufwaya",
+  "enter-amount": "Lembeni amapondo",
+  
+  "personal-info-label": "Amashiwi Yenu",
+  "first-name-label": "Ishina Lyakutanguna *",
+  "last-name-label": "Ishina Lyakumanyuma *",
+  "email-label": "Imelo *",
+  "phone-label": "Nambala ya Foni",
+  "phone-help": "Talifunikila - pa buketi lya cipoboshi",
+  
+  "payment-method-label": "Inshila Yakupililila",
+  "payment-mobile-money": "Amapondo ya Foni (Airtel/MTN)",
+  "payment-bank-transfer": "Ukutumina ku Banki",
+  "payment-paypal": "PayPal/Kadi ya Kunsa",
+  
+  "anonymous-donation": "Pangeni icipoboshi icishinwa",
+  "newsletter-signup": "Lembeni kulandila amashintu",
+  "dedication-label": "Ubutumishi bwa Kupokela (Tabufunikila)",
+  "dedication-placeholder": "Mu kumbukila... nangu Mu kucingilila...",
+  
+  "donate-submit-btn": "Iyani ku Kupilila",
+  "security-note": "🔒 Icipoboshi cenu cilaikewa bwino. Mulatwalikilwa ku mpanga shaikala sha kupilila.",
+  
+  "alternative-donations-title": "Inshila Shine Shakubafisha",
+  "alternative-volunteer-title": "Upeni Inshita Yenu",
+  "alternative-volunteer-desc": "Shitanina mu lukuta lwesu lwa bafwikishi no kubafisha na mashili yenu.",
+  "alternative-volunteer-btn": "Ishileni Ukucila",
+  "alternative-corporate-title": "Ubushirikisho bwa Makampani",
+  "alternative-corporate-desc": "Shirikishanini naife pa milimo ya balebenshi, CSR, nama kupanga amashintu ya mulukuta.",
+  "alternative-corporate-btn": "Mutulumikile",
+  "alternative-supplies-title": "Upeni Ifyuma",
+  "alternative-supplies-desc": "Upeni amafuta yakwikala ku isuba, inyanja shakwikala, ifyuma fyamashilo, nangu ifyuma ifine ifunikile.",
+  "alternative-supplies-btn": "Mutulumikile",
+  
+  "footer-home": "Ng'anda",
+  
+  "slide-1-title": "Ukubafisha Abaana Besu",
+  "slide-1-desc": "AFZ ilakupa amafuta yakwikala ku isuba ku baana abakwata albinism mu Zambia yonse.",
+  "slide-2-title": "Ukwikala nama Samalilo",
+  "slide-2-desc": "Umwana uliyonse alafwile ukwikelwa ku isuba. AFZ ilaonako ukuti paliya ashiwa.",
+  "slide-3-title": "Ukubombelana na Bantu",
+  "slide-3-desc": "Ukubomba pamo na miyushi, ubusumbu, nama bashirika ukulwila amalungelo ya bantu abakwata albinism.",
+  "slide-4-title": "Ukukonkelesha Ukulwila",
+  "slide-4-desc": "Amakwebo yesu yalipelela yalabomba takakwata ukukonkelesha no kuiminisha inshila shakusala.",
+  "slide-5-title": "Ubushintu bwa Cilengeleshi",
+  "slide-5-desc": "Albinism ilacitikapo mwa cilengeleshi pa byuumi byonse, ukutemwika ubwikalo bwa bushintu bwa majini.",
+  
+  "accessibility": {
+    "skip_to_content": "Yamukile ku bintu bilimu katikati"
+  },
+
+  "events": {
+    "title": "Ificifike - Ubungano bwa Albinism bwa Zambia",
+    "hero": {
+      "title": "Ificifike nama Milimo",
+      "subtitle": "Shitanina ku fficifike fyesu fyaukulwila, amashilo, nama milimo yamulukuta mu Zambia yonse",
+      "create_event": "Pangeni Ificifike",
+      "upcoming": "Boneni Ificisha"
+    },
+    "view": {
+      "calendar": "Kalendala",
+      "list": "Ukulandana"
+    },
+    "filter": {
+      "all_categories": "Amakwebo Yonse",
+      "workshops": "Amashilo",
+      "advocacy": "Ukulwila",
+      "awareness": "Ukumona",
+      "support": "Amakwebo Yakubafishana",
+      "fundraising": "Ukupata Amapondo",
+      "all_locations": "Amasambo Yonse",
+      "online": "Pa Intaneti",
+      "search_placeholder": "Sakanini ificifike..."
+    },
+    "calendar": {
+      "today": "Lelo",
+      "sun": "Mul",
+      "mon": "Cit",
+      "tue": "Cib",
+      "wed": "Cis",
+      "thu": "Cin",
+      "fri": "Cis",
+      "sat": "Muk"
+    }
+  },
+
+  "common": {
+    "loading": "Ukutwala..."
+  },
+
+  "resources": {
+    "title": "Ibokosi lya Fikingilo - Ubungano bwa Albinism bwa Zambia",
+    "hero": {
+      "title": "Ibokosi lya Fikingilo nama Sambo lya Mashilo",
+      "subtitle": "Patanini ifikingilo fyalashila, amatontonkanyo, nama ifikingilo fyakubafisha amakwebo ya bantu abakwata albinism",
+      "browse": "Sakanini Ifikingilo",
+      "upload": "Twalikanini Icintu"
+    }
+  },
+
+  "copyright": "© 2024 Ubungano bwa Albinism bwa Zambia - AFZ. Amalungelo yonse yasungidwe."
+}

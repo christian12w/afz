@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join us in our advocacy events, workshops, and community activities across Zambia">
+    <meta name="keywords" content="albinism events, workshops, advocacy, community activities, AFZ, Zambia">
+    <title>Events & Activities - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#DAA520">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Events & Activities - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Join us in our advocacy events, workshops, and community activities across Zambia">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../images/afz-logo-final.png">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/events.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Events & Activities - Albinism Foundation of Zambia - AFZ">
+    <meta name="twitter:description" content="Join us in our advocacy events, workshops, and community activities across Zambia">
+    <meta name="twitter:image" content="../images/afz-logo-final.png">
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Events Page Specific Styles */
+        .events-hero {
+            background: linear-gradient(135deg, var(--secondary-orange) 0%, var(--primary-blue) 50%, var(--secondary-orange) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 4rem;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+            color: white;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .events-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .events-hero .hero-title {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .events-hero .hero-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .events-hero .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .events-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="calendar" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23calendar)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .events-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .event-category-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.8s ease-out forwards;
+        }
+        
+        .event-category-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-category-card:nth-child(2) { animation-delay: 0.3s; }
+        .event-category-card:nth-child(3) { animation-delay: 0.5s; }
+        .event-category-card:nth-child(4) { animation-delay: 0.7s; }
+        
+        @keyframes cardFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .event-category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-orange), var(--primary-blue));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .event-category-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue-light);
+        }
+        
+        .event-category-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .category-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            display: inline-block;
+        }
+        
+        .event-category-card:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .category-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .category-stats {
+            background: linear-gradient(135deg, var(--primary-blue-light), var(--secondary-orange-light));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        
+        .resource-count {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-blue-light);
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-orange), var(--primary-blue));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .event-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .event-card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .event-date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary-orange);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .event-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .event-location {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .event-card-body {
+            padding: 1.5rem;
+        }
+        
+        .event-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        
+        .event-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .event-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .upcoming-events {
+            background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 4rem 2rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInScale 0.8s ease-out;
+        }
+        
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .upcoming-events::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="events-pattern" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23events-pattern)" /></svg>');
+            opacity: 0.4;
+        }
+        
+        .upcoming-events .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .upcoming-events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .upcoming-event-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        
+        .upcoming-event-card:nth-child(1) { animation-delay: 0.2s; }
+        .upcoming-event-card:nth-child(2) { animation-delay: 0.4s; }
+        .upcoming-event-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        .upcoming-event-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .upcoming-event-card h3 {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .upcoming-event-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .filters-section {
+            background: linear-gradient(135deg, var(--gray-50), white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-sm);
+            animation: slideInFromTop 0.8s ease-out;
+        }
+        
+        @keyframes slideInFromTop {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .filters-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .filter-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+        
+        .filter-select, .filter-input {
+            padding: 1rem 1.25rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            background: white;
+            font-size: 1rem;
+            min-width: 180px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .filter-select:focus, .filter-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+            background: white;
+        }
+        
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 0.25rem;
+            border: 1px solid var(--gray-300);
+        }
+        
+        .view-toggle-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .view-toggle-btn:hover {
+            background: var(--gray-100);
+        }
+        
+        .view-toggle-btn.active {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+        }
+        
+        .view-toggle-btn.active:hover {
+            background: var(--primary-blue-dark);
+        }
+        
+        /* Additional interactive features */
+        .event-card-body {
+            padding: 2rem;
+        }
+        
+        .event-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn-sm {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-sm:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .no-events {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--gray-600);
+        }
+        
+        .no-events h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gray-800);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            overflow: auto;
+        }
+        
+        .modal.modal-open {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-xl);
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            z-index: 1001;
+            box-shadow: var(--shadow-lg);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-600);
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--gray-100);
+            color: var(--gray-800);
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .event-modal-header {
+            background: linear-gradient(135deg, var(--primary-blue-light), var(--secondary-orange-light));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2rem;
+        }
+        
+        .event-date-time {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .event-date, .event-time {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .event-location {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .status-open {
+            background: rgba(34, 197, 94, 0.2);
+            color: #15803d;
+        }
+        
+        .status-closed {
+            background: rgba(239, 68, 68, 0.2);
+            color: #dc2626;
+        }
+        
+        .event-description h3 {
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .event-details {
+            margin-top: 2rem;
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+        }
+        
+        .detail-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .spots-available {
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        .spots-full {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        
+        .event-modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+        
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            max-width: 400px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            animation: notificationSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes notificationSlideIn {
+            from { opacity: 0; transform: translateX(100%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .notification-success {
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+        }
+        
+        .notification-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+        }
+        
+        .notification-warning {
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            color: #ca8a04;
+        }
+        
+        .notification-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s ease;
+        }
+        
+        .notification-close:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .events-hero .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .events-categories {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1.5rem;
+            }
+            
+            .filter-item {
+                width: 100%;
+            }
+            
+            .event-category-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .upcoming-events {
+                padding: 3rem 1.5rem;
+            }
+            
+            .filters-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 1rem;
+            }
+            
+            .modal-header, .modal-body {
+                padding: 1.5rem;
+            }
+            
+            .event-date-time {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .notification {
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../images/afz-logo-final.png" alt="Albinism Foundation Zambia Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Breaking the silence on Albinism</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="programs.html" class="nav-link">Programs</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="advocacy.html" class="nav-link">Advocacy</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="auth.html" class="nav-link">Member Portal</a></li>
+                    <li><a href="donate.html" class="nav-link">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main id="main-content" class="main">
+        <!-- Hero Section -->
+        <section class="events-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Events & Activities</h1>
+                    <p class="hero-subtitle">
+                        Join us in our advocacy events, workshops, and community activities across Zambia
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="document.getElementById('listViewBtn').click()">
+                            View All Events
+                        </button>
+                        <button class="btn btn-outline" onclick="window.location.href='auth.html'">
+                            Member Portal
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Event Categories -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Event Categories</h2>
+                <div class="events-categories">
+                    <div class="event-category-card" onclick="filterByCategory('workshop')">
+                        <div class="category-icon">
+                            🎓
+                        </div>
+                        <h3 class="category-title">Workshops & Training</h3>
+                        <p class="category-description">
+                            Educational workshops, skill development sessions, and training programs.
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">3</span> upcoming events
+                        </div>
+                    </div>
+                    
+                    <div class="event-category-card" onclick="filterByCategory('advocacy')">
+                        <div class="category-icon">
+                            📢
+                        </div>
+                        <h3 class="category-title">Advocacy & Awareness</h3>
+                        <p class="category-description">
+                            Public awareness campaigns, advocacy events, and community outreach.
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">2</span> upcoming events
+                        </div>
+                    </div>
+                    
+                    <div class="event-category-card" onclick="filterByCategory('support')">
+                        <div class="category-icon">
+                            🤝
+                        </div>
+                        <h3 class="category-title">Support Groups</h3>
+                        <p class="category-description">
+                            Peer support meetings, family gatherings, and community support sessions.
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">2</span> upcoming events
+                        </div>
+                    </div>
+                    
+                    <div class="event-category-card" onclick="filterByCategory('fundraising')">
+                        <div class="category-icon">
+                            💝
+                        </div>
+                        <h3 class="category-title">Fundraising</h3>
+                        <p class="category-description">
+                            Charity events, fundraising campaigns, and donation drives.
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">1</span> upcoming events
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Upcoming Events Highlight -->
+        <section class="upcoming-events">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="upcoming-events-grid">
+                    <div class="upcoming-event-card">
+                        <div class="event-date-badge">Feb 15, 2024</div>
+                        <h3>International Albinism Awareness Workshop</h3>
+                        <p>📍 University of Zambia, Lusaka</p>
+                        <p>Join us for a comprehensive workshop on albinism awareness and advocacy strategies.</p>
+                        <div class="event-meta">
+                            <span>🕒 9:00 AM - 4:00 PM</span>
+                            <span>👥 150 participants</span>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-event-card">
+                        <div class="event-date-badge">Feb 22, 2024</div>
+                        <h3>Community Support Group Meeting</h3>
+                        <p>📍 AFZ Community Center, Kitwe</p>
+                        <p>Monthly gathering for families and individuals with albinism to share experiences and support.</p>
+                        <div class="event-meta">
+                            <span>🕒 2:00 PM - 5:00 PM</span>
+                            <span>👥 50 participants</span>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-event-card">
+                        <div class="event-date-badge">Mar 5, 2024</div>
+                        <h3>Medical Outreach Program</h3>
+                        <p>📍 Ndola General Hospital</p>
+                        <p>Free medical checkups and consultations for persons with albinism in the Copperbelt region.</p>
+                        <div class="event-meta">
+                            <span>🕒 8:00 AM - 3:00 PM</span>
+                            <span>👥 200 participants</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Filters and View Toggle -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters-controls">
+                    <div class="view-toggle">
+                        <button class="view-toggle-btn" id="listViewBtn" onclick="switchView('list')">
+                            📋 List View
+                        </button>
+                        <button class="view-toggle-btn active" id="calendarViewBtn" onclick="switchView('calendar')">
+                            📅 Calendar View
+                        </button>
+                    </div>
+                    
+                    <div class="filter-item">
+                        <label class="filter-label">Category:</label>
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="all">All Categories</option>
+                            <option value="workshop">Workshops</option>
+                            <option value="advocacy">Advocacy</option>
+                            <option value="support">Support Groups</option>
+                            <option value="fundraising">Fundraising</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-item">
+                        <label class="filter-label">Location:</label>
+                        <select class="filter-select" id="locationFilter">
+                            <option value="all">All Locations</option>
+                            <option value="lusaka">Lusaka</option>
+                            <option value="kitwe">Kitwe</option>
+                            <option value="ndola">Ndola</option>
+                            <option value="online">Online</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-item">
+                        <label class="filter-label">Search:</label>
+                        <input type="text" class="filter-input" id="searchInput" placeholder="Search events...">
+                    </div>
+                    
+                    <button class="btn btn-outline btn-sm" onclick="clearFilters()">
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- Events Content -->
+        <section class="events-content">
+            <div class="container">
+                <!-- Calendar View -->
+                <div class="events-view" id="calendarView">
+                    <div class="calendar-header">
+                        <div class="calendar-nav">
+                            <button class="calendar-nav-btn" id="prevMonth" aria-label="Previous month">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15,18 9,12 15,6"></polyline>
+                                </svg>
+                            </button>
+                            <h2 class="calendar-title" id="calendarTitle">January 2024</h2>
+                            <button class="calendar-nav-btn" id="nextMonth" aria-label="Next month">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,18 15,12 9,6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="btn btn-sm" id="todayBtn" data-translate="events.calendar.today">Today</button>
+                    </div>
+                    
+                    <div class="calendar-grid">
+                        <div class="calendar-weekdays">
+                            <div class="weekday" data-translate="events.calendar.sun">Sun</div>
+                            <div class="weekday" data-translate="events.calendar.mon">Mon</div>
+                            <div class="weekday" data-translate="events.calendar.tue">Tue</div>
+                            <div class="weekday" data-translate="events.calendar.wed">Wed</div>
+                            <div class="weekday" data-translate="events.calendar.thu">Thu</div>
+                            <div class="weekday" data-translate="events.calendar.fri">Fri</div>
+                            <div class="weekday" data-translate="events.calendar.sat">Sat</div>
+                        </div>
+                        <div class="calendar-days" id="calendarDays">
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- List View -->
+                <div class="events-view events-view-hidden" id="listView">
+                    <div class="events-list" id="eventsList">
+                        <!-- Events will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <button class="pagination-btn pagination-btn-prev" id="prevPage" disabled>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                            <span data-translate="events.pagination.previous">Previous</span>
+                        </button>
+                        <div class="pagination-info">
+                            <span id="pageInfo">Page 1 of 1</span>
+                        </div>
+                        <button class="pagination-btn pagination-btn-next" id="nextPage" disabled>
+                            <span data-translate="events.pagination.next">Next</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- No Events Message -->
+                <div class="no-events" id="noEvents" style="display: none;">
+                    <div class="no-events-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <h3 data-translate="events.no_events.title">No Events Found</h3>
+                    <p data-translate="events.no_events.message">There are no events matching your current filters.</p>
+                    <button class="btn btn-primary" id="clearFiltersBtn" data-translate="events.no_events.clear_filters">
+                        Clear Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-translate="footer.about.title">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text" data-translate="footer.about.description">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle" data-translate="footer.quick_links.title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="../index.html" class="footer-link" data-translate="nav.home">Home</a>
+                        <a href="about.html" class="footer-link" data-translate="nav.about">About</a>
+                        <a href="advocacy.html" class="footer-link" data-translate="nav.advocacy">Advocacy</a>
+                        <a href="events.html" class="footer-link" data-translate="nav.events">Events</a>
+                        <a href="resources.html" class="footer-link" data-translate="nav.resources">Resources</a>
+                        <a href="contact.html" class="footer-link" data-translate="nav.contact">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle" data-translate="footer.contact.title">Contact Info</h4>
+                    <div class="footer-contact">
+                        <p class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Lusaka, Zambia</span>
+                        </p>
+                        <p class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>info@afz.org.zm</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle" data-translate="footer.support.title">Support Our Cause</h4>
+                    <p class="footer-text" data-translate="footer.support.description">
+                        Help us advocate for persons with albinism in Zambia.
+                    </p>
+                    <a href="donate.html" class="btn btn-primary btn-sm" data-translate="footer.support.donate">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    <span data-translate="footer.copyright">&copy; 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Event Details Modal -->
+    <div class="modal" id="eventModal" role="dialog" aria-labelledby="eventModalTitle" aria-hidden="true">
+        <div class="modal-backdrop" aria-hidden="true"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="eventModalTitle">Event Details</h2>
+                <button class="modal-close" id="closeEventModal" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="eventModalBody">
+                <!-- Event details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner" aria-hidden="true">
+        <div class="spinner"></div>
+        <span class="loading-text" data-translate="common.loading">Loading...</span>
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+        // Events data - synced from admin portal
+        // In production, this would be fetched from your backend API
+        const adminEvents = [
+            {
+                id: 1,
+                title: "International Albinism Awareness Day Celebration",
+                category: "awareness",
+                date: "2024-06-13",
+                time: "10:00",
+                location: "Mulungushi Conference Centre, Lusaka",
+                description: "Annual celebration of International Albinism Awareness Day with keynote speeches, exhibitions, and community activities.",
+                capacity: 300,
+                attendees: 156,
+                status: "upcoming",
+                createdBy: "Admin",
+                featured: true,
+                registrationOpen: true
+            },
+            {
+                id: 2,
+                title: "Medical Screening & Consultation Camp",
+                category: "medical",
+                date: "2024-03-20",
+                time: "08:00",
+                location: "University Teaching Hospital, Lusaka",
+                description: "Free medical screenings, dermatological consultations, and eye examinations for persons with albinism.",
+                capacity: 200,
+                attendees: 89,
+                status: "upcoming",
+                createdBy: "Medical Team",
+                featured: true,
+                registrationOpen: true
+            },
+            {
+                id: 3,
+                title: "Community Support Group - Copperbelt Region",
+                category: "support",
+                date: "2024-02-28",
+                time: "14:00",
+                location: "Kitwe Community Center",
+                description: "Monthly support group meeting for families and individuals with albinism in the Copperbelt region.",
+                capacity: 50,
+                attendees: 32,
+                status: "upcoming",
+                createdBy: "Regional Coordinator",
+                featured: false,
+                registrationOpen: true
+            },
+            {
+                id: 4,
+                title: "Educational Workshop: Inclusive Teaching Methods",
+                category: "workshop",
+                date: "2024-03-15",
+                time: "09:00",
+                location: "Teachers' Resource Centre, Lusaka",
+                description: "Professional development workshop for educators on creating inclusive learning environments for students with albinism.",
+                capacity: 80,
+                attendees: 67,
+                status: "upcoming",
+                createdBy: "Education Outreach Team",
+                featured: false,
+                registrationOpen: true
+            },
+            {
+                id: 5,
+                title: "Fundraising Gala Dinner",
+                category: "fundraising",
+                date: "2024-04-12",
+                time: "18:00",
+                location: "InterContinental Lusaka",
+                description: "Annual fundraising gala dinner to support AFZ programs and initiatives. Features guest speakers and auction.",
+                capacity: 250,
+                attendees: 198,
+                status: "upcoming",
+                createdBy: "Fundraising Committee",
+                featured: true,
+                registrationOpen: true
+            },
+            {
+                id: 6,
+                title: "Youth Empowerment Workshop",
+                category: "workshop",
+                date: "2024-03-08",
+                time: "10:00",
+                location: "YWCA Lusaka",
+                description: "Skills development and empowerment workshop specifically designed for young people with albinism.",
+                capacity: 60,
+                attendees: 45,
+                status: "upcoming",
+                createdBy: "Youth Programs Coordinator",
+                featured: false,
+                registrationOpen: true
+            },
+            {
+                id: 7,
+                title: "Legal Rights Advocacy Forum",
+                category: "advocacy",
+                date: "2024-04-25",
+                time: "09:30",
+                location: "Law Association of Zambia, Lusaka",
+                description: "Forum discussing legal rights, advocacy strategies, and policy recommendations for persons with albinism.",
+                capacity: 100,
+                attendees: 23,
+                status: "upcoming",
+                createdBy: "Legal Affairs Team",
+                featured: false,
+                registrationOpen: true
+            },
+            {
+                id: 8,
+                title: "Sun Protection Distribution Drive",
+                category: "support",
+                date: "2024-02-25",
+                time: "08:00",
+                location: "Multiple locations across Lusaka",
+                description: "Community distribution of sunscreen, protective clothing, and educational materials.",
+                capacity: 500,
+                attendees: 234,
+                status: "completed",
+                createdBy: "Community Outreach Team",
+                featured: false,
+                registrationOpen: false
+            }
+        ];
+        
+        let currentView = 'calendar';
+        let filteredEvents = [...adminEvents.filter(event => event.status === 'upcoming')];
+        
+        // Filter functionality
+        function filterByCategory(category) {
+            const categoryFilter = document.getElementById('categoryFilter');
+            categoryFilter.value = category;
+            applyFilters();
+        }
+        
+        function clearFilters() {
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('locationFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
+        
+        function applyFilters() {
+            const category = document.getElementById('categoryFilter').value;
+            const location = document.getElementById('locationFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            
+            filteredEvents = adminEvents.filter(event => {
+                const isUpcoming = event.status === 'upcoming';
+                if (!isUpcoming) return false;
+                const matchesCategory = category === 'all' || event.category === category;
+                const matchesLocation = location === 'all' || event.location.toLowerCase().includes(location);
+                const matchesSearch = search === '' || 
+                    event.title.toLowerCase().includes(search) || 
+                    event.description.toLowerCase().includes(search);
+                
+                return matchesCategory && matchesLocation && matchesSearch;
+            });
+            
+            if (currentView === 'list') {
+                displayEventsList();
+            } else {
+                displayCalendar();
+            }
+        }
+        
+        // View switching
+        function switchView(view) {
+            currentView = view;
+            
+            // Update button states
+            document.querySelectorAll('.view-toggle-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            if (view === 'list') {
+                document.getElementById('listViewBtn').classList.add('active');
+                document.getElementById('calendarView').style.display = 'none';
+                document.getElementById('listView').style.display = 'block';
+                displayEventsList();
+            } else {
+                document.getElementById('calendarViewBtn').classList.add('active');
+                document.getElementById('listView').style.display = 'none';
+                document.getElementById('calendarView').style.display = 'block';
+                displayCalendar();
+            }
+        }
+        
+        // Display events in list format
+        function displayEventsList() {
+            const container = document.getElementById('eventsList');
+            container.innerHTML = '';
+            
+            if (filteredEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="no-events">
+                        <h3>No Events Found</h3>
+                        <p>Try adjusting your search criteria or browse different categories.</p>
+                        <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredEvents.forEach(event => {
+                const eventCard = document.createElement('div');
+                eventCard.className = 'event-card';
+                eventCard.innerHTML = `
+                    <div class="event-card-header">
+                        <div class="event-date-badge">
+                            📅 ${formatDate(event.date)}
+                        </div>
+                        <h3 class="event-title">${event.title}</h3>
+                        <div class="event-location">
+                            📍 ${event.location}
+                        </div>
+                    </div>
+                    <div class="event-card-body">
+                        <p class="event-description">${event.description}</p>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                🕒 <span>${formatTime(event.time)}</span>
+                            </div>
+                            <div class="event-meta-item">
+                                👥 <span>${event.attendees}/${event.capacity} registered</span>
+                            </div>
+                            <div class="event-meta-item">
+                                📋 <span>${capitalizeFirst(event.category)}</span>
+                            </div>
+                        </div>
+                        <div class="event-actions">
+                            <button class="btn btn-primary btn-sm" onclick="registerForEvent(${event.id})">
+                                Register
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="viewEventDetails(${event.id})">
+                                Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(eventCard);
+            });
+        }
+        
+        // Display calendar (simplified version)
+        function displayCalendar() {
+            // This would normally be a full calendar implementation
+            // For now, just show a message
+            const calendarDays = document.getElementById('calendarDays');
+            calendarDays.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #666;">
+                    <p>📅 Calendar view would display events for the current month</p>
+                    <p>Switch to List View to see all events</p>
+                    <button class="btn btn-primary" onclick="switchView('list')">View Events List</button>
+                </div>
+            `;
+        }
+        
+        // Utility functions
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+        
+        function formatTime(timeString) {
+            const [hours, minutes] = timeString.split(':');
+            const hour = parseInt(hours);
+            const ampm = hour >= 12 ? 'PM' : 'AM';
+            const displayHour = hour > 12 ? hour - 12 : (hour === 0 ? 12 : hour);
+            return `${displayHour}:${minutes} ${ampm}`;
+        }
+        
+        function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        
+        // Event actions
+        function registerForEvent(eventId) {
+            const event = adminEvents.find(e => e.id === eventId);
+            if (event) {
+                if (!event.registrationOpen) {
+                    showNotification('Registration is currently closed for this event.', 'warning');
+                    return;
+                }
+                
+                if (event.attendees >= event.capacity) {
+                    showNotification('Sorry, this event is fully booked.', 'error');
+                    return;
+                }
+                
+                // Show registration confirmation
+                if (confirm(`Register for "${event.title}"?\n\nDate: ${formatDate(event.date)} at ${formatTime(event.time)}\nLocation: ${event.location}\n\nClick OK to confirm your registration.`)) {
+                    showNotification('Registration successful! You will receive a confirmation email shortly.', 'success');
+                }
+            }
+        }
+        
+        function viewEventDetails(eventId) {
+            const event = adminEvents.find(e => e.id === eventId);
+            if (event) {
+                showEventModal(event);
+            }
+        }
+        
+        function showEventModal(event) {
+            const modal = document.getElementById('eventModal');
+            const modalBody = document.getElementById('eventModalBody');
+            const modalTitle = document.getElementById('eventModalTitle');
+            
+            modalTitle.textContent = event.title;
+            
+            const registrationStatus = event.registrationOpen ? 
+                `<span class="status-badge status-open">✅ Registration Open</span>` : 
+                `<span class="status-badge status-closed">❌ Registration Closed</span>`;
+                
+            const availableSpots = event.capacity - event.attendees;
+            const spotsText = availableSpots > 0 ? 
+                `<span class="spots-available">${availableSpots} spots available</span>` :
+                `<span class="spots-full">Event is fully booked</span>`;
+            
+            modalBody.innerHTML = `
+                <div class="event-modal-content">
+                    <div class="event-modal-header">
+                        <div class="event-date-time">
+                            <div class="event-date">📅 ${formatDate(event.date)}</div>
+                            <div class="event-time">🕒 ${formatTime(event.time)}</div>
+                        </div>
+                        <div class="event-location">📍 ${event.location}</div>
+                        ${registrationStatus}
+                    </div>
+                    
+                    <div class="event-modal-body">
+                        <div class="event-description">
+                            <h3>About This Event</h3>
+                            <p>${event.description}</p>
+                        </div>
+                        
+                        <div class="event-details">
+                            <div class="detail-item">
+                                <strong>Category:</strong> ${capitalizeFirst(event.category)}
+                            </div>
+                            <div class="detail-item">
+                                <strong>Organized by:</strong> ${event.createdBy}
+                            </div>
+                            <div class="detail-item">
+                                <strong>Capacity:</strong> ${event.attendees}/${event.capacity} registered
+                            </div>
+                            <div class="detail-item">
+                                ${spotsText}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="event-modal-actions">
+                        ${event.registrationOpen && availableSpots > 0 ? 
+                            `<button class="btn btn-primary" onclick="registerForEvent(${event.id}); closeModal();">Register Now</button>` :
+                            `<button class="btn btn-outline" disabled>Registration ${event.registrationOpen ? 'Full' : 'Closed'}</button>`
+                        }
+                        <button class="btn btn-outline" onclick="shareEvent(${event.id})">Share Event</button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('modal-open');
+            modal.setAttribute('aria-hidden', 'false');
+            
+            // Close modal functionality
+            const closeBtn = document.getElementById('closeEventModal');
+            const backdrop = modal.querySelector('.modal-backdrop');
+            
+            closeBtn.onclick = closeModal;
+            backdrop.onclick = closeModal;
+            
+            // ESC key to close
+            document.addEventListener('keydown', function escHandler(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                    document.removeEventListener('keydown', escHandler);
+                }
+            });
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('eventModal');
+            modal.classList.remove('modal-open');
+            modal.setAttribute('aria-hidden', 'true');
+        }
+        
+        function shareEvent(eventId) {
+            const event = adminEvents.find(e => e.id === eventId);
+            if (navigator.share && event) {
+                navigator.share({
+                    title: event.title,
+                    text: `Join us for ${event.title} on ${formatDate(event.date)} at ${event.location}`,
+                    url: window.location.href
+                });
+            } else {
+                // Fallback: copy to clipboard
+                const shareText = `${event.title}\n${formatDate(event.date)} at ${formatTime(event.time)}\n${event.location}\n\n${event.description}\n\nRegister: ${window.location.href}`;
+                navigator.clipboard.writeText(shareText).then(() => {
+                    showNotification('Event details copied to clipboard!', 'success');
+                });
+            }
+        }
+        
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.innerHTML = `
+                <div class="notification-content">
+                    <span class="notification-message">${message}</span>
+                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+        
+        // Event management is handled through Member Portal
+        function redirectToMemberPortal() {
+            alert('Event management is handled through the Member Portal.\n\nAdmins can create and manage events after logging in to the Member Portal.');
+            // In a real implementation: window.location.href = 'auth.html?redirect=events';
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default view
+            switchView('list');
+            
+            // Add event listeners
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+            document.getElementById('locationFilter').addEventListener('change', applyFilters);
+            
+            // Mobile menu functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    const nav = document.getElementById('main-navigation');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    nav.classList.toggle('nav-open');
+                });
+            }
+        });
+    </script>
+    
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/pwa.js"></script>
+</body>
+</html>

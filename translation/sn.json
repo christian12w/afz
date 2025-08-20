@@ -1,0 +1,104 @@
+{
+  "org-name": "Albinism Foundation Zambia",
+  "org-tagline": "Kurwira Kodzero, Kuvaka Ruzivo, Kugadzira Shanduko",
+  
+  "nav-home": "Musha",
+  "nav-about": "Nesu",
+  "nav-programs": "Zvirongwa",
+  "nav-resources": "Zvinhu",
+  "nav-advocacy": "Kurwira",
+  "nav-contact": "Bata",
+  
+  "hero-title": "Kusimbisa Upenyu, Kuchengetedza Kodzero",
+  "hero-description": "Albinism Foundation Zambia yakazvipira kurwira kodzero dzevanhu vane albinism, kukurudzira ruzivo, uye kuvaka nharaunda yakabatana uko munhu wese anogona kubudirira.",
+  "cta-get-involved": "Bata Chanza",
+  "cta-learn-more": "Dzidza Zvimwe",
+  
+  "mission-heading": "Chinangwa Chedu",
+  "mission-statement": "Kurwira kodzero, rukudzo, uye kubatanidzwa kwevanhu vane albinism muZambia kuburikidza nemishandirapamwe yekuzivisa, kurwira mutemo, masevhisi etsigiro, uye zvirongwa zvekusimbisa nharaunda.",
+  "stat-members": "Nhengo Dzakatsigirwa",
+  "stat-programs": "Zvirongwa Zviri Kushanda",
+  "stat-provinces": "Matunhu Akasvikwa",
+  
+  "focus-heading": "Nzvimbo Dzatinona Dzako",
+  "focus-rights": "Kurwira Kodzero",
+  "focus-rights-desc": "Kutsigira kushandurwa kwemitemo nekuchengetedzwa kwemutemo kuti tive nekodzero dzakafanana nemikana yevanhu vese vane albinism.",
+  "focus-awareness": "Mishandirapamwe Yekuzivisa",
+  "focus-awareness-desc": "Kudzidzisa nharaunda nezve albinism kurwisa ngano, mafungiro asina chokwadi, uye rusarura kuburikidza nezvirongwa zvakananga.",
+  "focus-support": "Masevhisi Etsigiro",
+  "focus-support-desc": "Kupa masevhisi akakosha kusanganisira kugova sunscreen, mbatya dzinodzivira, uye kuronga kuwana hutano.",
+  "focus-education": "Kuwana Dzidzo",
+  "focus-education-desc": "Kuona kuti vana vane albinism vane mukana wekuwana dzidzo yakanaka pamwe nekugadziriswa kwakakodzera uye masystem etsigiro.",
+  
+  "news-heading": "Nhau Dzazvino & Zvitsva",
+  "news-1-title": "AFZ Inotanga Mushandirapamwe Wekuzivisa Munyika Yese",
+  "news-1-excerpt": "Mushandirapamwe wedu wakakwana wekuzivisa unosvika kunharaunda dzemumafuro muZambia kurwisa rusarura nekukurudzira kunzwisisa.",
+  "news-2-title": "Kukunda Kwemutemo: Matanho Matsva Ekudzivirira Akabvumidzwa",
+  "news-2-excerpt": "Hurumende inobvumidza matanho matsva emutemo ekudzivirira vanhu vane albinism kubva kumhirizhonga nerusarura.",
+  "news-3-title": "Kuwedzera Chirongwa Chetsigiro Yedzidzo",
+  "news-3-excerpt": "AFZ inowedzera zvirongwa zvetsigiro yedzidzo kusanganisira vadzidzi vane albinism mazana maviri vamwe pematunhu ese.",
+  "read-more": "Verenga Zvimwe",
+  
+  "cta-title": "Bata Sangano Redu",
+  "cta-description": "Pamwe chete, tinogona kugadzira Zambia iyo vanhu vane albinism vanogara nerukudzo, kufanana, nemikana.",
+  "cta-donate": "Donati Zvino",
+  "cta-volunteer": "Volunteer",
+  "cta-contact": "Titaurire",
+  
+  "footer-contact": "Ruzivo Rwekubata",
+  "address-label": "Kero:",
+  "address": "[Kero yeHofisi yeAFZ - Inofanira kutsiviwa nekero chaiyo]",
+  "phone-label": "Runhare:",
+  "email-label": "Email:",
+  "footer-links": "Mabatirwo Akakurumidza",
+  "footer-about": "Nesu",
+  "footer-programs": "Zvirongwa Zvedu",
+  "footer-resources": "Zvinhu",
+  "footer-contact-page": "Bata",
+  "footer-support": "Titsigirei",
+  "footer-donate": "Ita Chipo",
+  "footer-volunteer": "Volunteer",
+  "footer-partner": "Ita Shamwari",
+  "footer-social": "Titeverei",
+  "nav-donate": "Kupa",
+  "nav-events": "Zviitiko",
+  "nav-member-portal": "Nzvimbo Yenhengo",
+  
+  "cta-donate-main": "Kupa Izvozvi",
+  
+  "awareness-title": "Kuvaka ruzivo nezve albinism",
+  "awareness-description": "Pamwe chete, tinoputsa runyararo uye tinoparadza mafungiro asina chokwadi nezve albinism.",
+  "awareness-stat-1-number": "1 pa20,000",
+  "awareness-stat-1-desc": "Vanhu pasi rose vanoberekerwa ne albinism",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "VaZambia vanogara ne albinism",
+  "awareness-cta-learn": "Dzidza nezve Albinism",
+  "awareness-cta-support": "Joinha Chikonzero Chedu",
+  
+  "donate-page-title": "Tsigira Chinangwa Chedu",
+  "donation-impact-title": "Mukana Wako",
+  "donation-form-title": "Ita Rubatsiro",
+  "first-name-label": "Zita Rekutanga *",
+  "last-name-label": "Zita Rekupedzisira *",
+  "email-label": "Email *",
+  "phone-label": "Nhamba Yefoni",
+  "donate-submit-btn": "Enda Kubhadharo",
+  
+  "footer-home": "Musha",
+  "slide-1-title": "Kutsigira Vana Vedu",
+  "slide-2-title": "Kudzivirira Nekuchengeta",
+  "slide-3-title": "Kushanda Nenharaunda",
+  "slide-4-title": "Kuronga Kurwira",
+  "slide-5-title": "Musiyano Wechisikigo",
+  
+  "accessibility": {
+    "skip_to_content": "Svirira kune zvirimo"
+  },
+  "common": {
+    "loading": "Kurodha..."
+  },
+  
+  "copyright": "© 2024 Albinism Foundation Zambia. Kodzero dzese dzakachengetedzwa.",
+  "privacy-policy": "Mutemo Wekuvanzika",
+  "terms-service": "Mamiriro Esevhisi"
+}

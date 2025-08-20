@@ -1,0 +1,193 @@
+{
+  "org-name": "Albinism Foundation Zambia",
+  "org-tagline": "Kulwela Zyilungelo, Kujaka Kuzyiba, Kusandula Zyindi",
+  
+  "nav-home": "Ingu",
+  "nav-about": "Atubede",
+  "nav-programs": "Zinchiito",
+  "nav-resources": "Zisebenzyo",
+  "nav-advocacy": "Kulwela",
+  "nav-contact": "Kambukila",
+  "nav-donate": "Kupa",
+  
+  "hero-title": "Kusandula Buumi, Kulinda Zyilungelo",
+  "hero-description": "Albinism Foundation Zambia yakabambana kulwela zyilungelo zyabantu baliansikila, kupandula kuzyiba, akujaka mulukuta ulalangilana uko kufumbwa wumwi akutakata.",
+  "cta-donate-main": "Kupa Lino",
+  "cta-get-involved": "Jatania",
+  "cta-learn-more": "Iyenga Zimbi",
+  
+  "mission-heading": "Chebo Chesu",
+  "mission-statement": "Kulwela zyilungelo, bulemekelo, akujatanizya kwabantu baliansikila muZambia kwindilila makatazyo akulaangila kuzyiba, kulwela milawo, zisebenzyo zyabuzuuminzi, azinchiito zyakusandula mulukuta.",
+  "stat-members": "Balendo Babazuuzigwa",
+  "stat-programs": "Zinchiito Zibelekelela",
+  "stat-provinces": "Zisi Zyakasikila",
+  
+  "focus-heading": "Zyalo Ziesu Zyakutongolosya",
+  "focus-rights": "Kulwela Zyilungelo",
+  "focus-rights-desc": "Kukatazya kusandulwa kwamilawo akuchengetedwa kwamulawo kuti tujane zyilungelo zyakafwanana amakani abantu boonse baliansikila.",
+  "focus-awareness": "Makatazyo Akulaangila Kuzyiba",
+  "focus-awareness-desc": "Kulaangila milukuta yamansikila kuti tulwane antambi, myeelo itakachena, akubeela kwindilila zinchiito zyakuleka.",
+  "focus-support": "Zisebenzyo Zyabuzuuminzi",
+  "focus-support-desc": "Kupa zisebenzyo zyachisemo kubikula sunscreen, zifuko zyachenjelo, akutongolosya kutambula kabotu kazubomi.",
+  "focus-education": "Kutambula Kusikila",
+  "focus-education-desc": "Kuona kuti baana baliansikila banjane mkani wakutambula kusikila kwabotu amatolosyo akulungama azinchiito zyabuzuuminzi.",
+  
+  "news-heading": "Manzibo Achiindi Chino Azindi",
+  "news-1-title": "AFZ Iyamba Katazyo Koonse Kaakulaangila Kuzyiba",
+  "news-1-excerpt": "Katazyo kesu kamanene kaakulaangila kuzyiba kasika mumilukuta yamumafulo muZambia kuti tulwane kubeela akupandula kunyumfwana.",
+  "news-2-title": "Buwindi Bwamulawo: Zikakilo Zilizyasanu Zyabuzuuminzi Zyapegwa Mvuumo",
+  "news-2-excerpt": "Gamente yapegwa mvuumo kuzikakilo zilizyasanu zyamulawo zyakuchengeteza bantu baliansikila kubuziba abukaindu.",
+  "news-3-title": "Kulaula Zikakilo Zyachebo Chakusikila",
+  "news-3-excerpt": "AFZ yajongonya zinchiito zyachebo chakusikila kuti zijatanye basikila 200 babonjelwe baliansikila kuzisi zyoonse.",
+  "read-more": "Bala Zimbi",
+  
+  "cta-title": "Jatania Chebo Chesu",
+  "cta-description": "Twaamwi, tuyanda kujaka Zambia uko bantu baliansikila bakkale abulemekelo, bufwanane, amakani.",
+  "cta-donate": "Kupa Lino",
+  "cta-volunteer": "Volunteer",
+  "cta-contact": "Tukambukile",
+  
+  "footer-contact": "Maambo Aakukambukila",
+  "address-label": "Chalo:",
+  "address": "[Chalo Chaofisi yaAFZ - Chafwilide kusandululwa achalo chachimuli]",
+  "phone-label": "Foni:",
+  "email-label": "Email:",
+  "footer-links": "Zikambukilo Zyaluzilo",
+  "footer-about": "Atubede",
+  "footer-programs": "Zinchiito Ziesu",
+  "footer-resources": "Zisebenzyo",
+  "footer-contact-page": "Kambukila",
+  "footer-support": "Tutampe",
+  "footer-donate": "Kupa Chipo",
+  "footer-volunteer": "Volunteer",
+  "footer-partner": "Iba Muziindi",
+  "footer-social": "Tutobele",
+  "awareness-title": "Kulaangila Kuzyiba kwa Mansikila",
+  "awareness-description": "Twaamwi, tulaabulaangula bwiko akukomeeka myeelo itakachena yamansikila. Kwindilila kulangila, kulwela, akuzuuminzi mwamulukuta, tulajaka nyika uko muntu uumwi auumwi ulaansikila uyanda kukkala abulemekelo, bufwanane, akuyeeya.",
+  "awareness-stat-1-number": "1 mu 20,000",
+  "awareness-stat-1-desc": "Bantu munyika yoonse balyalwe mansikila",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "Ba-Zambia bakkalang mansikila",
+  "awareness-cta-learn": "Iyenga kwa Mansikila",
+  "awareness-cta-support": "Jatania Chebo Chesu",
+  
+  "donate-page-title": "Zunike Chebo Chesu",
+  "donate-page-description": "Zipo zyanu zilazunika kulwela zyilungelo, bulemu, akujatanizya kwabatu balyaansikila muZambia. Zipo zyilizyonse zilajaka musiyano mukujaka citundu chijatanizyigwa.",
+  "donation-impact-title": "Zipo Zyanu",
+  "impact-title-sunscreen": "Buzuuminzi bwa Sunscreen",
+  "impact-desc-sunscreen": "Kupa sunscreen kumuntu ulyaansikila myezi 3",
+  "impact-title-workshop": "Kampani yamulukuta",
+  "impact-desc-workshop": "Kulipila kampani yakulaangila kuzyiba mumuzi uumwi",
+  "impact-title-education": "Buzuuminzi bwakusikila",
+  "impact-desc-education": "Kuzunika zintu zyakusikila zya bana 10 balyaansikila",
+  
+  "donation-form-title": "Ipe Zipo",
+  "donation-type-label": "Bwanzi bwazipo",
+  "donation-type-once": "Zipo zyakamwi",
+  "donation-type-monthly": "Zipo zyamwezi umwi aumwi",
+  "donation-amount-label": "Mali azipo (USD)",
+  "custom-amount": "Kusala",
+  "custom-amount-input-label": "Lemba mali uyanda",
+  "enter-amount": "Lemba mali",
+  
+  "personal-info-label": "Zinkangilo Zyako",
+  "first-name-label": "Zyina zyakutanguna *",
+  "last-name-label": "Zyina zyakumana *",
+  "email-label": "Email *",
+  "phone-label": "Nambala yafoni",
+  "phone-help": "Ntakafunikila - kwa buketi lyazipo",
+  
+  "payment-method-label": "Nzila yakulipila",
+  "payment-mobile-money": "Mali afoni (Airtel/MTN)",
+  "payment-bank-transfer": "Kutumina kubanki",
+  "payment-paypal": "PayPal/Kadi yakule",
+  
+  "anonymous-donation": "Jaka zipo ezi zisikamvwike",
+  "newsletter-signup": "Lemba kutambula zyindi",
+  "dedication-label": "Meseji yachipereko (Ntakafunikila)",
+  "dedication-placeholder": "Mukuyeeya kwa... nano mukuremeka kwa...",
+  
+  "donate-submit-btn": "Iya kulipila",
+  "security-note": "🔒 Zipo zyako zilachengetedwe bwino. Ulafalisigwa kumalo akachengetedwa akulipila.",
+  
+  "alternative-donations-title": "Zinzila Zyambi Zyakuzunika",
+  "alternative-volunteer-title": "Ipe Cindi Chako",
+  "alternative-volunteer-desc": "Jatania mukwebo wesu wabashanduki azunika amambo ako.",
+  "alternative-volunteer-btn": "Iyenga Zimbi",
+  "alternative-corporate-title": "Bucaali bwamakampani",
+  "alternative-corporate-desc": "Caale naasu pakujanana kwabantu bamubombelo, CSR, akuupa chiindi muchitundu.",
+  "alternative-corporate-btn": "Tukambukile",
+  "alternative-supplies-title": "Upe Zisebenzyo",
+  "alternative-supplies-desc": "Upa sunscreen, zifuko zyakulinda, zisebenzyo zyakusikila, nano zintu zyambi zifunikila.",
+  "alternative-supplies-btn": "Tukambukile",
+  
+  "footer-home": "Ingu",
+  
+  "slide-1-title": "Kuzunika Bana Besu",
+  "slide-1-desc": "AFZ yapa sunscreen kubana balyaansikila muZambia yoonse.",
+  "slide-2-title": "Kulinda akusamalila",
+  "slide-2-desc": "Mwana uumwi auumwi ufwiile kulindidwa kuzyuba. AFZ yalanga kuti takuli uukasiyigwa.",
+  "slide-3-title": "Kubombela abantu",
+  "slide-3-desc": "Kubomba lyoonse amyunzi, busimba, abacaali kulwela zyilungelo zyabantu balyaansikila.",
+  "slide-4-title": "Kukonzya kulwela",
+  "slide-4-desc": "Bungwe lyesu lyapeela lyalabomba takasweka kukonzya akulunga nzila zyakulwela.",
+  "slide-5-title": "Busiyani bwakujaka",
+  "slide-5-desc": "Mansikila alacitika mukujaka pabuumi byoonse, kupepesha buluya bwabusiyani bwamambobeele.",
+  
+  "accessibility": {
+    "skip_to_content": "Iya kuzintu zilimukati"
+  },
+
+  "events": {
+    "title": "Zyachitika - Albinism Foundation Zambia",
+    "hero": {
+      "title": "Zyachitika amilimu",
+      "subtitle": "Jatania kuzyachitika zyesu zyakulwela, makampani, amilimu yamulukuta muZambia yoonse",
+      "create_event": "Jaka Chachitika",
+      "upcoming": "Bona Zyichiza"
+    },
+    "view": {
+      "calendar": "Kalendala",
+      "list": "Lulandano"
+    },
+    "filter": {
+      "all_categories": "Zibungwe Zyoonse",
+      "workshops": "Makampani",
+      "advocacy": "Kulwela",
+      "awareness": "Kulaangila Kuzyiba",
+      "support": "Zibungwe Zyakuzunikelana",
+      "fundraising": "Kupata Mali",
+      "all_locations": "Zyalo Zyoonse",
+      "online": "Paintaneti",
+      "search_placeholder": "Saka zyachitika..."
+    },
+    "calendar": {
+      "today": "Lelo",
+      "sun": "Cis",
+      "mon": "Muv",
+      "tue": "Cib",
+      "wed": "Cit",
+      "thu": "Cin",
+      "fri": "Cis",
+      "sat": "Mug"
+    }
+  },
+
+  "common": {
+    "loading": "Kuyutula..."
+  },
+
+  "resources": {
+    "title": "Sanduku Lyazisebenzyo - Albinism Foundation Zambia",
+    "hero": {
+      "title": "Sanduku Lyazisebenzyo amalo Akusikila",
+      "subtitle": "Wana zisebenzyo zyakutongolosya, malangizo, azisebenzyo zakuzunika bungwe lyabantu balyaansikila",
+      "browse": "Saka Zisebenzyo",
+      "upload": "Yika Chintu"
+    }
+  },
+
+  "copyright": "© 2024 Albinism Foundation Zambia. Zyilungelo zyoonse zyachengetedwe.",
+  "privacy-policy": "Mulawo Wakulema",
+  "terms-service": "Milawo Yazisebenzyo"
+}

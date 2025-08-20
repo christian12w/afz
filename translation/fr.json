@@ -1,0 +1,300 @@
+{
+  "org-name": "Fondation de l'Albinisme de Zambie",
+  "org-tagline": "Défendre les Droits, Sensibiliser, Créer le Changement",
+  
+  "nav-home": "Accueil",
+  "nav-about": "À Propos",
+  "nav-programs": "Programmes",
+  "nav-resources": "Ressources",
+  "nav-advocacy": "Plaidoyer",
+  "nav-contact": "Contact",
+  "nav-donate": "Faire un Don",
+  "nav-events": "Événements",
+  "nav-member-portal": "Portail Membre",
+  
+  "hero-title": "Donner du Pouvoir aux Vies, Protéger les Droits",
+  "hero-description": "La Fondation de l'Albinisme de Zambie se consacre à défendre les droits des personnes atteintes d'albinisme, à promouvoir la sensibilisation et à construire une société inclusive où chacun peut s'épanouir.",
+  "cta-donate-main": "Faire un Don",
+  "cta-get-involved": "S'Impliquer",
+  "cta-learn-more": "En Savoir Plus",
+  
+  "mission-heading": "Notre Mission",
+  "mission-statement": "Défendre les droits, la dignité et l'inclusion des personnes atteintes d'albinisme en Zambie à travers des campagnes de sensibilisation, du plaidoyer politique, des services de soutien et des programmes d'autonomisation communautaire.",
+  "stat-members": "Membres Soutenus",
+  "stat-programs": "Programmes Actifs",
+  "stat-provinces": "Provinces Atteintes",
+  
+  "focus-heading": "Nos Domaines d'Action",
+  "focus-rights": "Plaidoyer pour les Droits",
+  "focus-rights-desc": "Champion des changements politiques et des protections légales pour assurer l'égalité des droits et des opportunités pour toutes les personnes atteintes d'albinisme.",
+  "focus-awareness": "Campagnes de Sensibilisation",
+  "focus-awareness-desc": "Éduquer les communautés sur l'albinisme pour combattre les mythes, les idées fausses et la discrimination par des programmes de sensibilisation ciblés.",
+  "focus-support": "Services de Soutien",
+  "focus-support-desc": "Fournir des services essentiels incluant la distribution de crème solaire, des vêtements de protection et la coordination d'accès aux soins de santé.",
+  "focus-education": "Accès à l'Éducation",
+  "focus-education-desc": "Assurer que les enfants atteints d'albinisme aient accès à une éducation de qualité avec des aménagements appropriés et des systèmes de soutien.",
+  
+  "news-heading": "Dernières Nouvelles et Mises à Jour",
+  "news-1-title": "AFZ Lance une Campagne de Sensibilisation Nationale",
+  "news-1-excerpt": "Notre campagne de sensibilisation complète atteint les communautés rurales à travers la Zambie pour combattre la discrimination et promouvoir la compréhension.",
+  "news-2-title": "Victoire Politique : Nouvelles Mesures de Protection Approuvées",
+  "news-2-excerpt": "Le gouvernement approuve de nouvelles mesures législatives pour protéger les personnes atteintes d'albinisme de la violence et de la discrimination.",
+  "news-3-title": "Expansion du Programme de Soutien Éducatif",
+  "news-3-excerpt": "AFZ étend les programmes de soutien éducatif pour inclure 200 étudiants supplémentaires atteints d'albinisme dans toutes les provinces.",
+  "read-more": "Lire Plus",
+  
+  "cta-title": "Rejoignez Notre Mouvement",
+  "cta-description": "Ensemble, nous pouvons créer une Zambie où les personnes atteintes d'albinisme vivent avec dignité, égalité et opportunité.",
+  "cta-donate": "Faire un Don",
+  "cta-volunteer": "Faire du Bénévolat",
+  "cta-contact": "Nous Contacter",
+  
+  "footer-contact": "Informations de Contact",
+  "address-label": "Adresse :",
+  "address": "[Adresse du Bureau AFZ - À remplacer par l'adresse actuelle]",
+  "phone-label": "Téléphone :",
+  "email-label": "Email :",
+  "footer-links": "Liens Rapides",
+  "footer-about": "À Propos",
+  "footer-programs": "Nos Programmes",
+  "footer-resources": "Ressources",
+  "footer-contact-page": "Contact",
+  "footer-support": "Nous Soutenir",
+  "footer-donate": "Faire un Don",
+  "footer-volunteer": "Bénévolat",
+  "footer-partner": "Devenir Partenaire",
+  "footer-social": "Suivez-Nous",
+  "copyright": "© 2024 Fondation de l'Albinisme de Zambie. Tous droits réservés.",
+  "privacy-policy": "Politique de Confidentialité",
+  "terms-service": "Conditions de Service",
+  
+  "awareness-title": "Sensibilisation sur l'Albinisme",
+  "awareness-description": "Ensemble, nous brisons le silence et détruisons les idées fausses sur l'albinisme. Par l'éducation, le plaidoyer et le soutien communautaire, nous créons un monde où chaque personne atteinte d'albinisme peut vivre avec dignité, égalité et espoir.",
+  "awareness-stat-1-number": "1 sur 20,000",
+  "awareness-stat-1-desc": "Personnes dans le monde naissent avec l'albinisme",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "Zambiens vivant avec l'albinisme",
+  "awareness-cta-learn": "Apprendre sur l'Albinisme",
+  "awareness-cta-support": "Rejoindre Notre Cause",
+  
+  "donate-page-title": "Soutenez Notre Mission",
+  "donate-page-description": "Votre don nous aide à défendre les droits, la dignité et l'inclusion des personnes atteintes d'albinisme en Zambie. Chaque contribution fait une différence dans la construction d'une société plus inclusive.",
+  "donation-impact-title": "Votre Impact",
+  "impact-title-sunscreen": "Soutien Crème Solaire",
+  "impact-desc-sunscreen": "Fournit de la crème solaire pour une personne atteinte d'albinisme pendant 3 mois",
+  "impact-title-workshop": "Atelier Communautaire",
+  "impact-desc-workshop": "Finance un atelier de sensibilisation dans une communauté",
+  "impact-title-education": "Soutien Éducatif",
+  "impact-desc-education": "Soutient le matériel éducatif pour 10 étudiants atteints d'albinisme",
+  
+  "donation-form-title": "Faire un Don",
+  "donation-type-label": "Type de Don",
+  "donation-type-once": "Don Unique",
+  "donation-type-monthly": "Don Mensuel",
+  "donation-amount-label": "Montant du Don (USD)",
+  "custom-amount": "Personnalisé",
+  "custom-amount-input-label": "Entrez le montant personnalisé",
+  "enter-amount": "Entrez le montant",
+  
+  "personal-info-label": "Informations Personnelles",
+  "first-name-label": "Prénom *",
+  "last-name-label": "Nom *",
+  "email-label": "Adresse Email *",
+  "phone-label": "Numéro de Téléphone",
+  "phone-help": "Optionnel - pour le reçu de don",
+  
+  "payment-method-label": "Méthode de Paiement",
+  "payment-mobile-money": "Argent Mobile (Airtel/MTN)",
+  "payment-bank-transfer": "Virement Bancaire",
+  "payment-paypal": "PayPal/Carte Internationale",
+  
+  "anonymous-donation": "Rendre ce don anonyme",
+  "newsletter-signup": "S'abonner à notre newsletter pour les mises à jour",
+  "dedication-label": "Message de Dédicace (Optionnel)",
+  "dedication-placeholder": "En mémoire de... ou En l'honneur de...",
+  
+  "donate-submit-btn": "Procéder au Paiement",
+  "security-note": "🔒 Votre don est sécurisé et crypté. Vous serez redirigé vers notre processeur de paiement sécurisé.",
+  
+  "alternative-donations-title": "Autres Façons d'Aider",
+  "alternative-volunteer-title": "Faire du Bénévolat",
+  "alternative-volunteer-desc": "Rejoignez notre équipe de bénévoles et contribuez avec vos compétences pour avoir un impact direct.",
+  "alternative-volunteer-btn": "En Savoir Plus",
+  "alternative-corporate-title": "Partenariat d'Entreprise",
+  "alternative-corporate-desc": "Partenariat avec nous pour l'engagement des employés, les initiatives RSE et l'impact communautaire.",
+  "alternative-corporate-btn": "Nous Contacter",
+  "alternative-supplies-title": "Donner des Fournitures",
+  "alternative-supplies-desc": "Donner de la crème solaire, des vêtements de protection, du matériel éducatif ou d'autres articles nécessaires.",
+  "alternative-supplies-btn": "Nous Contacter",
+  
+  "footer-home": "Accueil",
+  
+  "accessibility": {
+    "skip_to_content": "Aller au contenu"
+  },
+
+  "events": {
+    "title": "Événements - Fondation de l'Albinisme de Zambie",
+    "hero": {
+      "title": "Événements et Activités",
+      "subtitle": "Rejoignez-nous dans nos événements de plaidoyer, ateliers et activités communautaires à travers la Zambie",
+      "create_event": "Créer un Événement",
+      "upcoming": "Voir les Prochains"
+    },
+    "view": {
+      "calendar": "Calendrier",
+      "list": "Liste"
+    },
+    "filter": {
+      "all_categories": "Toutes Catégories",
+      "workshops": "Ateliers",
+      "advocacy": "Plaidoyer",
+      "awareness": "Sensibilisation",
+      "support": "Groupes de Soutien",
+      "fundraising": "Collecte de Fonds",
+      "all_locations": "Tous les Lieux",
+      "online": "En Ligne",
+      "search_placeholder": "Rechercher des événements..."
+    },
+    "calendar": {
+      "today": "Aujourd'hui",
+      "sun": "Dim",
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mer",
+      "thu": "Jeu",
+      "fri": "Ven",
+      "sat": "Sam"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "no_events": {
+      "title": "Aucun Événement Trouvé",
+      "message": "Il n'y a aucun événement correspondant à vos filtres actuels.",
+      "clear_filters": "Effacer les Filtres"
+    },
+    "create": {
+      "title": "Créer un Nouvel Événement",
+      "title_label": "Titre de l'Événement*",
+      "title_placeholder": "Entrez le titre de l'événement",
+      "category_label": "Catégorie*",
+      "category_placeholder": "Sélectionner la catégorie",
+      "date_label": "Date*",
+      "time_label": "Heure*",
+      "location_label": "Lieu*",
+      "location_placeholder": "Entrez le lieu de l'événement",
+      "capacity_label": "Capacité",
+      "capacity_placeholder": "Nombre maximum de participants",
+      "description_label": "Description*",
+      "description_placeholder": "Fournir des détails sur l'événement",
+      "cancel": "Annuler",
+      "submit": "Créer l'Événement"
+    }
+  },
+
+  "common": {
+    "loading": "Chargement..."
+  },
+
+  "resources": {
+    "title": "Bibliothèque de Ressources - Fondation de l'Albinisme de Zambie",
+    "hero": {
+      "title": "Bibliothèque de Ressources et Centre Éducatif",
+      "subtitle": "Accédez à du matériel éducatif complet, des guides et des ressources pour soutenir la communauté de l'albinisme",
+      "browse": "Parcourir les Ressources",
+      "upload": "Télécharger une Ressource"
+    },
+    "categories": {
+      "title": "Catégories de Ressources",
+      "educational": "Matériel Éducatif",
+      "educational_desc": "Guides, fiches d'information et contenu éducatif sur l'albinisme",
+      "medical": "Information Médicale",
+      "medical_desc": "Guides de soins de santé, conseils de soins de la peau et ressources médicales",
+      "legal": "Droits Légaux",
+      "legal_desc": "Connaissez vos droits, protections légales et ressources de plaidoyer",
+      "support": "Guides de Soutien",
+      "support_desc": "Soutien communautaire, ressources de conseil et guides familiaux",
+      "resources": "ressources"
+    },
+    "search": {
+      "placeholder": "Rechercher des ressources..."
+    },
+    "filters": {
+      "all_categories": "Toutes Catégories",
+      "all_types": "Tous Types",
+      "documents": "Documents",
+      "videos": "Vidéos",
+      "audio": "Audio",
+      "images": "Images",
+      "links": "Liens Externes",
+      "all_languages": "Toutes Langues",
+      "clear": "Effacer les Filtres"
+    },
+    "results": {
+      "showing": "Afficher Toutes les Ressources"
+    },
+    "sort": {
+      "label": "Trier par :",
+      "newest": "Plus Récent d'Abord",
+      "oldest": "Plus Ancien d'Abord",
+      "alphabetical": "A-Z",
+      "popular": "Plus Populaire"
+    },
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant"
+    },
+    "no_results": {
+      "title": "Aucune Ressource Trouvée",
+      "message": "Essayez d'ajuster vos critères de recherche ou parcourez différentes catégories.",
+      "clear_search": "Effacer la Recherche"
+    },
+    "featured": {
+      "title": "Ressources en Vedette"
+    },
+    "upload": {
+      "title": "Télécharger une Ressource",
+      "title_label": "Titre de la Ressource*",
+      "title_placeholder": "Entrez le titre de la ressource",
+      "category_label": "Catégorie*",
+      "category_placeholder": "Sélectionner la catégorie",
+      "type_label": "Type de Ressource*",
+      "type_placeholder": "Sélectionner le type",
+      "language_label": "Langue*",
+      "description_label": "Description*",
+      "description_placeholder": "Fournir des détails sur la ressource",
+      "file_label": "Fichier ou URL",
+      "drag_drop": "Glissez-déposez un fichier ici, ou cliquez pour sélectionner",
+      "file_types": "Formats supportés : PDF, DOC, MP4, MP3, JPG, PNG",
+      "url_placeholder": "Ou entrez une URL",
+      "tags_label": "Étiquettes",
+      "tags_placeholder": "Entrez les étiquettes séparées par des virgules",
+      "cancel": "Annuler",
+      "submit": "Télécharger la Ressource"
+    },
+    "footer": {
+      "about": {
+        "title": "Fondation de l'Albinisme de Zambie",
+        "description": "Défendre les droits et l'inclusion des personnes atteintes d'albinisme en Zambie par l'éducation, le soutien et la réforme des politiques."
+      },
+      "quick_links": {
+        "title": "Liens Rapides"
+      },
+      "contact": {
+        "title": "Informations de Contact"
+      },
+      "support": {
+        "title": "Soutenez Notre Cause",
+        "description": "Aidez-nous à défendre les personnes atteintes d'albinisme en Zambie.",
+        "donate": "Faire un Don Maintenant"
+      },
+      "copyright": "&copy; 2024 Fondation de l'Albinisme de Zambie. Tous droits réservés.",
+      "social": {
+        "facebook": "Facebook",
+        "twitter": "Twitter"
+      }
+    }
+  }
+}

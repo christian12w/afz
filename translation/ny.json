@@ -1,0 +1,233 @@
+{
+  "org-name": "Bungwe la Albinism la Zambia - AFZ",
+  "org-tagline": "Kuphulitsa Mawu pa Albinism",
+  
+  "nav-home": "Nyumba",
+  "nav-about": "Za Ife",
+  "nav-programs": "Mapulogalamu",
+  "nav-resources": "Zinthu",
+  "nav-advocacy": "Kulimbikitsa",
+  "nav-contact": "Kulumikizana",
+  "nav-donate": "Pereka",
+  "nav-events": "Zochitika",
+  "nav-member-portal": "Malo a Mamembala",
+  
+  "hero-title": "Kulimbikitsa Miyoyo, Kuteteza Ufulu",
+  "hero-description": "Bungwe la Albinism la Zambia ladzipereka kulimbikitsa ufulu wa anthu okhala ndi albinism, kulimbikitsa chidziwitso, ndikumanga gulu lophatikizana pomwe aliyense akhoza kuchita bwino.",
+  "cta-donate-main": "Perekani Tsopano",
+  "cta-get-involved": "Tengani Nawo Mbali",
+  "cta-learn-more": "Phunzirani Zambiri",
+  
+  "mission-heading": "Cholinga Chathu",
+  "mission-statement": "Kulimbikitsa ufulu, ulemu, ndikuphatikizidwa kwa anthu okhala ndi albinism ku Zambia kudzera m'mapulogalamu odziwitsa, kulimbikitsa malamulo, ntchito zothandizira, ndikukweza gulu.",
+  "stat-members": "Mamembala Othandizidwa",
+  "stat-programs": "Mapulogalamu Ogwira Ntchito",
+  "stat-provinces": "Zigawo Zofikiridwa",
+  
+  "focus-heading": "Madera Athu Ofunikira",
+  "focus-rights": "Kulimbikitsa Ufulu",
+  "focus-rights-desc": "Kulimbikitsa kusintha kwa malamulo ndikuteteza kuti pakhale mwayi wofanana kwa anthu onse okhala ndi albinism.",
+  "focus-awareness": "Mapulogalamu Odziwitsa",
+  "focus-awareness-desc": "Kuphunzitsa magulu za albinism kuti tithane ndi zikhulupiriro zolakwika, malingaliro olakwika, ndikusalana bwino kudzera m'mapulogalamu odziwitsa.",
+  "focus-support": "Ntchito Zothandiza",
+  "focus-support-desc": "Kupereka ntchito zofunikira kuphatikizapo kugawa mankhwala oteteza dzuwa, zovala zoteteza, ndikukonzekera kufikira chithandizo chamankhwala.",
+  "focus-education": "Mwayi wa Maphunziro",
+  "focus-education-desc": "Kuonetsa kuti ana okhala ndi albinism akupeza maphunziro abwino ndi chithandizo choyenera.",
+  
+  "news-heading": "Nkhani Zatsopano ndi Zosintha",
+  "news-1-title": "AFZ Yayambitsa Kampeni Yodziwitsa M'dziko Lonse",
+  "news-1-excerpt": "Kampeni yathu yodziwitsa ikufika kumadera akumidzi kuzungulira Zambia kuthana ndi tsalano ndikukulitsa kumvetsetsa.",
+  "news-2-title": "Kupambana kwa Malamulo: Njira Zatsopano Zoteteza Zavomerezedwa",
+  "news-2-excerpt": "Boma lavomereza njira zatsopano zamalamulo zoteteza anthu okhala ndi albinism ku nkhanza nditsalano.",
+  "news-3-title": "Kukulitsa kwa Pulogalamu Yothandiza Maphunziro",
+  "news-3-excerpt": "AFZ yakulitsa mapulogalamu othandiza maphunziro kuphatikiza ana 200 owonjezera okhala ndi albinism m'zigawo zonse.",
+  "read-more": "Werengani Zambiri",
+  
+  "cta-title": "Lowani Nawo Gulu Lathu",
+  "cta-description": "Pamodzi, tingapange Zambia pomwe anthu okhala ndi albinism akhala ndi ulemu, kufanana, ndimwayi.",
+  "cta-donate": "Perekani Tsopano",
+  "cta-volunteer": "Khala Wopereka",
+  "cta-contact": "Tilumikizeni",
+  
+  "footer-contact": "Zambiri Zolumikizirana",
+  "address-label": "Malo:",
+  "address": "[Adiresi ya Ofesi ya AFZ]",
+  "phone-label": "Foni:",
+  "email-label": "Imelo:",
+  "footer-links": "Maulalo Achangu",
+  "footer-about": "Za Ife",
+  "footer-programs": "Mapulogalamu Athu",
+  "footer-resources": "Zinthu",
+  "footer-contact-page": "Lumikizana",
+  "footer-support": "Tithandizeni",
+  "footer-donate": "Perekani",
+  "footer-volunteer": "Khalani Wopereka",
+  "footer-partner": "Khalani Wogwirizana",
+  "footer-social": "Titsatireni",
+  "copyright": "© 2024 Bungwe la Albinism la Zambia - AFZ. Ufulu wonse wosungidwa.",
+  "privacy-policy": "Dongosolo la Chinsinsi",
+  "terms-service": "Malamulo a Ntchito",
+  
+  "awareness-title": "Kudziwisa za Albinism",
+  "awareness-description": "Pamodzi, tikuphulitsa bata ndikuthyola malingaliro olakwika za albinism. Kudzera mu maphunziro, kulimbikitsa, ndi chithandizo cha gulu, tikupanga dziko pomwe munthu aliyense okhala ndi albinism akhoza kukhala ndi ulemu, kufanana, ndi chiyembekezo.",
+  "awareness-stat-1-number": "M'modzi mwa 20,000",
+  "awareness-stat-1-desc": "Anthu padziko lonse amabadwira ndi albinism",
+  "awareness-stat-2-number": "15,000+",
+  "awareness-stat-2-desc": "Aza-Zambia okhala ndi albinism",
+  "awareness-cta-learn": "Phunzirani za Albinism",
+  "awareness-cta-support": "Lowani Nawo Gulu Lathu",
+  
+  "donate-page-title": "Thandizani Cholinga Chathu",
+  "donate-page-description": "Chopereka chanu chimathandiza kulimbikitsa ufulu, ulemu, ndikuphatikizidwa kwa anthu okhala ndi albinism ku Zambia. Chopereka chilichonse chimapangitsa kusiyana pakumanga gulu lophatikizana.",
+  "donation-impact-title": "Chopereka Chanu",
+  "impact-title-sunscreen": "Thandizo la Mankhwala Oteteza Dzuwa",
+  "impact-desc-sunscreen": "Kupatsa mankhwala oteteza dzuwa kwa munthu okhala ndi albinism kwa miyezi 3",
+  "impact-title-workshop": "Maphunziro a M'mudzi",
+  "impact-desc-workshop": "Kulipira maphunziro odziwitsa mu gulu limodzi",
+  "impact-title-education": "Chithandizo cha Maphunziro",
+  "impact-desc-education": "Kuthandiza zida za maphunziro kwa ana 10 okhala ndi albinism",
+  
+  "donation-form-title": "Perekani Chopereka",
+  "donation-type-label": "Mtundu wa Chopereka",
+  "donation-type-once": "Chopereka Kamodzi",
+  "donation-type-monthly": "Chopereka cha Mwezi Uliwonse",
+  "donation-amount-label": "Ndalama za Chopereka (USD)",
+  "custom-amount": "Kusankha",
+  "custom-amount-input-label": "Lemberani ndalama zomwe mukufuna",
+  "enter-amount": "Lemberani ndalama",
+  
+  "personal-info-label": "Zambiri Zanu",
+  "first-name-label": "Dzina Loyamba *",
+  "last-name-label": "Dzina la Kumbuyo *",
+  "email-label": "Imelo *",
+  "phone-label": "Nambala ya Foni",
+  "phone-help": "Osafunikira - kwa bukhu la chopereka",
+  
+  "payment-method-label": "Njira ya Kulipira",
+  "payment-mobile-money": "Ndalama za Foni (Airtel/MTN)",
+  "payment-bank-transfer": "Kutumizira ku Banki",
+  "payment-paypal": "PayPal/Kadi ya Kunja",
+  
+  "anonymous-donation": "Pangani chopereka chosadziwika",
+  "newsletter-signup": "Lemberani kulandira zosintha",
+  "dedication-label": "Uthenga wa Kudzipereka (Osafunikira)",
+  "dedication-placeholder": "Pokumbukira... kapena Polemekeza...",
+  
+  "donate-submit-btn": "Pitani ku Kulipira",
+  "security-note": "🔒 Chopereka chanu ndi chotetezedwa. Mudzakafalitsidwa ku malo otetezedwa a kulipira.",
+  
+  "alternative-donations-title": "Njira Zina Zothandizira",
+  "alternative-volunteer-title": "Perekani Nthawi Yanu",
+  "alternative-volunteer-desc": "Lowani mu gulu lathu la opereka ndikuthandiza ndi luso lanu.",
+  "alternative-volunteer-btn": "Phunzirani Zambiri",
+  "alternative-corporate-title": "Ubale wa Makampani",
+  "alternative-corporate-desc": "Gwirizanani nafe pa ntchito za antchito, CSR, ndikupanga zosintha m'mudzi.",
+  "alternative-corporate-btn": "Lumikizanani nafe",
+  "alternative-supplies-title": "Perekani Zinthu",
+  "alternative-supplies-desc": "Perekani mankhwala oteteza dzuwa, zovala zoteteza, zida za maphunziro, kapena zinthu zina zofunikira.",
+  "alternative-supplies-btn": "Tilumikizeni",
+  
+  "footer-home": "Nyumba",
+  
+  "slide-1-title": "Kuthandiza Ana Athu",
+  "slide-1-desc": "AFZ imapereka mankhwala oteteza dzuwa kwa ana okhala ndi albinism ku Zambia konse.",
+  "slide-2-title": "Kuteteza ndi Chisamaliro",
+  "slide-2-desc": "Mwana aliyense ayenera kutetezedwa ku dzuwa. AFZ imaona kuti palibe amene asiyidwa.",
+  "slide-3-title": "Kugwirizana ndi Anthu",
+  "slide-3-desc": "Kugwira ntchito limodzi ndi midzi, boma, ndi ogwirizana kulimbikitsa ufulu wa anthu okhala ndi albinism.",
+  "slide-4-title": "Kukonzekera Kulimbikitsa",
+  "slide-4-desc": "Gulu lathu lodzipereka limagwira ntchito mosalekeza kukonzekera ndi kukhazikitsa njira zolimbikitsira.",
+  "slide-5-title": "Kusiyanasiyana kwa Chilengedwe",
+  "slide-5-desc": "Albinism imachitika mwachilengedwe pazamoyo zonse, kukondwerera kukongola kwa kusiyanasiyana kwa majini.",
+  
+  "accessibility": {
+    "skip_to_content": "Pitani ku zomwe zili mkati"
+  },
+
+  "events": {
+    "title": "Zochitika - Bungwe la Albinism ku Zambia",
+    "hero": {
+      "title": "Zochitika ndi Ntchito",
+      "subtitle": "Lowani nawo ku zochitika zathu za kulimbikitsa, maphunziro, ndi ntchito za m'mudzi ku Zambia konse",
+      "create_event": "Pangani Chochitika",
+      "upcoming": "Onani Zobwera"
+    },
+    "view": {
+      "calendar": "Kalendala",
+      "list": "Mndandanda"
+    },
+    "filter": {
+      "all_categories": "Magulu Onse",
+      "workshops": "Maphunziro",
+      "advocacy": "Kulimbikitsa",
+      "awareness": "Kudziwitsa",
+      "support": "Magulu Othandizana",
+      "fundraising": "Kupeza Ndalama",
+      "all_locations": "Malo Onse",
+      "online": "Pa Intaneti",
+      "search_placeholder": "Sakanini zochitika..."
+    },
+    "calendar": {
+      "today": "Lero",
+      "sun": "Lam",
+      "mon": "Lolemba",
+      "tue": "Lachiwiri",
+      "wed": "Lachitatu",
+      "thu": "Lachinayi",
+      "fri": "Lachisanu",
+      "sat": "Loweruka"
+    },
+    "pagination": {
+      "previous": "Yakale",
+      "next": "Yotsatira"
+    },
+    "no_events": {
+      "title": "Palibe Zochitika Zopezeka",
+      "message": "Palibe zochitika zomwe zikufanana ndi zomwe mwasankha.",
+      "clear_filters": "Chotsani Zosakaniza"
+    },
+    "create": {
+      "title": "Pangani Chochitika Chatsopano",
+      "title_label": "Mutu wa Chochitika*",
+      "title_placeholder": "Lemberani mutu wa chochitika",
+      "category_label": "Gulu*",
+      "category_placeholder": "Sankhani gulu",
+      "date_label": "Tsiku*",
+      "time_label": "Nthawi*",
+      "location_label": "Malo*",
+      "location_placeholder": "Lemberani malo a chochitika",
+      "capacity_label": "Kuchuluka",
+      "capacity_placeholder": "Chiwerengero chokwanira cha opezekapo",
+      "description_label": "Kufotokozera*",
+      "description_placeholder": "Perekani zambiri za chochitika",
+      "cancel": "Lekani",
+      "submit": "Pangani Chochitika"
+    }
+  },
+
+  "common": {
+    "loading": "Kukweza..."
+  },
+
+  "resources": {
+    "title": "Bokosi la Zinthu - Bungwe la Albinism ku Zambia",
+    "hero": {
+      "title": "Bokosi la Zinthu ndi Malo a Maphunziro",
+      "subtitle": "Pezerani zinthu zophunzitsira, malangizo, ndi zinthu zothandizira gulu la anthu okhala ndi albinism",
+      "browse": "Sakanani Zinthu",
+      "upload": "Kwezani Chinthu"
+    },
+    "categories": {
+      "title": "Magulu a Zinthu",
+      "educational": "Zinthu Zophunzitsira",
+      "educational_desc": "Malangizo, mapepala ofotokozera, ndi zinthu zophunzitsira za albinism",
+      "medical": "Zambiri za Chipatala",
+      "medical_desc": "Malangizo a chipatala, uphungu wa kusamalira khungu, ndi zinthu za chipatala",
+      "legal": "Ufulu wa Mulamulo",
+      "legal_desc": "Dziwani ufulu wanu, kutetezedwa kwamulamulo, ndi zinthu za kulimbikitsa",
+      "support": "Malangizo Othandizira",
+      "support_desc": "Chithandizo cha gulu, zinthu za uphungu, ndi malangizo a banja",
+      "resources": "zinthu"
+    }
+  }
+}

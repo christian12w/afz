@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - AFZ | Albinism Foundation of Zambia</title>
+    <meta name="description" content="You are currently offline. Albinism Foundation of Zambia - AFZ content will be available when you reconnect.">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    
+    <style>
+        /* Offline page specific styles that override/extend the unified design system */
+        body {
+            background: linear-gradient(135deg, var(--secondary-orange) 0%, var(--primary-blue) 50%, var(--secondary-orange) 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--spacing-5);
+            font-family: var(--font-sans);
+        }
+        
+        /* Skip link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--gray-900);
+            color: white;
+            padding: var(--spacing-2) var(--spacing-3);
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        .offline-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .offline-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            animation: pulse 2s infinite;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .offline-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(45deg, white, rgba(255,255,255,0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .offline-message {
+            font-size: 1.2rem;
+            line-height: var(--line-height-relaxed);
+            margin-bottom: var(--spacing-8);
+            opacity: 0.9;
+        }
+        
+        .offline-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-4);
+            align-items: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-3) var(--spacing-6);
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: var(--font-weight-semibold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-primary {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+            border-color: var(--primary-blue-dark);
+        }
+        
+        .connection-status {
+            margin-top: var(--spacing-8);
+            padding: var(--spacing-4);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+        
+        .connection-status.online {
+            background: rgba(34, 197, 94, 0.2);
+            border: 2px solid rgba(34, 197, 94, 0.3);
+            display: block;
+        }
+        
+        .connection-status.offline {
+            background: rgba(239, 68, 68, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.3);
+            display: block;
+        }
+        
+        .cached-pages {
+            margin-top: var(--spacing-8);
+            padding: var(--spacing-6);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            text-align: left;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cached-pages h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-4);
+            text-align: center;
+            color: var(--secondary-orange);
+            font-weight: var(--font-weight-semibold);
+        }
+        
+        .cached-pages ul {
+            list-style: none;
+            display: grid;
+            gap: var(--spacing-2);
+        }
+        
+        .cached-pages li {
+            padding: var(--spacing-2) var(--spacing-3);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            transition: background-color 0.2s ease;
+        }
+        
+        .cached-pages li:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cached-pages a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            font-weight: var(--font-weight-medium);
+        }
+        
+        .cached-pages a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 640px) {
+            .offline-title {
+                font-size: 2rem;
+            }
+            
+            .offline-message {
+                font-size: 1.1rem;
+            }
+            
+            .offline-icon {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+            
+            body {
+                padding: var(--spacing-4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <main id="main-content" class="offline-container">
+        <div class="offline-icon" aria-label="Offline indicator">
+            📱
+        </div>
+        
+        <h1 class="offline-title">You're Offline</h1>
+        
+        <p class="offline-message">
+            Don't worry! Some Albinism Foundation of Zambia - AFZ content is available offline. Check your internet connection to access the full experience.
+        </p>
+        
+        <div class="offline-actions">
+            <button class="btn btn-primary" onclick="checkConnection()" id="retry-btn">
+                🔄 Try Again
+            </button>
+            
+            <button class="btn" onclick="goBack()">
+                ← Go Back
+            </button>
+        </div>
+        
+        <div class="connection-status" id="connection-status">
+            <p id="status-text"></p>
+        </div>
+        
+        <div class="cached-pages">
+            <h3>📚 Available Offline Pages</h3>
+            <ul id="cached-pages-list">
+                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="about.html">ℹ️ About AFZ</a></li>
+                <li><a href="contact.html">📞 Contact Us</a></li>
+                <li><a href="donate.html">💝 Donate</a></li>
+                <li><a href="auth.html">👤 Member Portal</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        // Check connection status
+        function updateConnectionStatus() {
+            const statusDiv = document.getElementById('connection-status');
+            const statusText = document.getElementById('status-text');
+            const retryBtn = document.getElementById('retry-btn');
+            
+            if (navigator.onLine) {
+                statusDiv.className = 'connection-status online';
+                statusText.textContent = '✅ Connection restored! You can now access all content.';
+                retryBtn.innerHTML = '🔄 Refresh Page';
+                
+                // Auto-refresh after 2 seconds if connection is restored
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                statusDiv.className = 'connection-status offline';
+                statusText.textContent = '❌ Still offline. Please check your internet connection.';
+                retryBtn.innerHTML = '🔄 Try Again';
+            }
+        }
+        
+        // Check connection and update status
+        function checkConnection() {
+            updateConnectionStatus();
+            
+            // Also try to fetch a small resource to double-check connectivity
+            fetch('/manifest.json', { 
+                method: 'HEAD', 
+                cache: 'no-cache',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // If successful, reload the page
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            })
+            .catch(() => {
+                // Still offline, status already updated
+                console.log('Still offline');
+            });
+        }
+        
+        // Go back to previous page
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = '../index.html';
+            }
+        }
+        
+        // Listen for online/offline events
+        window.addEventListener('online', () => {
+            updateConnectionStatus();
+        });
+        
+        window.addEventListener('offline', () => {
+            updateConnectionStatus();
+        });
+        
+        // Check available cached pages
+        async function checkCachedPages() {
+            if ('caches' in window) {
+                try {
+                    const cacheNames = await caches.keys();
+                    const cache = await caches.open(cacheNames[0]);
+                    const cachedRequests = await cache.keys();
+                    
+                    const pagesList = document.getElementById('cached-pages-list');
+                    pagesList.innerHTML = '';
+                    
+                    // Filter for HTML pages
+                    const htmlPages = cachedRequests.filter(request => 
+                        request.url.endsWith('.html') || request.url.endsWith('/')
+                    );
+                    
+                    if (htmlPages.length === 0) {
+                        pagesList.innerHTML = '<li>No cached pages available</li>';
+                        return;
+                    }
+                    
+                    htmlPages.forEach(request => {
+                        const url = new URL(request.url);
+                        const pathname = url.pathname;
+                        const pageName = getPageName(pathname);
+                        const icon = getPageIcon(pathname);
+                        
+                        const li = document.createElement('li');
+                        li.innerHTML = `<a href="${pathname}">${icon} ${pageName}</a>`;
+                        pagesList.appendChild(li);
+                    });
+                    
+                } catch (error) {
+                    console.error('Error checking cached pages:', error);
+                }
+            }
+        }
+        
+        // Get friendly page name
+        function getPageName(pathname) {
+            const pageNames = {
+                '/': 'Home',
+                '/index.html': 'Home',
+                '/pages/about.html': 'About AFZ',
+                '/pages/contact.html': 'Contact Us',
+                '/pages/donate.html': 'Donate',
+                '/pages/auth.html': 'Member Portal',
+                '/pages/events.html': 'Events',
+                '/pages/resources.html': 'Resources'
+            };
+            
+            return pageNames[pathname] || pathname;
+        }
+        
+        // Get page icon
+        function getPageIcon(pathname) {
+            const pageIcons = {
+                '/': '🏠',
+                '/index.html': '🏠',
+                '/pages/about.html': 'ℹ️',
+                '/pages/contact.html': '📞',
+                '/pages/donate.html': '💝',
+                '/pages/auth.html': '👤',
+                '/pages/events.html': '📅',
+                '/pages/resources.html': '📚'
+            };
+            
+            return pageIcons[pathname] || '📄';
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateConnectionStatus();
+            checkCachedPages();
+        });
+        
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + R: Retry connection
+            if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+                e.preventDefault();
+                checkConnection();
+            }
+            
+            // Escape: Go back
+            if (e.key === 'Escape') {
+                goBack();
+            }
+        });
+    </script>
+</body>
+</html>
