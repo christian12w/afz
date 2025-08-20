@@ -275,10 +275,13 @@
                 statusText.textContent = '✅ Connection restored! You can now access all content.';
                 retryBtn.innerHTML = '🔄 Refresh Page';
                 
-                // Auto-refresh after 2 seconds if connection is restored
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2000);
+                // Auto-refresh after 2 seconds if connection is restored (guarded)
+                if (!sessionStorage.getItem('offlineAutoReloaded')) {
+                    sessionStorage.setItem('offlineAutoReloaded', '1');
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
             } else {
                 statusDiv.className = 'connection-status offline';
                 statusText.textContent = '❌ Still offline. Please check your internet connection.';
@@ -291,16 +294,18 @@
             updateConnectionStatus();
             
             // Also try to fetch a small resource to double-check connectivity
-            fetch('/manifest.json', { 
-                method: 'HEAD', 
-                cache: 'no-cache',
-                mode: 'no-cors'
+            fetch('/manifest.json', {
+                method: 'HEAD',
+                cache: 'no-cache'
             })
-            .then(() => {
-                // If successful, reload the page
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
+            .then((response) => {
+                // Only reload when we truly have network and the request succeeded
+                if (response && response.ok && !sessionStorage.getItem('offlineAutoReloaded')) {
+                    sessionStorage.setItem('offlineAutoReloaded', '1');
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                }
             })
             .catch(() => {
                 // Still offline, status already updated

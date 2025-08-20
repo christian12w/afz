@@ -7,6 +7,8 @@ class AFZPWAManager {
         this.swRegistration = null;
         this.isOnline = navigator.onLine;
         this.installPromptShown = false;
+        this.isRefreshing = false;
+        this._controllerChangeBound = false;
         
         this.init();
     }
@@ -904,11 +906,18 @@ class AFZPWAManager {
     // Update app
     async updateApp() {
         if (this.swRegistration && this.swRegistration.waiting) {
+            // Listen for the new service worker to take control, then reload once
+            if (!this._controllerChangeBound && typeof navigator !== 'undefined' && navigator.serviceWorker) {
+                this._controllerChangeBound = true;
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (this.isRefreshing) return;
+                    this.isRefreshing = true;
+                    window.location.reload();
+                });
+            }
+
             // Tell the waiting service worker to take over
             this.swRegistration.waiting.postMessage({ type: 'SKIP_WAITING' });
-            
-            // Reload the page to get the new version
-            window.location.reload();
         }
     }
     
