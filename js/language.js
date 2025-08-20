@@ -118,9 +118,14 @@ class LanguageManager {
             
             // FORCE RELOAD to eliminate any cached JavaScript
             console.log('🧨 [Language System] Force reloading page to eliminate cached JavaScript...');
-            setTimeout(() => {
-                window.location.reload(true);
-            }, 1000);
+            if (!sessionStorage.getItem('langForceReloaded')) {
+                sessionStorage.setItem('langForceReloaded', '1');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
+            } else {
+                console.log('⚠️ [Language System] Skipping reload to prevent loop (langForceReloaded)');
+            }
             
         } catch (error) {
             console.warn('⚠️ [Language System] Some cache clearing failed:', error);

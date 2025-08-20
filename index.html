@@ -632,9 +632,15 @@
             navigator.serviceWorker.addEventListener('message', event => {
                 if (event.data && event.data.type === 'FORCE_RELOAD') {
                     console.log('🔄 Service Worker forcing reload:', event.data.message);
+                    // Guard to prevent reload loops within the same session
+                    if (sessionStorage.getItem('swForceReloaded') === '1') {
+                        console.log('⚠️ Skipping reload to prevent loop (swForceReloaded)');
+                        return;
+                    }
+                    sessionStorage.setItem('swForceReloaded', '1');
                     // Force reload after a short delay
                     setTimeout(() => {
-                        window.location.reload(true);
+                        window.location.reload();
                     }, 1000);
                 }
             });
