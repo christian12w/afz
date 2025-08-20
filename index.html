@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFZ - Albinism Foundation of Zambia advocates for rights and inclusion of persons with albinism through education, support, and policy reform.">
+    <meta name="keywords" content="AFZ, albinism foundation Zambia, albinism awareness, advocacy, human rights, inclusion">
+    <title>Home - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Home - Albinism Foundation of Zambia">
+    <meta property="og:description" content="AFZ advocates for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://albinism-awareness.com/index.html">
+    <meta property="og:image" content="./images/afz-logo-final.png">
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="./css/afz-unified-design.css">
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link" data-translate="accessibility.skip_link">Skip to main content</a>
+    
+    <!-- PROFESSIONAL LANGUAGE SELECTOR (replaces animated modal) -->
+    <div class="professional-language-selector" role="region" aria-label="Language selection">
+        <button class="language-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+            <div class="current-language">
+                <span class="current-flag">🇺🇸</span>
+                <div class="language-text">
+                    <span class="language-label" data-translate="language.label">Language</span>
+                    <span class="current-lang-name">English</span>
+                </div>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 11l-4-4h8l-4 4z"/>
+                </svg>
+            </div>
+        </button>
+        
+        <div class="language-dropdown-menu" role="listbox" aria-label="Available languages">
+            <div class="language-section">
+                <h3 class="section-heading" data-translate="language.international">International</h3>
+                <div class="language-options">
+                    <button class="language-option" data-lang="en" role="option" aria-selected="true">
+                        <span class="flag">🇺🇸</span>
+                        <div class="language-info">
+                            <span class="lang-name">English</span>
+                            <span class="lang-native">English</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="fr" role="option">
+                        <span class="flag">🇫🇷</span>
+                        <div class="language-info">
+                            <span class="lang-name">French</span>
+                            <span class="lang-native">Français</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="es" role="option">
+                        <span class="flag">🇪🇸</span>
+                        <div class="language-info">
+                            <span class="lang-name">Spanish</span>
+                            <span class="lang-native">Español</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="pt" role="option">
+                        <span class="flag">🇵🇹</span>
+                        <div class="language-info">
+                            <span class="lang-name">Portuguese</span>
+                            <span class="lang-native">Português</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="language-section">
+                <h3 class="section-heading" data-translate="language.african_heritage">African Heritage</h3>
+                <div class="language-options">
+                    <button class="language-option" data-lang="ny" role="option">
+                        <span class="flag">🇿🇲</span>
+                        <div class="language-info">
+                            <span class="lang-name">Nyanja</span>
+                            <span class="lang-native">Nyanja</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="be" role="option">
+                        <span class="flag">🇿🇲</span>
+                        <div class="language-info">
+                            <span class="lang-name">Bemba</span>
+                            <span class="lang-native">Bemba</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="to" role="option">
+                        <span class="flag">🇿🇲</span>
+                        <div class="language-info">
+                            <span class="lang-name">Tonga</span>
+                            <span class="lang-native">Tonga</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="lo" role="option">
+                        <span class="flag">🇿🇲</span>
+                        <div class="language-info">
+                            <span class="lang-name">Lozi</span>
+                            <span class="lang-native">Lozi</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="sn" role="option">
+                        <span class="flag">🇿🇼</span>
+                        <div class="language-info">
+                            <span class="lang-name">Shona</span>
+                            <span class="lang-native">Shona</span>
+                        </div>
+                    </button>
+                    <button class="language-option" data-lang="nd" role="option">
+                        <span class="flag">🇿🇼</span>
+                        <div class="language-info">
+                            <span class="lang-name">Ndebele</span>
+                            <span class="lang-native">Ndebele</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="./images/afz-logo-final.png" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Breaking the silence on Albinism</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only" data-translate="accessibility.toggle_navigation">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active" data-translate="nav-home">Home</a></li>
+                    <li><a href="./pages/about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
+                    <li><a href="./pages/programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="./pages/resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="./pages/advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="./pages/events.html" class="nav-link" data-translate="nav-events">Events</a></li>
+                    <li><a href="./pages/contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="./pages/member-hub.html" class="nav-link" data-translate="nav-member-portal">Member Hub</a></li>
+                    <li><a href="./pages/donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+        <main id="main-content">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title" data-translate="hero-title">Breaking the silence on Albinism</h1>
+                        <p class="hero-subtitle" data-translate="hero-subtitle">Advocating for the rights, dignity, and inclusion of persons with albinism in Zambia through education, support, and policy reform.</p>
+                        <div class="cta-buttons">
+                            <a href="./pages/donate.html" class="cta-button primary" data-translate="cta-donate">Donate Now</a>
+                            <a href="./pages/contact.html" class="cta-button secondary" data-translate="cta-get-involved">Get Involved</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slideshow">
+                <div class="slideshow-container">
+                    <!-- Slide 1: Community Support -->
+                    <div class="slide">
+                        <img src="./images/programs/slideshow-1.jpg" 
+                             alt="AFZ community outreach and support programs in action"
+                             loading="eager"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3 data-translate="slideshow.community_outreach.title">Community Outreach</h3>
+                            <p data-translate="slideshow.community_outreach.description">AFZ reaches out to communities across Zambia, providing education and support to persons with albinism and their families.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2: Education and Awareness -->
+                    <div class="slide">
+                        <img src="./images/programs/slideshow-2.jpg" 
+                             alt="Educational programs and awareness campaigns"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3 data-translate="slideshow.education_awareness.title">Education & Awareness</h3>
+                            <p data-translate="slideshow.education_awareness.description">Through workshops and seminars, we educate communities about albinism, breaking myths and promoting understanding.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3: Sunscreen Distribution -->
+                    <div class="slide contain">
+                        <img src="./images/gallery/children-sunscreen.jpg" 
+                             alt="Children with albinism receiving essential sunscreen products"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3 data-translate="slideshow.healthcare_support.title">Sunscreen Program</h3>
+                            <p data-translate="slideshow.healthcare_support.description">Providing life-saving sunscreen and protective equipment to children with albinism across all provinces.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Happy Beneficiaries -->
+                    <div class="slide">
+                        <img src="./images/gallery/child-with-sunscreen.jpg" 
+                             alt="Smiling child with albinism holding sunscreen bottles"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3 data-translate="slideshow.healthcare_support.title">Protecting Our Children</h3>
+                            <p data-translate="slideshow.healthcare_support.description">Every smile represents hope - children with albinism now have access to essential sun protection.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5: Advocacy and Policy -->
+                    <div class="slide">
+                        <img src="./images/gallery/meeting-session.jpg" 
+                             alt="AFZ advocacy meeting with stakeholders"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3 data-translate="slideshow.advocacy_rights.title">Policy Advocacy</h3>
+                            <p data-translate="slideshow.advocacy_rights.description">Working with government officials and stakeholders to create policies that protect persons with albinism.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 6: Team Collaboration -->
+                    <div class="slide">
+                        <img src="./images/gallery/office-meeting.jpg" 
+                             alt="AFZ team planning and coordination meeting"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3>Strategic Planning</h3>
+                            <p>Our dedicated team works tirelessly to plan and coordinate effective programs and initiatives.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 7: Awareness Through Nature -->
+                    <div class="slide scale-down">
+                        <img src="./images/gallery/albino-crocodile.jpg" 
+                             alt="Albino crocodile showcasing natural diversity"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3>Natural Diversity</h3>
+                            <p>Albinism occurs naturally throughout the animal kingdom, celebrating the beauty of genetic diversity.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 8: Program Success -->
+                    <div class="slide">
+                        <img src="./images/programs/slideshow-3.jpg" 
+                             alt="Successful AFZ program implementation"
+                             loading="lazy"
+                             decoding="async"
+                             width="1200" 
+                             height="600">
+                        <div class="slide-caption">
+                            <h3>Program Success</h3>
+                            <p>Measuring impact and celebrating milestones in our journey to create an inclusive society.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="prev" aria-label="Previous slide" data-translate="slideshow.previous">❮</button>
+                <button class="next" aria-label="Next slide" data-translate="slideshow.next">❯</button>
+                <div class="dots"></div>
+            </section>
+
+            <section class="community-photos">
+                <div class="container">
+                    <h2 data-translate="community-photos-title">AFZ in Action</h2>
+                    <p class="section-intro" data-translate="community-photos-intro">Discover the impact of AFZ's work through our community engagements, outreach programs, and awareness campaigns across Zambia.</p>
+                    
+                    <div class="photo-categories">
+                        <!-- Community Events -->
+                        <div class="photo-category">
+                            <h3 data-translate="community-events-title">Community Events</h3>
+                            <div class="photo-grid">
+                                <div class="photo-item">
+                                    <img src="./images/community-events/community-gathering-1.jpg" alt="AFZ community gathering and support meeting" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Community Gathering</h4>
+                                        <p>Bringing together persons with albinism and their families for support and networking.</p>
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <img src="./images/community-events/community-gathering-2.jpg" alt="AFZ community workshop and education session" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Educational Workshops</h4>
+                                        <p>Empowering communities with knowledge about albinism and rights advocacy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Outreach Programs -->
+                        <div class="photo-category">
+                            <h3 data-translate="outreach-programs-title">Outreach Programs</h3>
+                            <div class="photo-grid">
+                                <div class="photo-item">
+                                    <img src="./images/outreach/outreach-program-1.jpg" alt="AFZ outreach team visiting rural communities" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Rural Outreach</h4>
+                                        <p>Reaching remote communities to provide support and essential supplies.</p>
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <img src="./images/gallery/children-sunscreen.jpg" alt="Children receiving sunscreen and protective supplies" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Sunscreen Distribution</h4>
+                                        <p>Providing life-saving sun protection to children with albinism.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Awareness Campaigns -->
+                        <div class="photo-category">
+                            <h3 data-translate="awareness-campaigns-title">Awareness Campaigns</h3>
+                            <div class="photo-grid">
+                                <div class="photo-item">
+                                    <img src="./images/awareness-campaigns/awareness-event-1.jpg" alt="AFZ awareness campaign and public education" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Public Awareness</h4>
+                                        <p>Educating the public and breaking misconceptions about albinism.</p>
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <img src="./images/gallery/meeting-session.jpg" alt="AFZ stakeholder meeting and policy discussions" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Policy Advocacy</h4>
+                                        <p>Working with stakeholders to create protective policies and legislation.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Success Stories -->
+                        <div class="photo-category">
+                            <h3 data-translate="success-stories-title">Success Stories</h3>
+                            <div class="photo-grid">
+                                <div class="photo-item">
+                                    <img src="./images/gallery/child-with-sunscreen.jpg" alt="Happy child with albinism holding sunscreen protection" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Protected Children</h4>
+                                        <p>Every smile represents hope and successful sun protection efforts.</p>
+                                    </div>
+                                </div>
+                                <div class="photo-item">
+                                    <img src="./images/gallery/office-meeting.jpg" alt="AFZ team strategic planning and coordination" loading="lazy">
+                                    <div class="photo-overlay">
+                                        <h4>Strategic Impact</h4>
+                                        <p>Our dedicated team planning effective advocacy and support programs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-section">
+                        <h3 data-translate="get-involved-title">Get Involved in Our Mission</h3>
+                        <p data-translate="get-involved-description">Join us in creating a more inclusive society for persons with albinism in Zambia.</p>
+                        <div class="cta-buttons">
+                            <a href="./pages/contact.html" class="cta-button primary" data-translate="cta-volunteer">Volunteer with Us</a>
+                            <a href="./pages/donate.html" class="cta-button secondary" data-translate="cta-support">Support Our Cause</a>
+                            <a href="./pages/events.html" class="cta-button outline" data-translate="cta-events">View Our Events</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-with-image">
+                <div class="container">
+                    <img src="./images/raising-awareness-albinism.jpg" alt="Raising Awareness on Albinism - Community support and unity">
+                    <h2 data-translate="awareness-title">Breaking the silence on Albinism</h2>
+                    <p data-translate="awareness-description">The Albinism Foundation Zambia is dedicated to advocating for the rights of individuals with albinism, promoting awareness, and building an inclusive society where everyone can thrive.</p>
+                    <div class="cta-buttons">
+                        <a href="./pages/donate.html" class="cta-button primary" data-translate="cta-donate">Donate Now</a>
+                        <a href="./pages/contact.html" class="cta-button secondary" data-translate="cta-get-involved">Get Involved</a>
+                        <a href="./pages/about.html" class="cta-button outline" data-translate="cta-learn-more">Learn More</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h3>Raising Awareness on Albinism</h3>
+                    <p>Together, we break the silence and shatter misconceptions about albinism. Through education, advocacy, and community support, we create a world where every person with albinism can live with dignity, equality, and hope.</p>
+                    <div class="stats-grid">
+                        <div>
+                            <p>1 in 20,000</p>
+                            <p>People worldwide are born with albinism</p>
+                        </div>
+                        <div>
+                            <p>30,000+</p>
+                            <p>Zambians living with albinism</p>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="./pages/about.html" class="cta-button outline" data-translate="cta-learn-about">Learn About Albinism</a>
+                        <a href="./pages/contact.html" class="cta-button secondary" data-translate="cta-join-cause">Join Our Cause</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2>Our Mission</h2>
+                    <p>To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs.</p>
+                    <div class="stats-grid">
+                        <p>500+ Members Supported</p>
+                        <p>15+ Active Programs</p>
+                        <p>8 Provinces Reached</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="focus-areas">
+                <div class="container">
+                    <h2>Our Focus Areas</h2>
+                    <div class="focus-grid">
+                        <div>
+                            <h3>Rights Advocacy</h3>
+                            <p>Championing policy changes and legal protections to ensure equal rights and opportunities for all persons with albinism.</p>
+                        </div>
+                        <div>
+                            <h3>Awareness Campaigns</h3>
+                            <p>Educating communities about albinism to combat myths, misconceptions, and discrimination through targeted outreach programs.</p>
+                        </div>
+                        <div>
+                            <h3>Support Services</h3>
+                            <p>Providing essential services including sunscreen distribution, protective clothing, and healthcare access coordination.</p>
+                        </div>
+                        <div>
+                            <h3>Education Access</h3>
+                            <p>Ensuring children with albinism have access to quality education with appropriate accommodations and support systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="event-calendar">
+                <div class="container">
+                    <h2>Upcoming Events</h2>
+                    <ul>
+                        <li><strong>Sep 10, 2025</strong> - Awareness Walk in Lusaka</li>
+                        <li><strong>Oct 15, 2025</strong> - Advocacy Workshop</li>
+                        <li><strong>Nov 20, 2025</strong> - Community Health Fair</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2>Latest News & Updates</h2>
+                    <div class="news-grid">
+                        <div>
+                            <h3>August 1, 2024</h3>
+                            <h4>AFZ Launches Nationwide Awareness Campaign</h4>
+                            <p>Our comprehensive awareness campaign reaches rural communities across Zambia to combat discrimination and promote understanding.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                        <div>
+                            <h3>July 15, 2024</h3>
+                            <h4>Policy Victory: New Protection Measures Approved</h4>
+                            <p>Government approves new legislative measures to protect persons with albinism from violence and discrimination.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                        <div>
+                            <h3>June 30, 2024</h3>
+                            <h4>Educational Support Program Expansion</h4>
+                            <p>AFZ extends educational support programs to include 200 additional students with albinism across all provinces.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <div class="container">
+                    <h2>Subscribe to Our Newsletter</h2>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <div class="container">
+                    <h2>Become a Volunteer</h2>
+                    <form>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="Phone Number" required>
+                        <button type="submit">Apply Now</button>
+                    </form>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <h2>Join Our Movement</h2>
+                    <p>Together, we can create a Zambia where persons with albinism live with dignity, equality, and opportunity.</p>
+                    <div class="cta-buttons">
+                        <a href="./pages/donate.html" class="cta-button primary" data-translate="cta-donate">Donate Now</a>
+                        <a href="./pages/contact.html" class="cta-button secondary" data-translate="cta-volunteer">Volunteer</a>
+                        <a href="./pages/contact.html" class="cta-button outline" data-translate="cta-contact">Contact Us</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title" data-translate="footer_sections.about.title">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text" data-translate="footer_sections.about.description">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" data-translate="social.facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" data-translate="social.twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" data-translate="social.linkedin" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" data-translate="social.youtube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.quick_links.title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link" data-translate="nav-home">Home</a></li>
+                        <li><a href="./pages/about.html" class="footer-link" data-translate="nav-about">About Us</a></li>
+                        <li><a href="./pages/programs.html" class="footer-link" data-translate="nav-programs">Programs</a></li>
+                        <li><a href="./pages/advocacy.html" class="footer-link" data-translate="nav-advocacy">Advocacy</a></li>
+                        <li><a href="./pages/events.html" class="footer-link" data-translate="nav-events">Events</a></li>
+                        <li><a href="./pages/contact.html" class="footer-link" data-translate="nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.contact.title">Contact Info</h4>
+                    <div class="contact-info">
+                        <p><strong data-translate="contact.email_label">Email:</strong> info@afz.org.zm</p>
+<p><strong data-translate="contact.phone_label">Phone:</strong> +260 97 7977026</p>
+                        <p><strong data-translate="contact.address_label">Address:</strong> AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title" data-translate="footer_sections.support.title">Support Our Cause</h4>
+                    <p class="footer-text" data-translate="footer_sections.support.description">
+                        Help us advocate for persons with albinism in Zambia.
+                    </p>
+                    <a href="./pages/donate.html" class="cta-button primary" data-translate="footer_sections.support.donate">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    <span data-translate="footer_sections.copyright">&copy; 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
+                </p>
+                <div class="footer-legal">
+                    <a href="#" data-translate="footer_sections.privacy">Privacy Policy</a>
+                    <a href="#" data-translate="footer_sections.terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./js/main.js"></script>
+    <script src="./js/language.js"></script>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/pwa.js"></script>
+    
+    <script>
+        // Listen for service worker messages
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.addEventListener('message', event => {
+                if (event.data && event.data.type === 'FORCE_RELOAD') {
+                    console.log('🔄 Service Worker forcing reload:', event.data.message);
+                    // Force reload after a short delay
+                    setTimeout(() => {
+                        window.location.reload(true);
+                    }, 1000);
+                }
+            });
+        }
+        
+        // Professional Language Selector
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageDropdownBtn = document.querySelector('.language-dropdown-btn');
+            const languageDropdownMenu = document.querySelector('.language-dropdown-menu');
+            const languageOptions = document.querySelectorAll('.language-option');
+            const currentFlag = document.querySelector('.current-flag');
+            const currentLangName = document.querySelector('.current-lang-name');
+            
+            if (languageDropdownBtn && languageDropdownMenu) {
+                languageDropdownBtn.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    languageDropdownMenu.classList.toggle('open');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.professional-language-selector')) {
+                        languageDropdownBtn.setAttribute('aria-expanded', 'false');
+                        languageDropdownMenu.classList.remove('open');
+                    }
+                });
+                
+                // Handle language selection
+                languageOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const lang = this.getAttribute('data-lang');
+                        const flag = this.querySelector('.flag').textContent;
+                        const langName = this.querySelector('.lang-name').textContent;
+                        
+                        // Update current language display
+                        currentFlag.textContent = flag;
+                        currentLangName.textContent = langName;
+                        
+                        // Update aria-selected
+                        languageOptions.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+                        this.setAttribute('aria-selected', 'true');
+                        
+                        // Close dropdown
+                        languageDropdownBtn.setAttribute('aria-expanded', 'false');
+                        languageDropdownMenu.classList.remove('open');
+                        
+                        // Store language preference
+                        localStorage.setItem('afz-language', lang);
+                        
+                        // Initialize language system if not already done
+                        if (window.languageManager) {
+                            window.languageManager.setLanguage(lang);
+                        }
+                        
+                        console.log('Language changed to:', lang);
+                    });
+                });
+                
+                // Load saved language preference
+                const savedLang = localStorage.getItem('afz-language');
+                if (savedLang) {
+                    const savedOption = document.querySelector(`[data-lang="${savedLang}"]`);
+                    if (savedOption) {
+                        savedOption.click();
+                    }
+                }
+            }
+            
+            // Mobile Navigation
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    mainNav.classList.toggle('mobile-open');
+                });
+            }
+            
+            // Enhanced Dynamic Slideshow functionality
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.dots');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            const slideshow = document.querySelector('.slideshow');
+            
+            if (slides.length > 0 && dotsContainer && prevBtn && nextBtn && slideshow) {
+                let slideIndex = 0;
+                let autoSlideTimer;
+                let isTransitioning = false;
+                
+                // Add loading class initially
+                slideshow.classList.add('loading');
+                
+                function showSlides(n, direction = 'next') {
+                    if (isTransitioning) return;
+                    
+                    if (n >= slides.length) slideIndex = 0;
+                    if (n < 0) slideIndex = slides.length - 1;
+                    
+                    isTransitioning = true;
+                    
+                    // Add transition effects
+                    const container = document.querySelector('.slideshow-container');
+                    if (container) {
+                        const offset = -slideIndex * 100;
+                        container.style.transform = `translateX(${offset}%)`;
+                        
+                        // Add slide entrance animations
+                        slides.forEach((slide, index) => {
+                            slide.classList.remove('active');
+                            if (index === slideIndex) {
+                                setTimeout(() => {
+                                    slide.classList.add('active');
+                                }, 100);
+                            }
+                        });
+                    }
+                    
+                    // Update dots with animation
+                    const dots = document.querySelectorAll('.dot');
+                    dots.forEach((dot, index) => {
+                        dot.classList.remove('active');
+                        if (index === slideIndex) {
+                            setTimeout(() => {
+                                dot.classList.add('active');
+                            }, 300);
+                        }
+                    });
+                    
+                    // Remove loading state after first slide
+                    if (slideshow.classList.contains('loading')) {
+                        setTimeout(() => {
+                            slideshow.classList.remove('loading');
+                        }, 300);
+                    }
+                    
+                    // Reset transition flag after animation completes
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 600);
+                    
+                    // Reset progress bar animation
+                    slideshow.style.animation = 'none';
+                    setTimeout(() => {
+                        slideshow.style.animation = '';
+                    }, 10);
+                }
+                
+                function plusSlides(n) {
+                    const direction = n > 0 ? 'next' : 'prev';
+                    showSlides(slideIndex += n, direction);
+                    resetAutoSlide();
+                }
+                
+                function resetAutoSlide() {
+                    clearInterval(autoSlideTimer);
+                    startAutoSlide();
+                }
+                
+                function startAutoSlide() {
+                    autoSlideTimer = setInterval(() => {
+                        if (!slideshow.matches(':hover')) {
+                            plusSlides(1);
+                        }
+                    }, 5000);
+                }
+                
+                // Navigation event listeners with haptic feedback simulation
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevBtn.style.transform = 'translateY(-50%) scale(0.95)';
+                    setTimeout(() => {
+                        prevBtn.style.transform = 'translateY(-50%) scale(1)';
+                    }, 150);
+                    plusSlides(-1);
+                });
+                
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextBtn.style.transform = 'translateY(-50%) scale(0.95)';
+                    setTimeout(() => {
+                        nextBtn.style.transform = 'translateY(-50%) scale(1)';
+                    }, 150);
+                    plusSlides(1);
+                });
+                
+                // Initialize dots with enhanced interactions
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    if (index === 0) dot.classList.add('active');
+                    
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (index !== slideIndex) {
+                            slideIndex = index;
+                            showSlides(slideIndex);
+                            resetAutoSlide();
+                        }
+                    });
+                    
+                    // Add tooltip-like behavior
+                    dot.setAttribute('title', `Go to slide ${index + 1}`);
+                    
+                    dotsContainer.appendChild(dot);
+                });
+                
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        plusSlides(-1);
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        plusSlides(1);
+                    }
+                });
+                
+                // Touch/swipe support for mobile
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                slideshow.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+                
+                slideshow.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                });
+                
+                function handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = touchStartX - touchEndX;
+                    
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            // Swiped left - next slide
+                            plusSlides(1);
+                        } else {
+                            // Swiped right - previous slide
+                            plusSlides(-1);
+                        }
+                    }
+                }
+                
+                // Pause auto-slide on hover
+                slideshow.addEventListener('mouseenter', () => {
+                    clearInterval(autoSlideTimer);
+                });
+                
+                slideshow.addEventListener('mouseleave', () => {
+                    startAutoSlide();
+                });
+                
+                // Initialize slideshow
+                showSlides(slideIndex);
+                startAutoSlide();
+                
+                // Preload images for smooth transitions
+                slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    if (img && img.src) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.src;
+                    }
+                });
+            }
+        });
+    </script>
+    </body>
+    </html>
