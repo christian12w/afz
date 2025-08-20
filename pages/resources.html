@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Access comprehensive educational materials, guides, and resources to support the albinism community in Zambia">
+    <meta name="keywords" content="albinism resources, educational materials, medical information, legal rights, support guides, AFZ, Zambia">
+    <title>Resource Library - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Resource Library - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Access comprehensive educational materials, guides, and resources to support the albinism community">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../images/afz-logo-final.png">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/resources.html">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Resource Library - Albinism Foundation of Zambia - AFZ">
+    <meta name="twitter:description" content="Access comprehensive educational materials, guides, and resources to support the albinism community">
+    <meta name="twitter:image" content="../images/afz-logo-final.png">
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Resources Page Specific Styles */
+        .resources-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 30%, var(--secondary-orange) 70%, #ff6b35 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 0 4rem;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: 200px 0; }
+        }
+        
+        .resources-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffffff, #f0f9ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-stat:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .resources-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="books" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M5 2h10v16H5zm2 2v12h6V4z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23books)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .resources-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: cardFadeIn 0.6s ease-out forwards;
+        }
+        
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes cardFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .category-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent
+            );
+            transition: left 0.5s;
+            z-index: 1;
+        }
+        
+        .category-card:hover::after {
+            left: 100%;
+        }
+        
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--gray-900);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-stats {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .category-stats .resource-count {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-orange));
+        }
+        
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .category-card:hover .category-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(43, 108, 176, 0.3);
+        }
+        
+        .category-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary-blue-light);
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-orange));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .resource-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .resource-header {
+            padding: 1.5rem 1.5rem 1rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .resource-category-tag {
+            display: inline-block;
+            background: var(--primary-blue-light);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .resource-description {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .resource-content {
+            padding: 1.5rem;
+        }
+        
+        .resource-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+        
+        .resource-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .resource-actions {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .search-section {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-input-wrapper {
+            flex: 1;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            color: var(--gray-400);
+        }
+        
+        .filter-controls {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-select {
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            background: white;
+            font-size: 0.9rem;
+            min-width: 150px;
+        }
+        
+        .featured-resources {
+            background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .featured-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .sort-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        /* Loading States */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+            position: relative;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            margin: -20px 0 0 -20px;
+            border: 3px solid var(--gray-300);
+            border-top-color: var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Search Enhancement */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+        }
+        
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--gray-100);
+            transition: background-color 0.2s ease;
+        }
+        
+        .suggestion-item:hover {
+            background-color: var(--gray-50);
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Bookmark Feature */
+        .bookmark-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            border: 2px solid var(--gray-300);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .bookmark-btn:hover {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .bookmark-btn.bookmarked {
+            background: var(--secondary-orange);
+            border-color: var(--secondary-orange);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .resources-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .filter-controls {
+                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-select {
+                min-width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .results-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .hero-stat {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            
+            <div class="logo-section">
+                <img src="../images/afz-logo-final.png" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Breaking the silence on Albinism</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
+                    <li><a href="programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="resources.html" class="nav-link active" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="events.html" class="nav-link" data-translate="nav-events">Events</a></li>
+                    <li><a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="auth.html" class="nav-link" data-translate="nav-member-portal">Member Portal</a></li>
+                    <li><a href="donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    
+    <main id="main-content" class="main">
+        <!-- Hero Section -->
+        <section class="resources-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Resource Library & Education Center</h1>
+                    <p class="hero-subtitle">
+                        Access comprehensive educational materials, guides, and resources to support the albinism community in Zambia
+                    </p>
+                    <div class="hero-actions">
+                        <button class="cta-button primary" onclick="document.getElementById('searchInput').focus()">
+                            📚 Browse Resources
+                        </button>
+                        <button class="cta-button outline-light" onclick="window.location.href='auth.html'">
+                            👤 Member Portal
+                        </button>
+                    </div>
+                    
+                    <!-- Hero Statistics -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">143</span>
+                            <span class="hero-stat-label">Total Resources</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">12</span>
+                            <span class="hero-stat-label">Languages Available</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="hero-stat-number">25K+</span>
+                            <span class="hero-stat-label">Downloads</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Categories Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Resource Categories</h2>
+                <div class="resources-categories">
+                    <div class="category-card" onclick="filterByCategory('educational')">
+                        <div class="category-icon">
+                            📚
+                        </div>
+                        <h3 class="category-title">Educational Materials</h3>
+                        <p class="category-description">
+                            Comprehensive guides, fact sheets, and educational content about albinism
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">45</span> resources
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="filterByCategory('medical')">
+                        <div class="category-icon">
+                            🏥
+                        </div>
+                        <h3 class="category-title">Medical Information</h3>
+                        <p class="category-description">
+                            Healthcare guides, skin care tips, and essential medical resources
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">32</span> resources
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="filterByCategory('legal')">
+                        <div class="category-icon">
+                            ⚖️
+                        </div>
+                        <h3 class="category-title">Legal Rights & Advocacy</h3>
+                        <p class="category-description">
+                            Know your rights, legal protections, and advocacy resources
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">28</span> resources
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="filterByCategory('support')">
+                        <div class="category-icon">
+                            🤝
+                        </div>
+                        <h3 class="category-title">Support & Community</h3>
+                        <p class="category-description">
+                            Community support, counseling resources, and family guides
+                        </p>
+                        <div class="category-stats">
+                            <span class="resource-count">38</span> resources
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Search and Filters -->
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" class="search-input" id="searchInput" 
+                               placeholder="Search resources by title, description, or tags..."
+                               aria-label="Search resources" autocomplete="off">
+                        <div class="search-suggestions" id="searchSuggestions"></div>
+                    </div>
+                </div>
+                
+                <div class="filter-controls">
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="educational">Educational Materials</option>
+                        <option value="medical">Medical Information</option>
+                        <option value="legal">Legal Rights</option>
+                        <option value="support">Support & Community</option>
+                    </select>
+                    
+                    <select class="filter-select" id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="document">Documents</option>
+                        <option value="video">Videos</option>
+                        <option value="audio">Audio</option>
+                        <option value="image">Images</option>
+                        <option value="link">External Links</option>
+                    </select>
+                    
+                    <select class="filter-select" id="languageFilter">
+                        <option value="all">All Languages</option>
+                        <option value="en">English</option>
+                        <option value="ny">Chichewa</option>
+                        <option value="be">Bemba</option>
+                        <option value="to">Tonga</option>
+                        <option value="lz">Lozi</option>
+                    </select>
+                    
+                    <button class="cta-button secondary" onclick="clearFilters()">
+                        🗑️ Clear Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Resources -->
+        <section class="featured-resources">
+            <div class="container">
+                <h2 class="section-title">Featured Resources</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <h3>Understanding Albinism: A Comprehensive Guide</h3>
+                        <p>Essential information for individuals with albinism, their families, and communities.</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">📄 PDF Guide</span>
+                            <span class="resource-language">🌍 English</span>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <h3>Skin Care Essentials for Persons with Albinism</h3>
+                        <p>Practical tips and medical advice for proper skin care and sun protection.</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">🎥 Video</span>
+                            <span class="resource-language">🌍 Multi-language</span>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <h3>Legal Rights Handbook - Zambian Edition</h3>
+                        <p>Know your rights and legal protections under Zambian law.</p>
+                        <div class="resource-meta">
+                            <span class="resource-type">📄 Legal Document</span>
+                            <span class="resource-language">🌍 English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Resources Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="results-header">
+                    <div class="results-info">
+                        <h2 id="resultsTitle">All Resources</h2>
+                        <p id="resultsCount">Showing 143 resources</p>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <label for="sortSelect">Sort by:</label>
+                        <select class="filter-select" id="sortSelect">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="alphabetical">A-Z</option>
+                            <option value="popular">Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="resources-grid" id="resourcesGrid">
+                    <!-- Sample Resources - would be populated by JavaScript -->
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Educational</span>
+                            <h3 class="resource-title">What is Albinism? Basic Facts</h3>
+                            <p class="resource-description">A simple introduction to albinism, its causes, and common myths debunked.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    📄 <span>PDF Document</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>English</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2024-01-15</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">View</button>
+                                <button class="btn btn-outline btn-sm">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Medical</span>
+                            <h3 class="resource-title">Sun Protection Guidelines</h3>
+                            <p class="resource-description">Essential sun protection measures for people with albinism in tropical climates.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    🎥 <span>Video</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>English + Nyanja</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2024-01-10</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">Watch</button>
+                                <button class="btn btn-outline btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Legal</span>
+                            <h3 class="resource-title">Disability Rights in Zambia</h3>
+                            <p class="resource-description">Overview of disability rights legislation and how it applies to persons with albinism.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    📄 <span>Legal Guide</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>English</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2024-01-05</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">Read</button>
+                                <button class="btn btn-outline btn-sm">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Support</span>
+                            <h3 class="resource-title">Family Support Handbook</h3>
+                            <p class="resource-description">A guide for families supporting a child or family member with albinism.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    📄 <span>Handbook</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>Multi-language</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2023-12-20</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">View</button>
+                                <button class="btn btn-outline btn-sm">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Educational</span>
+                            <h3 class="resource-title">School Inclusion Best Practices</h3>
+                            <p class="resource-description">Guidelines for educators on creating inclusive environments for students with albinism.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    🎓 <span>Training Material</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>English</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2023-12-15</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">Access</button>
+                                <button class="btn btn-outline btn-sm">Share</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-header">
+                            <span class="resource-category-tag">Medical</span>
+                            <h3 class="resource-title">Eye Care for Persons with Albinism</h3>
+                            <p class="resource-description">Comprehensive guide on vision care and low vision aids for people with albinism.</p>
+                        </div>
+                        <div class="resource-content">
+                            <div class="resource-meta">
+                                <div class="resource-meta-item">
+                                    📄 <span>Medical Guide</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    🌍 <span>English + Bemba</span>
+                                </div>
+                                <div class="resource-meta-item">
+                                    📅 <span>2023-12-10</span>
+                                </div>
+                            </div>
+                            <div class="resource-actions">
+                                <button class="btn btn-primary btn-sm">Read</button>
+                                <button class="btn btn-outline btn-sm">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="btn btn-outline btn-sm" disabled>« Previous</button>
+                    <span class="pagination-info">Page 1 of 8</span>
+                    <button class="btn btn-outline btn-sm">Next »</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/afz-logo-final.png" alt="AFZ Logo" class="footer-logo">
+                    <h3 class="footer-title">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text">
+                        Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.6v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="../index.html" class="footer-link">Home</a>
+                        <a href="about.html" class="footer-link">About</a>
+                        <a href="advocacy.html" class="footer-link">Advocacy</a>
+                        <a href="events.html" class="footer-link">Events</a>
+                        <a href="resources.html" class="footer-link">Resources</a>
+                        <a href="contact.html" class="footer-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contact Info</h4>
+                    <div class="footer-contact">
+                        <p class="contact-item">
+                            📍 <span>AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)</span>
+                        </p>
+                        <p class="contact-item">
+                            📧 <span>info@afz.org.zm</span>
+                        </p>
+                        <p class="contact-item">
+                            📞 <span>+260 97 7977026</span>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Support Our Cause</h4>
+                    <p class="footer-text">
+                        Help us advocate for persons with albinism in Zambia.
+                    </p>
+                    <a href="donate.html" class="cta-button primary">
+                        💝 Donate Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Real albinism resources data
+        const realResources = [
+            {
+                id: 1,
+                title: "Understanding Albinism: A Medical Guide",
+                category: "medical",
+                type: "document",
+                language: "en",
+                description: "Comprehensive medical information about oculocutaneous albinism, including types, genetics, and health management.",
+                date: "2024-01-15",
+                downloadUrl: "#",
+                fileSize: "2.1 MB",
+                format: "PDF"
+            },
+            {
+                id: 2,
+                title: "Sun Protection Guidelines for Persons with Albinism",
+                category: "medical",
+                type: "document",
+                language: "en",
+                description: "Essential guidelines for proper sun protection, including sunscreen selection, protective clothing, and daily care routines.",
+                date: "2024-01-10",
+                downloadUrl: "#",
+                fileSize: "1.8 MB",
+                format: "PDF"
+            },
+            {
+                id: 3,
+                title: "Albinism Awareness Educational Poster",
+                category: "educational",
+                type: "image",
+                language: "en",
+                description: "High-resolution educational poster explaining albinism facts and dispelling common myths.",
+                date: "2024-01-08",
+                downloadUrl: "#",
+                fileSize: "5.2 MB",
+                format: "PNG"
+            },
+            {
+                id: 4,
+                title: "Legal Rights of Persons with Albinism in Zambia",
+                category: "legal",
+                type: "document",
+                language: "en",
+                description: "Comprehensive overview of legal protections and rights under Zambian disability legislation.",
+                date: "2024-01-05",
+                downloadUrl: "#",
+                fileSize: "1.5 MB",
+                format: "PDF"
+            },
+            {
+                id: 5,
+                title: "Family Support Guide for Parents",
+                category: "support",
+                type: "document",
+                language: "en",
+                description: "Practical guidance for families raising children with albinism, including medical care, education, and emotional support.",
+                date: "2023-12-20",
+                downloadUrl: "#",
+                fileSize: "2.8 MB",
+                format: "PDF"
+            },
+            {
+                id: 6,
+                title: "Eye Care for People with Albinism",
+                category: "medical",
+                type: "video",
+                language: "en",
+                description: "Educational video explaining vision problems associated with albinism and available treatments and aids.",
+                date: "2023-12-15",
+                downloadUrl: "#",
+                fileSize: "45 MB",
+                format: "MP4"
+            },
+            {
+                id: 7,
+                title: "School Inclusion Handbook for Educators",
+                category: "educational",
+                type: "document",
+                language: "en",
+                description: "Comprehensive guide for teachers on creating inclusive learning environments for students with albinism.",
+                date: "2023-12-10",
+                downloadUrl: "#",
+                fileSize: "3.1 MB",
+                format: "PDF"
+            },
+            {
+                id: 8,
+                title: "Workplace Rights and Accommodations",
+                category: "legal",
+                type: "document",
+                language: "en",
+                description: "Information about employment rights and reasonable accommodations for persons with albinism in the workplace.",
+                date: "2023-12-01",
+                downloadUrl: "#",
+                fileSize: "1.2 MB",
+                format: "PDF"
+            },
+            {
+                id: 9,
+                title: "Community Support Network Directory",
+                category: "support",
+                type: "document",
+                language: "en",
+                description: "Directory of support groups, medical facilities, and community resources across Zambia.",
+                date: "2023-11-25",
+                downloadUrl: "#",
+                fileSize: "0.8 MB",
+                format: "PDF"
+            },
+            {
+                id: 10,
+                title: "Albinism Facts Infographic",
+                category: "educational",
+                type: "image",
+                language: "en",
+                description: "Visual infographic with key facts about albinism, genetics, and prevalence statistics.",
+                date: "2023-11-20",
+                downloadUrl: "#",
+                fileSize: "2.5 MB",
+                format: "PNG"
+            },
+            {
+                id: 11,
+                title: "Skin Care Routine Guide",
+                category: "medical",
+                type: "document",
+                language: "en",
+                description: "Daily skin care routine recommendations and product suggestions for persons with albinism.",
+                date: "2023-11-15",
+                downloadUrl: "#",
+                fileSize: "1.7 MB",
+                format: "PDF"
+            },
+            {
+                id: 12,
+                title: "Support Group Facilitator Manual",
+                category: "support",
+                type: "document",
+                language: "en",
+                description: "Training manual for individuals interested in facilitating albinism support groups in their communities.",
+                date: "2023-11-10",
+                downloadUrl: "#",
+                fileSize: "4.2 MB",
+                format: "PDF"
+            }
+        ];
+        
+        let filteredResources = [...realResources];
+        
+        // Initialize resources display
+        function initializeResources() {
+            displayResources(realResources);
+            updateResourceCounts();
+        }
+        
+        // Display resources in the grid
+        function displayResources(resources) {
+            const container = document.getElementById('resourcesGrid');
+            container.innerHTML = '';
+            
+            if (resources.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <h3>No Resources Found</h3>
+                        <p>Try adjusting your search criteria or browse different categories.</p>
+                        <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            resources.forEach((resource, index) => {
+                const resourceCard = document.createElement('div');
+                resourceCard.className = 'resourc                resourceCard.innerHTML = `
+                    <div class="bookmark-btn" data-resource-id="${resource.id}" onclick="toggleBookmark(${resource.id})" 
+                         role="button" tabindex="0" aria-label="Add to bookmarks">
+                        🤍
+                    </div>
+                    <div class="resource-header">
+                        <span class="resource-category-tag">${capitalizeFirst(resource.category)}</span>
+                        <h3 class="resource-title">${resource.title}</h3>
+                        <p class="resource-description">${resource.description}</p>
+                    </div>
+                    <div class="resource-content">
+                        <div class="resource-meta">
+                            <div class="resource-meta-item">
+                                📄 <span>${resource.format} ${resource.type === 'document' ? 'Document' : resource.type === 'video' ? 'Video' : 'Image'}</span>
+                            </div>
+                            <div class="resource-meta-item">
+                                🌍 <span>${resource.language === 'en' ? 'English' : resource.language}</span>
+                            </div>
+                            <div class="resource-meta-item">
+                                📅 <span>${formatDate(resource.date)}</span>
+                            </div>
+                            <div class="resource-meta-item">
+                                📊 <span>${resource.fileSize}</span>
+                            </div>
+                        </div>
+                        <div class="resource-actions">
+                            <button class="cta-button primary" onclick="downloadResource(${resource.id})">
+                                📥 Download
+                            </button>
+                            <button class="cta-button secondary" onclick="viewResource(${resource.id})">
+                                👁️ Preview
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(resourceCard);
+            });
+            
+            // Update bookmark buttons after rendering
+            updateBookmarkButtons();
+        }
+        
+        // Update resource counts in category cards
+        function updateResourceCounts() {
+            const counts = {
+                educational: realResources.filter(r => r.category === 'educational').length,
+                medical: realResources.filter(r => r.category === 'medical').length,
+                legal: realResources.filter(r => r.category === 'legal').length,
+                support: realResources.filter(r => r.category === 'support').length
+            };
+            
+            // Update the category cards with actual counts
+            // This would be done dynamically in a real implementation
+        }
+        
+        // Filter functionality
+        function filterByCategory(category) {
+            document.getElementById('categoryFilter').value = category;
+            applyFilters();
+        }
+        
+        function clearFilters() {
+            document.getElementById('categoryFilter').value = 'all';
+            document.getElementById('typeFilter').value = 'all';
+            document.getElementById('languageFilter').value = 'all';
+            document.getElementById('searchInput').value = '';
+            applyFilters();
+        }
+        
+        function applyFilters() {
+            const category = document.getElementById('categoryFilter').value;
+            const type = document.getElementById('typeFilter').value;
+            const language = document.getElementById('languageFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            
+            filteredResources = realResources.filter(resource => {
+                const matchesCategory = category === 'all' || resource.category === category;
+                const matchesType = type === 'all' || resource.type === type;
+                const matchesLanguage = language === 'all' || resource.language === language;
+                const matchesSearch = search === '' || 
+                    resource.title.toLowerCase().includes(search) || 
+                    resource.description.toLowerCase().includes(search);
+                
+                return matchesCategory && matchesType && matchesLanguage && matchesSearch;
+            });
+            
+            displayResources(filteredResources);
+            
+            // Update results count
+            document.getElementById('resultsCount').textContent = `${filteredResources.length} resources found`;
+            
+            // Update results title
+            if (category !== 'all') {
+                document.getElementById('resultsTitle').textContent = `${capitalizeFirst(category)} Resources`;
+            } else {
+                document.getElementById('resultsTitle').textContent = 'All Resources';
+            }
+        }
+        
+        // Resource actions
+        function downloadResource(resourceId) {
+            const resource = realResources.find(r => r.id === resourceId);
+            if (resource) {
+                // In a real implementation, this would trigger the actual download
+                alert(`Downloading: ${resource.title}\nFile: ${resource.format} (${resource.fileSize})\n\nIn a real implementation, this would start the download.`);
+                // window.open(resource.downloadUrl, '_blank');
+            }
+        }
+        
+        function viewResource(resourceId) {
+            const resource = realResources.find(r => r.id === resourceId);
+            if (resource) {
+                alert(`Resource Preview:\n\nTitle: ${resource.title}\nCategory: ${capitalizeFirst(resource.category)}\nType: ${resource.type}\nFormat: ${resource.format}\nSize: ${resource.fileSize}\nDescription: ${resource.description}\n\nIn a real implementation, this would show a preview or open the resource.`);
+            }
+        }
+        
+        function showUploadModal() {
+            // Redirect to member portal for resource uploads
+            alert('Resource uploads are managed through the Member Portal.\n\nPlease log in to the Member Portal to upload new resources.');
+            // In a real implementation: window.location.href = 'auth.html?redirect=upload';
+        }
+        
+        // Utility functions
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        }
+        
+        function capitalizeFirst(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        
+        // Bookmarking functionality
+        let bookmarkedResources = JSON.parse(localStorage.getItem('afz-bookmarked-resources') || '[]');
+        
+        function toggleBookmark(resourceId) {
+            const index = bookmarkedResources.indexOf(resourceId);
+            if (index === -1) {
+                bookmarkedResources.push(resourceId);
+            } else {
+                bookmarkedResources.splice(index, 1);
+            }
+            localStorage.setItem('afz-bookmarked-resources', JSON.stringify(bookmarkedResources));
+            updateBookmarkButtons();
+        }
+        
+        function updateBookmarkButtons() {
+            const bookmarkBtns = document.querySelectorAll('.bookmark-btn');
+            bookmarkBtns.forEach(btn => {
+                const resourceId = parseInt(btn.dataset.resourceId);
+                if (bookmarkedResources.includes(resourceId)) {
+                    btn.classList.add('bookmarked');
+                    btn.innerHTML = '❤️';
+                    btn.setAttribute('aria-label', 'Remove from bookmarks');
+                } else {
+                    btn.classList.remove('bookmarked');
+                    btn.innerHTML = '🤍';
+                    btn.setAttribute('aria-label', 'Add to bookmarks');
+                }
+            });
+        }
+        
+        // Enhanced search with suggestions
+        function setupSearchSuggestions() {
+            const searchInput = document.getElementById('searchInput');
+            const suggestions = document.getElementById('searchSuggestions');
+            
+            let searchTerms = [];
+            realResources.forEach(resource => {
+                const terms = [...resource.title.toLowerCase().split(' '), 
+                              ...resource.description.toLowerCase().split(' '),
+                              resource.category.toLowerCase()];
+                searchTerms.push(...terms);
+            });
+            
+            // Remove duplicates and filter out common words
+            const commonWords = ['the', 'of', 'and', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'with', 'by'];
+            searchTerms = [...new Set(searchTerms)].filter(term => 
+                term.length > 2 && !commonWords.includes(term)
+            );
+            
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                if (query.length > 1) {
+                    const matches = searchTerms.filter(term => 
+                        term.startsWith(query) && term !== query
+                    ).slice(0, 5);
+                    
+                    if (matches.length > 0) {
+                        suggestions.innerHTML = matches.map(term => 
+                            `<div class="suggestion-item" onclick="applySuggestion('${term}')">${term}</div>`
+                        ).join('');
+                        suggestions.style.display = 'block';
+                    } else {
+                        suggestions.style.display = 'none';
+                    }
+                } else {
+                    suggestions.style.display = 'none';
+                }
+                
+                applyFilters();
+            });
+            
+            // Hide suggestions when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
+                    suggestions.style.display = 'none';
+                }
+            });
+        }
+        
+        function applySuggestion(term) {
+            document.getElementById('searchInput').value = term;
+            document.getElementById('searchSuggestions').style.display = 'none';
+            applyFilters();
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize resources display
+            initializeResources();
+            setupSearchSuggestions();
+            
+            // Add event listeners
+            document.getElementById('searchInput').addEventListener('input', applyFilters);
+            document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+            document.getElementById('typeFilter').addEventListener('change', applyFilters);
+            document.getElementById('languageFilter').addEventListener('change', applyFilters);
+            
+            // Mobile menu functionality
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    const nav = document.getElementById('main-navigation');
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    nav.classList.toggle('nav-open');
+                });
+            }
+        });
+    </script>
+    
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/pwa.js"></script>
+</body>
+</html>

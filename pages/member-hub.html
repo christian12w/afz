@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AFZ Member Hub - Connect, collaborate, and access resources in the Albinism Foundation of Zambia community">
+    <meta name="keywords" content="AFZ, member hub, albinism, community, resources, events, networking">
+    <meta name="author" content="Albinism Foundation of Zambia - AFZ">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Member Hub - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Connect and collaborate in the AFZ community">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/member-hub.html">
+    <meta property="og:image" content="../images/afz-logo-final.png">
+    
+    <title>Member Hub - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/member-hub.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance hints -->
+    <link rel="preload" href="../css/member-hub.css" as="style">
+    <link rel="prefetch" href="../js/member-hub.js">
+    <link rel="preload" href="../images/afz-logo-final.png" as="image">
+    
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body class="member-hub-page" data-user-role="member">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="../images/afz-logo-final.png" alt="AFZ Logo" class="logo-animation">
+            </div>
+            <div class="loading-text">
+                <h2>Welcome to AFZ Member Hub</h2>
+                <p>Loading your personalized dashboard...</p>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="hub-header" role="banner">
+        <div class="header-container">
+            <div class="header-left">
+                <button id="mobile-menu" class="mobile-menu-btn" aria-label="Toggle navigation">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <div class="logo-section">
+                    <a href="../index.html">
+                        <img src="../images/afz-logo-final.png" alt="AFZ Logo" class="header-logo">
+                    </a>
+                    <div class="org-info">
+                        <h1 class="org-name">AFZ Member Hub</h1>
+                        <p class="org-tagline">Connect, Learn, Advocate</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="global-search" placeholder="Search members, resources, events..." autocomplete="off">
+                        <kbd class="search-shortcut">Ctrl+K</kbd>
+                    </div>
+                    <div id="search-results" class="search-results"></div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="header-actions">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="action-btn" title="Toggle Theme" aria-label="Toggle dark/light theme">
+                        <i class="fas fa-moon theme-icon"></i>
+                    </button>
+                    
+                    <!-- Notifications -->
+                    <div class="notification-dropdown">
+                        <button id="notifications-btn" class="action-btn notification-btn" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </button>
+                        
+                        <div id="notification-panel" class="notification-panel">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <div class="notification-actions">
+                                    <button class="filter-btn active" data-filter="all">All</button>
+                                    <button class="filter-btn" data-filter="unread">Unread</button>
+                                    <button id="mark-all-read" class="mark-read-btn">
+                                        <i class="fas fa-check-double"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="notification-list" class="notification-list">
+                                <!-- Notifications will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- User Menu -->
+                    <div class="user-dropdown">
+                        <button id="user-menu-btn" class="user-menu-btn" aria-label="User menu">
+                            <div class="user-avatar">
+                                <span class="avatar-text">JD</span>
+                                <div class="status-indicator online"></div>
+                            </div>
+                            <div class="user-info">
+                                <span class="user-name">John Doe</span>
+                                <span class="user-role">Member</span>
+                            </div>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </button>
+                        
+                        <div id="user-dropdown" class="user-dropdown-menu">
+                            <div class="dropdown-header">
+                                <div class="user-avatar-large">
+                                    <span class="avatar-text">JD</span>
+                                </div>
+                                <div class="user-details">
+                                    <span class="user-name">John Doe</span>
+                                    <span class="user-email">john.doe@email.com</span>
+                                </div>
+                            </div>
+                            <div class="dropdown-body">
+                                <a href="#profile" class="dropdown-item" data-action="edit-profile">
+                                    <i class="fas fa-user"></i>
+                                    <span>Edit Profile</span>
+                                </a>
+                                <a href="#settings" class="dropdown-item" data-action="account-settings">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Account Settings</span>
+                                </a>
+                                <a href="#privacy" class="dropdown-item" data-action="privacy-settings">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Privacy Settings</span>
+                                </a>
+                                <a href="#billing" class="dropdown-item" data-action="billing">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Billing & Donations</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#help" class="dropdown-item" data-action="help">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help & Support</span>
+                                </a>
+                                <a href="#logout" class="dropdown-item" data-action="logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="sidebar-content">
+            <!-- Main Navigation -->
+            <div class="nav-section">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="#dashboard" class="nav-link" data-section="dashboard">
+                            <div class="nav-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <span class="nav-text">Dashboard</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#chat" class="nav-link" data-section="chat">
+                            <div class="nav-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span class="nav-text">Community Chat</span>
+                            <span class="nav-badge">5</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#connections" class="nav-link" data-section="connections">
+                            <div class="nav-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <span class="nav-text">My Network</span>
+                            <span class="nav-badge">12</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#events" class="nav-link" data-section="events">
+                            <div class="nav-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <span class="nav-text">Events</span>
+                            <span class="nav-badge new">3</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resources" class="nav-link" data-section="resources">
+                            <div class="nav-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span class="nav-text">Resources</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#profile" class="nav-link" data-section="profile">
+                            <div class="nav-icon">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <span class="nav-text">My Profile</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Admin Section (hidden by default, shown for admin users) -->
+            <div id="admin-section" class="nav-section admin-section" style="display: none;">
+                <div class="nav-section-header">
+                    <span class="section-title">Administration</span>
+                    <span class="section-badge">Admin</span>
+                </div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#admin-dashboard" class="nav-link" data-section="admin-dashboard">
+                            <div class="nav-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <span class="nav-text">Admin Dashboard</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#member-management" class="nav-link" data-section="member-management">
+                            <div class="nav-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <span class="nav-text">Member Management</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#event-management" class="nav-link" data-section="event-management">
+                            <div class="nav-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <span class="nav-text">Event Management</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#analytics" class="nav-link" data-section="analytics">
+                            <div class="nav-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="nav-text">Analytics</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#content-curation" class="nav-link" data-section="content-curation">
+                            <div class="nav-icon">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <span class="nav-text">Content Curation</span>
+                            <div class="nav-indicator"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="footer-info">
+                <p class="copyright">© 2024 AFZ</p>
+                <p class="version">v2.1.0</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="#dashboard">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+
+        <!-- Content Sections -->
+        <!-- Dashboard Section -->
+        <section id="section-dashboard" class="content-section active">
+            <div class="section-header">
+                <div class="header-content">
+                    <h1 class="section-title">Welcome back, <span class="user-name">John</span>!</h1>
+                    <p class="section-subtitle">Here's what's happening in your AFZ community</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Quick Action
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Dashboard Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card interactive" data-stat="members">
+                    <div class="stat-header">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="1248">1,248</h3>
+                        <p class="stat-label">Community Members</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" data-progress="78"></div>
+                            </div>
+                            <span class="progress-text">78% to goal</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+12">
+                            <i class="fas fa-arrow-up"></i> +12% this month
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="members"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="events">
+                    <div class="stat-header">
+                        <div class="stat-icon success">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-bar"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="23">23</h3>
+                        <p class="stat-label">Events This Month</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar success">
+                                <div class="progress-fill" data-progress="92"></div>
+                            </div>
+                            <span class="progress-text">23 of 25 planned</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+5">
+                            <i class="fas fa-arrow-up"></i> +5 new events
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="events"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="resources">
+                    <div class="stat-header">
+                        <div class="stat-icon info">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-pie-chart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="847">847</h3>
+                        <p class="stat-label">Resources Available</p>
+                        <div class="stat-breakdown">
+                            <div class="breakdown-item">
+                                <span class="breakdown-color medical"></span>
+                                <span class="breakdown-text">Medical: 312</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-color education"></span>
+                                <span class="breakdown-text">Education: 285</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-color legal"></span>
+                                <span class="breakdown-text">Legal: 250</span>
+                            </div>
+                        </div>
+                        <span class="stat-change positive" data-change="+23">
+                            <i class="fas fa-arrow-up"></i> +23 this week
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="resources"></canvas>
+                    </div>
+                </div>
+                
+                <div class="stat-card interactive" data-stat="donations">
+                    <div class="stat-header">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="stat-actions">
+                            <button class="stat-action-btn" data-action="refresh" aria-label="Refresh data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="stat-action-btn" data-action="details" aria-label="View details">
+                                <i class="fas fa-chart-area"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="stat-number" data-target="15420">K15,420</h3>
+                        <p class="stat-label">Donations Raised</p>
+                        <div class="stat-progress">
+                            <div class="progress-bar warning">
+                                <div class="progress-fill" data-progress="61"></div>
+                            </div>
+                            <span class="progress-text">61% of K25,000 goal</span>
+                        </div>
+                        <span class="stat-change positive" data-change="+8">
+                            <i class="fas fa-arrow-up"></i> +8% this quarter
+                        </span>
+                    </div>
+                    <div class="stat-mini-chart">
+                        <canvas class="mini-chart" data-chart="donations"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions-section">
+                <h2 class="section-subtitle">Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('resources')">
+                        <div class="action-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Browse Resources</h4>
+                            <p>Access educational materials and guides</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('events')">
+                        <div class="action-icon">
+                            <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Join Events</h4>
+                            <p>Find and register for upcoming activities</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('connections')">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Connect</h4>
+                            <p>Expand your professional network</p>
+                        </div>
+                    </button>
+                    <button class="quick-action-card" onclick="afzMemberHub.switchSection('chat')">
+                        <div class="action-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="action-content">
+                            <h4>Community Chat</h4>
+                            <p>Join ongoing conversations</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="dashboard-widgets">
+                <div class="widget activity-widget">
+                    <div class="widget-header">
+                        <h3>Recent Activity</h3>
+                        <a href="#" class="widget-link">View All</a>
+                    </div>
+                    <div class="widget-content">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="../images/avatars/user1.jpg" alt="Sarah M.">
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Sarah M.</strong> shared a new resource</p>
+                                    <span class="activity-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <div class="avatar-placeholder">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                </div>
+                                <div class="activity-details">
+                                    <p>New event: <strong>Awareness Workshop</strong></p>
+                                    <span class="activity-time">4 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-avatar">
+                                    <img src="../images/avatars/user2.jpg" alt="Michael J.">
+                                </div>
+                                <div class="activity-details">
+                                    <p><strong>Michael J.</strong> joined the community</p>
+                                    <span class="activity-time">Yesterday</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget upcoming-widget">
+                    <div class="widget-header">
+                        <h3>Upcoming Events</h3>
+                        <a href="#events" class="widget-link" onclick="afzMemberHub.switchSection('events')">View Calendar</a>
+                    </div>
+                    <div class="widget-content">
+                        <div class="event-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">24</span>
+                                    <span class="month">AUG</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Albinism Awareness Workshop</h4>
+                                    <p>Lusaka Community Center • 2:00 PM</p>
+                                    <span class="event-status registered">Registered</span>
+                                </div>
+                            </div>
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">30</span>
+                                    <span class="month">AUG</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Healthcare Access Forum</h4>
+                                    <p>Virtual Event • 10:00 AM</p>
+                                    <button class="btn btn-sm btn-primary">Register</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="section-chat" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Community Chat</h1>
+                <p class="section-subtitle">Connect and communicate with fellow community members</p>
+            </div>
+            <!-- Chat content will be populated by ChatManager -->
+        </section>
+
+        <!-- Connections Section -->
+        <section id="section-connections" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">My Network</h1>
+                <p class="section-subtitle">Build meaningful connections within the AFZ community</p>
+            </div>
+            <!-- Connections content will be populated by ConnectionsManager -->
+        </section>
+
+        <!-- Events Section -->
+        <section id="section-events" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Events</h1>
+                <p class="section-subtitle">Discover and participate in community events and workshops</p>
+            </div>
+            <!-- Events content will be populated by EventsManager -->
+        </section>
+
+        <!-- Resources Section -->
+        <section id="section-resources" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Resource Library</h1>
+                <p class="section-subtitle">Access comprehensive educational materials and guides</p>
+            </div>
+            <!-- Resources content will be populated by ResourcesManager -->
+        </section>
+
+        <!-- Profile Section -->
+        <section id="section-profile" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">My Profile</h1>
+                <p class="section-subtitle">Manage your account information and preferences</p>
+            </div>
+            <!-- Profile content will be populated by ProfileManager -->
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="section-admin-dashboard" class="content-section">
+            <div class="section-header">
+                <h1 class="section-title">Admin Dashboard</h1>
+                <p class="section-subtitle">Administrative tools and system overview</p>
+            </div>
+            <!-- Admin content will be populated by AdminManager -->
+        </section>
+
+        <!-- Member Management Section -->
+        <section id="section-member-management" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Event Management Section -->
+        <section id="section-event-management" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="section-analytics" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+
+        <!-- Content Curation Section -->
+        <section id="section-content-curation" class="content-section">
+            <!-- Content populated by AdminManager -->
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/member-hub.js"></script>
+    <script src="../js/pwa.js"></script>
+    
+    <!-- Module Scripts -->
+    <script src="../js/modules/chat.js"></script>
+    <script src="../js/modules/profile.js"></script>
+    <script src="../js/modules/admin.js"></script>
+    <script src="../js/modules/connections.js"></script>
+    <script src="../js/modules/events.js"></script>
+    <script src="../js/modules/resources.js"></script>
+    
+    <!-- Initialize Modules -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all modules after dashboard is ready
+            setTimeout(() => {
+                // Initialize modules
+                window.chatManager = new ChatManager();
+                window.profileManager = new ProfileManager();
+                window.adminManager = new AdminManager();
+                window.connectionsManager = new ConnectionsManager();
+                window.eventsManager = new EventsManager();
+                window.resourcesManager = new ResourcesManager();
+                
+                // Set up module switching in member hub
+                const originalSwitchSection = window.afzMemberHub.switchSection;
+                window.afzMemberHub.switchSection = function(sectionName) {
+                    originalSwitchSection.call(this, sectionName);
+                    
+                    // Initialize specific modules when their sections are loaded
+                    switch(sectionName) {
+                        case 'chat':
+                            if (window.chatManager) window.chatManager.init();
+                            break;
+                        case 'connections':
+                            if (window.connectionsManager) window.connectionsManager.init();
+                            break;
+                        case 'events':
+                            if (window.eventsManager) window.eventsManager.init();
+                            break;
+                        case 'resources':
+                            if (window.resourcesManager) window.resourcesManager.init();
+                            break;
+                        case 'profile':
+                            if (window.profileManager) window.profileManager.init();
+                            break;
+                        case 'admin-dashboard':
+                        case 'member-management':
+                        case 'event-management':
+                        case 'analytics':
+                        case 'content-curation':
+                            if (window.adminManager) window.adminManager.switchAdminSection(sectionName);
+                            break;
+                    }
+                };
+                
+                console.log('AFZ Member Hub modules initialized successfully');
+            }, 2000);
+        });
+    </script>
+
+    <!-- Screen reader announcements -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

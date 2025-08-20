@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the AFZ community - Register or login to access personalized resources and connect with the albinism advocacy community in Zambia">
+    <meta name="keywords" content="AFZ, member, login, register, community, albinism, Zambia">
+    <meta name="author" content="Albinism Foundation of Zambia - AFZ">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#2b6cb0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Member Portal - Albinism Foundation of Zambia - AFZ">
+    <meta property="og:description" content="Join our community and access personalized resources for albinism advocacy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://albinism-awareness.com/pages/auth.html">
+    <meta property="og:image" content="../images/afz-logo-final.png">
+    
+    <title>Member Portal - AFZ | Albinism Foundation of Zambia</title>
+    
+    <!-- AFZ UNIFIED DESIGN SYSTEM -->
+    <link rel="stylesheet" href="../css/afz-unified-design.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    
+    <!-- Favicons and Icons -->
+<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    
+    <!-- PWA Icons for iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/pwa-icons/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="../images/pwa-icons/splash-screen.png">
+    <meta name="apple-mobile-web-app-title" content="AFZ Advocacy">
+    
+    <!-- Skip link for keyboard navigation -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 1000;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body class="auth-page">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../images/afz-logo-final.png" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
+                <div class="organization-info">
+                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" data-translate="org-tagline">Breaking the silence on Albinism</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link" data-translate="nav-about">About Us</a></li>
+                    <li><a href="programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="events.html" class="nav-link" data-translate="nav-events">Events</a></li>
+                    <li><a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="auth.html" class="nav-link active" data-translate="nav-member-portal">Member Portal</a></li>
+                    <li><a href="donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="auth-main">
+        <div class="auth-container">
+            <!-- Welcome Section -->
+            <section class="auth-welcome" aria-labelledby="welcome-heading">
+                <h2 id="welcome-heading" class="welcome-title" data-translate="auth-welcome-title">Join Our AFZ Community</h2>
+                <p class="welcome-description" data-translate="auth-welcome-desc">
+                    Become a member to access personalized resources, connect with fellow advocates, participate in impactful events, and track your journey in our albinism advocacy efforts across Zambia.
+                </p>
+                
+                <!-- Member Benefits -->
+                <div class="auth-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">👥</span>
+                        <div class="benefit-content">
+                            <strong data-translate="benefit-community-title">Connect & Network</strong>
+                            <span data-translate="benefit-community">Join a supportive community of advocates, families, and allies</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📚</span>
+                        <div class="benefit-content">
+                            <strong data-translate="benefit-resources-title">Exclusive Resources</strong>
+                            <span data-translate="benefit-resources">Access medical guides, educational materials, and advocacy tools</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📅</span>
+                        <div class="benefit-content">
+                            <strong data-translate="benefit-events-title">Events & Workshops</strong>
+                            <span data-translate="benefit-events">Register early for workshops, conferences, and community meetups</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📊</span>
+                        <div class="benefit-content">
+                            <strong data-translate="benefit-dashboard-title">Personal Dashboard</strong>
+                            <span data-translate="benefit-dashboard">Track your donations, event attendance, and advocacy impact</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🎯</span>
+                        <div class="benefit-content">
+                            <strong data-translate="benefit-personalized-title">Personalized Experience</strong>
+                            <span data-translate="benefit-personalized">Get content and resources tailored to your location and interests</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trust Indicators -->
+                <div class="auth-trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-icon">🔒</span>
+                        <span class="trust-text" data-translate="trust-secure">Secure & Private</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">✓</span>
+                        <span class="trust-text" data-translate="trust-verified">Verified Organization</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">👨‍⚕️</span>
+                        <span class="trust-text" data-translate="trust-medical">Medical Professional Network</span>
+                    </div>
+                </div>
+                
+                <!-- Preview Dashboard Button -->
+                <div class="auth-preview-section">
+                    <button class="btn-preview" onclick="showDashboardPreview()" data-translate="preview-dashboard">
+                        🎯 Preview Member Dashboard
+                    </button>
+                </div>
+            </section>
+
+            <!-- Auth Forms Container -->
+            <div class="auth-forms-container">
+                <!-- Tab Navigation -->
+                <div class="auth-tabs" role="tablist" aria-label="Authentication options">
+                    <button class="auth-tab active" id="login-tab" role="tab" aria-controls="login-panel" aria-selected="true" data-translate="auth-tab-login">
+                        Sign In
+                    </button>
+                    <button class="auth-tab" id="register-tab" role="tab" aria-controls="register-panel" aria-selected="false" data-translate="auth-tab-register">
+                        Create Account
+                    </button>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-panel active" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                    <form class="auth-form" id="loginForm" novalidate>
+                        <h3 class="form-title" data-translate="login-form-title">Welcome Back</h3>
+                        <p class="form-subtitle" data-translate="login-form-subtitle">Sign in to your AFZ account</p>
+                        
+                        <div class="form-group">
+                            <label for="login-email" data-translate="email-label">Email Address</label>
+                            <input type="email" id="login-email" name="email" required 
+                                   aria-describedby="login-email-error"
+                                   data-translate-placeholder="email-placeholder"
+                                   placeholder="Enter your email address">
+                            <div id="login-email-error" class="error-message" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password" data-translate="password-label">Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="login-password" name="password" required 
+                                       aria-describedby="login-password-error"
+                                       data-translate-placeholder="password-placeholder"
+                                       placeholder="Enter your password">
+                                <button type="button" class="password-toggle" aria-label="Show password" data-translate-aria="show-password">
+                                    <span class="password-toggle-icon">👁️</span>
+                                </button>
+                            </div>
+                            <div id="login-password-error" class="error-message" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="remember-me" name="rememberMe">
+                                <label for="remember-me" data-translate="remember-me">Remember me</label>
+                            </div>
+                            <a href="#forgot-password" class="forgot-password-link" data-translate="forgot-password">
+                                Forgot password?
+                            </a>
+                        </div>
+                        
+                        <button type="submit" class="auth-button primary" data-translate="login-button">
+                            Sign In
+                        </button>
+                        
+                        <div class="form-divider">
+                            <span data-translate="or-divider">or</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-button google-login" data-translate="login-google">
+                                <span class="social-icon">G</span>
+                                Continue with Google
+                            </button>
+                            <button type="button" class="social-button facebook-login" data-translate="login-facebook">
+                                <span class="social-icon">f</span>
+                                Continue with Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="auth-panel" id="register-panel" role="tabpanel" aria-labelledby="register-tab">
+                    <form class="auth-form" id="registerForm" novalidate>
+                        <h3 class="form-title" data-translate="register-form-title">Create Your Account</h3>
+                        <p class="form-subtitle" data-translate="register-form-subtitle">Join the AFZ community today</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-first-name" data-translate="first-name-label">First Name</label>
+                                <input type="text" id="register-first-name" name="firstName" required 
+                                       aria-describedby="register-first-name-error"
+                                       data-translate-placeholder="first-name-placeholder"
+                                       placeholder="Enter your first name">
+                                <div id="register-first-name-error" class="error-message" role="alert"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="register-last-name" data-translate="last-name-label">Last Name</label>
+                                <input type="text" id="register-last-name" name="lastName" required 
+                                       aria-describedby="register-last-name-error"
+                                       data-translate-placeholder="last-name-placeholder"
+                                       placeholder="Enter your last name">
+                                <div id="register-last-name-error" class="error-message" role="alert"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email" data-translate="email-label">Email Address</label>
+                            <input type="email" id="register-email" name="email" required 
+                                   aria-describedby="register-email-error"
+                                   data-translate-placeholder="email-placeholder"
+                                   placeholder="Enter your email address">
+                            <div id="register-email-error" class="error-message" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-phone" data-translate="phone-label">Phone Number</label>
+                            <input type="tel" id="register-phone" name="phone" 
+                                   aria-describedby="register-phone-help"
+                                   data-translate-placeholder="phone-placeholder"
+                                   placeholder="Enter your phone number">
+                            <div id="register-phone-help" class="field-help" data-translate="phone-help-optional">
+                                Optional - for important notifications
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-location" data-translate="location-label">Location</label>
+                            <select id="register-location" name="location" aria-describedby="register-location-help">
+                                <option value="" data-translate="location-select">Select your province</option>
+                                <option value="central">Central Province</option>
+                                <option value="copperbelt">Copperbelt Province</option>
+                                <option value="eastern">Eastern Province</option>
+                                <option value="luapula">Luapula Province</option>
+                                <option value="lusaka">Lusaka Province</option>
+                                <option value="muchinga">Muchinga Province</option>
+                                <option value="northern">Northern Province</option>
+                                <option value="northwestern">North-Western Province</option>
+                                <option value="southern">Southern Province</option>
+                                <option value="western">Western Province</option>
+                            </select>
+                            <div id="register-location-help" class="field-help" data-translate="location-help">
+                                Helps us connect you with local resources
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password" data-translate="password-label">Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="register-password" name="password" required 
+                                       aria-describedby="register-password-error register-password-requirements"
+                                       data-translate-placeholder="password-placeholder"
+                                       placeholder="Create a strong password">
+                                <button type="button" class="password-toggle" aria-label="Show password" data-translate-aria="show-password">
+                                    <span class="password-toggle-icon">👁️</span>
+                                </button>
+                            </div>
+                            <div id="register-password-requirements" class="field-help">
+                                <ul class="password-requirements">
+                                    <li data-translate="password-req-length">At least 8 characters</li>
+                                    <li data-translate="password-req-uppercase">One uppercase letter</li>
+                                    <li data-translate="password-req-lowercase">One lowercase letter</li>
+                                    <li data-translate="password-req-number">One number</li>
+                                </ul>
+                            </div>
+                            <div id="register-password-error" class="error-message" role="alert"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-confirm-password" data-translate="confirm-password-label">Confirm Password</label>
+                            <input type="password" id="register-confirm-password" name="confirmPassword" required 
+                                   aria-describedby="register-confirm-password-error"
+                                   data-translate-placeholder="confirm-password-placeholder"
+                                   placeholder="Confirm your password">
+                            <div id="register-confirm-password-error" class="error-message" role="alert"></div>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms-agreement" name="agreeToTerms" required>
+                            <label for="terms-agreement" data-translate="terms-agreement">
+                                I agree to the <a href="#terms" class="link">Terms of Service</a> and <a href="#privacy" class="link">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter-signup" name="subscribeNewsletter">
+                            <label for="newsletter-signup" data-translate="newsletter-signup-register">
+                                Subscribe to our newsletter for updates and resources
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="auth-button primary" data-translate="register-button">
+                            Create Account
+                        </button>
+                        
+                        <div class="form-divider">
+                            <span data-translate="or-divider">or</span>
+                        </div>
+                        
+                        <div class="social-login">
+                            <button type="button" class="social-button google-login" data-translate="register-google">
+                                <span class="social-icon">G</span>
+                                Sign up with Google
+                            </button>
+                            <button type="button" class="social-button facebook-login" data-translate="register-facebook">
+                                <span class="social-icon">f</span>
+                                Sign up with Facebook
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p data-translate="auth-footer-text">
+                    By joining AFZ, you're becoming part of a community dedicated to albinism advocacy and support in Zambia.
+                </p>
+                <div class="footer-links">
+                    <a href="../index.html" data-translate="back-to-home">← Back to Home</a>
+                    <a href="./contact.html" data-translate="need-help">Need Help?</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<!-- Scripts -->
+    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/pwa.js"></script>
+    
+    <!-- Screen reader announcements -->
+    <div id="sr-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

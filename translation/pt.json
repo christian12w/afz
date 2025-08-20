@@ -1,0 +1,45 @@
+{
+  "org-name": "Fundação do Albinismo da Zâmbia",
+  "org-tagline": "Defendendo Direitos, Construindo Consciência, Criando Mudança",
+  
+  "nav-home": "Início",
+  "nav-about": "Sobre Nós",
+  "nav-programs": "Programas",
+  "nav-resources": "Recursos",
+  "nav-advocacy": "Advocacia",
+  "nav-contact": "Contato",
+  "nav-donate": "Doar",
+  "nav-events": "Eventos",
+  "nav-member-portal": "Portal do Membro",
+  
+  "hero-title": "Capacitando Vidas, Protegendo Direitos",
+  "hero-description": "A Fundação do Albinismo da Zâmbia se dedica a defender os direitos das pessoas com albinismo, promover a conscientização e construir uma sociedade inclusiva onde todos possam prosperar.",
+  "cta-donate-main": "Doar Agora",
+  "cta-get-involved": "Envolver-se",
+  "cta-learn-more": "Saber Mais",
+  
+  "mission-heading": "Nossa Missão",
+  "mission-statement": "Defender os direitos, dignidade e inclusão das pessoas com albinismo na Zâmbia através de campanhas de conscientização, advocacia política, serviços de apoio e programas de capacitação comunitária.",
+  "stat-members": "Membros Apoiados",
+  "stat-programs": "Programas Ativos",
+  "stat-provinces": "Províncias Alcançadas",
+  
+  "focus-heading": "Nossas Áreas de Foco",
+  "focus-rights": "Advocacia de Direitos",
+  "focus-rights-desc": "Defendendo mudanças políticas e proteções legais para garantir igualdade de direitos e oportunidades para todas as pessoas com albinismo.",
+  "focus-awareness": "Campanhas de Conscientização",
+  "focus-awareness-desc": "Educando comunidades sobre o albinismo para combater mitos, equívocos e discriminação através de programas de alcance direcionados.",
+  "focus-support": "Serviços de Apoio",
+  "focus-support-desc": "Fornecendo serviços essenciais incluindo distribuição de protetor solar, roupas protetoras e coordenação de acesso à saúde.",
+  "focus-education": "Acesso à Educação",
+  "focus-education-desc": "Garantindo que crianças com albinismo tenham acesso à educação de qualidade com acomodações apropriadas e sistemas de apoio.",
+  
+  "news-heading": "Últimas Notícias e Atualizações",
+  "news-1-title": "AFZ Lança Campanha Nacional de Conscientização",
+  "news-1-excerpt": "Nossa campanha abrangente de conscientização alcança comunidades rurais em toda a Zâmbia para combater a discriminação e promover o entendimento.",
+  "news-2-title": "Vitória Política: Novas Medidas de Proteção Aprovadas",
+  "news-2-excerpt": "Governo aprova novas medidas legislativas para proteger pessoas com albinismo da violência e discriminação.",
+  "news-3-title": "Expansão do Programa de Apoio Educacional",
+  "news-3-excerpt": "AFZ estende programas de apoio educacional para incluir 200 estudantes adicionais com albinismo em todas as províncias.",
+  "read-more": "Ler Mais"
+}
