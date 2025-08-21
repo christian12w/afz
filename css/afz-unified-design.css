@@ -394,7 +394,10 @@ img {
 
 .logo {
     height: 60px;
-    width: auto;
+    width: 60px; /* enforce square for perfect rounding */
+    object-fit: cover;
+    border-radius: 50%; /* rounded logo */
+    border: 2px solid rgba(255,255,255,0.15);
 }
 
 .organization-info {
