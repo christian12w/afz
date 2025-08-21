@@ -1,7 +1,7 @@
 // Minimal Service Worker for AFZ Advocacy
 // Provides basic lifecycle handling and supports SKIP_WAITING messages
 
-const SW_VERSION = 'afz-sw-v1';
+const SW_VERSION = 'afz-sw-v2';
 
 self.addEventListener('install', (event) => {
     // Activate new SW immediately
@@ -10,7 +10,14 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
     // Take control of uncontrolled clients as soon as possible
-    event.waitUntil(self.clients.claim());
+    event.waitUntil((async () => {
+        await self.clients.claim();
+        // Notify all clients to reload so they fetch latest assets (CSS/JS)
+        const clients = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+        for (const client of clients) {
+            client.postMessage({ type: 'FORCE_RELOAD', message: `SW ${SW_VERSION} activated` });
+        }
+    })());
 });
 
 // Support messages from the page
