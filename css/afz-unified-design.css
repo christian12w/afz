@@ -11,7 +11,7 @@
     /* AFZ Brand Colors - Gold & Black Focus */
     --afz-gold: #DAA520;
     --afz-gold-light: #F4D03F;
-    --afz-gold-dark: #B7950B;
+    --afz-gold-dark: #8C6A00; /* darkened for better contrast */
     --afz-black: #000000;
     --afz-black-soft: #1A1A1A;
     --afz-white: #FFFFFF;
@@ -538,8 +538,8 @@ img {
 
 .cta-button.secondary {
     background: transparent;
-    color: var(--afz-gold);
-    border-color: var(--afz-gold);
+    color: #8C6A00; /* improved contrast */
+    border-color: #8C6A00; /* improved contrast */
 }
 
 .cta-button.secondary:hover {
