@@ -627,13 +627,18 @@ img {
     border-radius: var(--radius-md);
     color: var(--afz-white);
     transition: all 0.2s ease;
+    border: 2px solid rgba(255,255,255,0.2); /* improve visibility */
 }
-
+.social-link svg {
+    width: 26px; /* slightly larger */
+    height: 26px;
+}
 .social-link:hover {
     background: var(--afz-gold);
     color: var(--afz-black);
     transform: translateY(-2px);
     text-decoration: none;
+    border-color: var(--afz-gold);
 }
 
 .contact-info p {
