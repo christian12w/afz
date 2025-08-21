@@ -268,6 +268,43 @@ img {
     transform: rotate(180deg);
 }
 
+/* Mobile refinements: make language control compact and non-distracting */
+@media (max-width: 768px) {
+    .professional-language-selector {
+        top: auto;
+        right: var(--space-3);
+        bottom: var(--space-3);
+    }
+
+    .language-dropdown-btn {
+        padding: var(--space-1) var(--space-2);
+        min-height: 36px;
+        font-size: 0.8rem;
+        background: rgba(17, 24, 39, 0.55);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hide label text on mobile to reduce visual noise */
+    .language-text,
+    .dropdown-arrow {
+        display: none;
+    }
+
+    /* Open the dropdown upward when docked near the bottom */
+    .language-dropdown-menu {
+        top: auto;
+        bottom: 100%;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: var(--space-1);
+        transform: translateY(8px);
+    }
+
+    .language-dropdown-menu.open {
+        transform: translateY(0);
+    }
+}
+
 .language-dropdown-menu {
     position: absolute;
     top: 100%;
