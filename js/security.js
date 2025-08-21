@@ -633,7 +633,8 @@ class SecurityManager {
     }
 
     redirectToLogin() {
-        window.location.href = '/pages/member-portal.html';
+        // Redirect to existing auth page
+        window.location.href = '/pages/auth.html';
     }
 
     checkSecurityUpdates() {
