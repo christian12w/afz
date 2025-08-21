@@ -1231,8 +1231,8 @@ class AFZMemberHub {
         if (Notification.permission === 'granted' && document.hidden) {
             const desktopNotif = new Notification(notification.title, {
                 body: notification.message,
-                icon: '/images/afz-logo-small.png',
-                badge: '/images/afz-badge.png',
+                icon: './images/afz-logo-small.png',
+                badge: './images/afz-badge.png',
                 tag: notification.id,
                 requireInteraction: notification.priority === 'urgent'
             });
