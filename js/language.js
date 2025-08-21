@@ -273,10 +273,10 @@ class LanguageManager {
     // Ensure the professional language selector exists and is wired
     ensureProfessionalLanguageSelector() {
         const path = window.location.pathname;
-        const filename = path.split('/').pop() || '';
+        const filename = (path.split('/').pop() || 'index.html');
 
-        // Do not render on dashboard page
-        if (filename === 'dashboard.html') {
+        // Only render on home page
+        if (filename !== 'index.html') {
             return;
         }
 
@@ -285,13 +285,7 @@ class LanguageManager {
         if (!selector) {
             selector = this.createProfessionalLanguageSelector();
             if (selector) {
-                // Prefer mounting inside Member Hub header if present
-                const hubHeader = document.querySelector('.hub-header .header-container') || document.querySelector('.hub-header');
-                if (hubHeader) {
-                    hubHeader.appendChild(selector);
-                } else {
-                    document.body.prepend(selector);
-                }
+                document.body.prepend(selector);
             }
         }
 
