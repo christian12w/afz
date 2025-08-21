@@ -1023,7 +1023,10 @@
         }
         
         function startAutoSlide() {
+            const disableSlides = document.body.hasAttribute('data-disable-slideshow') || localStorage.getItem('afz-disable-slideshow') === '1';
+            if (disableSlides) return;
             slideInterval = setInterval(function() {
+                if (document.hidden) return;
                 slideIndex++;
                 const slides = document.querySelectorAll('.slide');
                 
