@@ -373,13 +373,13 @@
         function getPageName(pathname) {
             const pageNames = {
                 '/': 'Home',
-                '/index.html': 'Home',
-                '/pages/about.html': 'About AFZ',
-                '/pages/contact.html': 'Contact Us',
-                '/pages/donate.html': 'Donate',
-                '/pages/auth.html': 'Member Portal',
-                '/pages/events.html': 'Events',
-                '/pages/resources.html': 'Resources'
+                './index.html': 'Home',
+                './pages/about.html': 'About AFZ',
+                './pages/contact.html': 'Contact Us',
+                './pages/donate.html': 'Donate',
+                './pages/auth.html': 'Member Portal',
+                './pages/events.html': 'Events',
+                './pages/resources.html': 'Resources'
             };
             
             return pageNames[pathname] || pathname;
@@ -389,13 +389,13 @@
         function getPageIcon(pathname) {
             const pageIcons = {
                 '/': '🏠',
-                '/index.html': '🏠',
-                '/pages/about.html': 'ℹ️',
-                '/pages/contact.html': '📞',
-                '/pages/donate.html': '💝',
-                '/pages/auth.html': '👤',
-                '/pages/events.html': '📅',
-                '/pages/resources.html': '📚'
+                './index.html': '🏠',
+                './pages/about.html': 'ℹ️',
+                './pages/contact.html': '📞',
+                './pages/donate.html': '💝',
+                './pages/auth.html': '👤',
+                './pages/events.html': '📅',
+                './pages/resources.html': '📚'
             };
             
             return pageIcons[pathname] || '📄';

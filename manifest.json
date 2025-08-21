@@ -2,7 +2,7 @@
   "name": "Albinism Foundation of Zambia - AFZ",
   "short_name": "AFZ",
   "description": "Breaking the silence on Albinism - Advocating for rights, promoting awareness, and empowering persons with albinism across Zambia",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#DAA520",
@@ -85,7 +85,7 @@
       "name": "About AFZ",
       "short_name": "About",
       "description": "Learn about our mission and work",
-      "url": "/pages/about.html",
+      "url": "./pages/about.html",
       "icons": [
         {
           "src": "./images/pwa-icons/icon-192x192.png",
@@ -97,7 +97,7 @@
       "name": "Donate",
       "short_name": "Donate",
       "description": "Support our cause",
-      "url": "/pages/donate.html",
+      "url": "./pages/donate.html",
       "icons": [
         {
           "src": "./images/pwa-icons/icon-192x192.png",
