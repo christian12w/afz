@@ -285,7 +285,12 @@ class LanguageManager {
         if (!selector) {
             selector = this.createProfessionalLanguageSelector();
             if (selector) {
-                document.body.prepend(selector);
+                const headerContainer = document.querySelector('.site-header .header-container');
+                if (headerContainer) {
+                    headerContainer.appendChild(selector);
+                } else {
+                    document.body.prepend(selector);
+                }
             }
         }
 
