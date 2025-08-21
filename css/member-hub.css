@@ -49,3 +49,107 @@
     box-shadow: var(--shadow-lg);
     z-index: 2000;
 }
+
+/* Balanced layout refinements for Member Hub */
+.main-content {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--space-xl);
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: var(--space-md);
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.section-subtitle {
+    margin-top: var(--space-xs);
+    color: var(--text-secondary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+}
+
+.stat-card {
+    grid-column: span 3;
+    background: var(--surface);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-lg);
+}
+
+@media (max-width: 1024px) {
+    .stat-card { grid-column: span 6; }
+}
+
+@media (max-width: 640px) {
+    .stat-card { grid-column: span 12; }
+}
+
+.quick-actions-section { margin-bottom: var(--space-2xl); }
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-lg);
+}
+
+@media (max-width: 900px) {
+    .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 520px) {
+    .quick-actions-grid { grid-template-columns: 1fr; }
+}
+
+.quick-action-card {
+    background: var(--surface);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+}
+
+@media (max-width: 1024px) {
+    .dashboard-widgets { grid-template-columns: 1fr; }
+}
+
+.widget {
+    background: var(--surface);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-lg);
+}
+
+.nav-section .section-title {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+}
