@@ -193,7 +193,8 @@ img {
     position: fixed;
     top: var(--space-4);
     right: var(--space-4);
-    z-index: 1000;
+    z-index: 998; /* below header */
+    pointer-events: none; /* container doesn't block */
 }
 
 .language-dropdown-btn {
@@ -201,22 +202,25 @@ img {
     align-items: center;
     gap: var(--space-2);
     padding: var(--space-2) var(--space-3);
-    background: var(--afz-white);
-    border: 2px solid var(--gray-300);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-lg);
-    color: var(--gray-700);
+    color: var(--afz-white);
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
     min-height: 44px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: auto;
 }
 
 .language-dropdown-btn:hover {
-    background: var(--gray-50);
-    border-color: var(--afz-gold);
-    box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
 
 .language-dropdown-btn:focus-visible {
@@ -251,12 +255,12 @@ img {
 .current-lang-name {
     font-size: 0.875rem;
     font-weight: 600;
-    color: var(--gray-800);
+    color: var(--afz-white);
     line-height: 1;
 }
 
 .dropdown-arrow {
-    color: var(--gray-500);
+    color: var(--afz-white);
     transition: transform 0.2s ease;
 }
 
@@ -269,16 +273,20 @@ img {
     top: 100%;
     right: 0;
     margin-top: var(--space-1);
-    background: var(--afz-white);
-    border: 2px solid var(--gray-300);
+    background: rgba(17, 24, 39, 0.6);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
     min-width: 280px;
+    color: var(--afz-white);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
     transition: all 0.2s ease;
-    z-index: 1001;
+    z-index: 1002;
+    pointer-events: auto;
 }
 
 .language-dropdown-menu.open {
