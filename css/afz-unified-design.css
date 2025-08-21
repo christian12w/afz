@@ -459,6 +459,15 @@ img {
     border: 2px solid rgba(255,255,255,0.15);
 }
 
+/* Ensure footer logos are also rounded */
+.footer-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.06);
+}
+
 .organization-info {
     display: flex;
     flex-direction: column;
