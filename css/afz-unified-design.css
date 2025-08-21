@@ -274,6 +274,7 @@ img {
         top: var(--space-3);
         right: var(--space-3);
         bottom: auto;
+        pointer-events: auto; /* ensure taps work on mobile */
     }
 
     .language-dropdown-btn {
@@ -308,6 +309,10 @@ img {
         margin-top: var(--space-1);
         margin-bottom: 0;
         transform: translateY(-8px);
+        z-index: 1100; /* above mobile nav */
+        width: min(92vw, 320px);
+        max-height: 60vh;
+        overflow: auto;
     }
 
     .language-dropdown-menu.open {
