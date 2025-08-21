@@ -1216,9 +1216,18 @@ function switchTheme() {
     }
 }
 
-// Service Worker registration for PWA capabilities
+// Service Worker registration for PWA capabilities (guarded - PWA manager handles this)
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
+    window.addEventListener('load', async () => {
+        try {
+            const registrations = await navigator.serviceWorker.getRegistrations();
+            if (registrations && registrations.length > 0) {
+                console.log('SW already registered by another module, skipping dashboard registration');
+                return;
+            }
+        } catch (e) {
+            console.warn('Could not check existing SW registrations, attempting register once');
+        }
         navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
                 console.log('SW registered: ', registration);

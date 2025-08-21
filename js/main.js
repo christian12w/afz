@@ -6,6 +6,29 @@
 // Global Application Object
 window.AFZ = window.AFZ || {};
 
+// Global reload guard to prevent accidental reload loops across the app
+(function() {
+    if (window.__afzReloadGuardInstalled) return;
+    window.__afzReloadGuardInstalled = true;
+    try {
+        const originalReload = window.location.reload.bind(window.location);
+        window.location.reload = function(forceReload) {
+            const key = 'afzReloadGuardTs';
+            const lastTimestamp = Number(sessionStorage.getItem(key) || '0');
+            const now = Date.now();
+            // Block if a reload happened in the last 10 seconds
+            if (now - lastTimestamp < 10000) {
+                console.warn('[AFZ] Reload blocked to prevent loop');
+                return;
+            }
+            sessionStorage.setItem(key, String(now));
+            originalReload(forceReload);
+        };
+    } catch (e) {
+        console.warn('[AFZ] Failed to install reload guard', e);
+    }
+})();
+
 // Configuration
 AFZ.config = {
     supportedLanguages: ['en', 'fr', 'es', 'pt', 'ny', 'be', 'to', 'lo', 'sn', 'nd'],

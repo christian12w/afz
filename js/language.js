@@ -31,8 +31,13 @@ class LanguageManager {
         // DEBUG: Track all translation requests to identify old code
         this.debugTranslationRequests();
         
-        // NUCLEAR OPTION: Force clear all browser caches
-        await this.forceClearAllCaches();
+        // NUCLEAR OPTION: Force clear all browser caches (run at most once per session)
+        if (!sessionStorage.getItem('langCachesCleared')) {
+            sessionStorage.setItem('langCachesCleared', '1');
+            await this.forceClearAllCaches();
+        } else {
+            console.log('🧨 [Language System] Skipping cache clear (already done this session)');
+        }
         
         // Get saved language preference
         const savedLang = localStorage.getItem('afz-language') || 'en';
