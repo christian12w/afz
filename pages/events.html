@@ -1637,14 +1637,14 @@
             document.getElementById('categoryFilter').addEventListener('change', applyFilters);
             document.getElementById('locationFilter').addEventListener('change', applyFilters);
             
-            // Mobile menu functionality
+            // Mobile menu functionality (align with global NavigationManager)
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             if (mobileMenuToggle) {
                 mobileMenuToggle.addEventListener('click', function() {
                     const nav = document.getElementById('main-navigation');
                     const isExpanded = this.getAttribute('aria-expanded') === 'true';
                     this.setAttribute('aria-expanded', !isExpanded);
-                    nav.classList.toggle('nav-open');
+                    nav.classList.toggle('mobile-open');
                 });
             }
         });
