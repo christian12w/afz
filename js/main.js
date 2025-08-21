@@ -47,6 +47,32 @@ window.AFZ = window.AFZ || {};
     }, true);
 })();
 
+// Global debug overlay to surface reload attempts and major events
+(function() {
+    const enableOverlay = localStorage.getItem('afz-debug-overlay') === '1';
+    if (!enableOverlay) return;
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;bottom:10px;right:10px;max-width:60vw;z-index:99999;background:rgba(0,0,0,0.7);color:#fff;padding:8px 12px;border-radius:6px;font:12px/1.4 sans-serif;pointer-events:none;white-space:pre-wrap;';
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(overlay));
+    const log = (msg) => {
+        const ts = new Date().toLocaleTimeString();
+        overlay.textContent = `[${ts}] ${msg}\n` + overlay.textContent;
+    };
+    // Hook reload wrapper
+    const originalReload = window.location.reload.bind(window.location);
+    window.location.reload = function(forceReload) {
+        log(`Reload requested (force=${!!forceReload}) by ${new Error().stack.split('\n')[2] || 'unknown'}`);
+        originalReload(forceReload);
+    };
+    // Visibility changes
+    document.addEventListener('visibilitychange', () => log(`Visibility: ${document.visibilityState}`));
+    // SW controller changes
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.addEventListener('controllerchange', () => log('Service worker controllerchange'));
+        navigator.serviceWorker.addEventListener('message', (e) => log(`SW message: ${JSON.stringify(e.data)}`));
+    }
+})();
+
 // Configuration
 AFZ.config = {
     supportedLanguages: ['en', 'fr', 'es', 'pt', 'ny', 'be', 'to', 'lo', 'sn', 'nd'],
