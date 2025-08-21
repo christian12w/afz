@@ -53,10 +53,50 @@ class LanguageManager {
         // Ensure professional language selector exists on this page
         this.ensureProfessionalLanguageSelector();
 
+        // Ensure viewport meta for proper mobile scaling (especially on Android)
+        this.ensureViewportMetaTag();
+
+        // Inject runtime CSS to force visibility and stacking on mobile
+        this.injectMobileLanguageVisibilityStyles();
+
         // Setup event listeners
         this.setupEventListeners();
         
         console.log('🚀 [Language System] Language Manager initialized successfully');
+    }
+
+    ensureViewportMetaTag() {
+        try {
+            const hasViewport = document.querySelector('meta[name="viewport"]');
+            if (!hasViewport) {
+                const meta = document.createElement('meta');
+                meta.setAttribute('name', 'viewport');
+                meta.setAttribute('content', 'width=device-width, initial-scale=1, viewport-fit=cover');
+                document.head.appendChild(meta);
+            }
+        } catch (_) {
+            /* no-op */
+        }
+    }
+
+    injectMobileLanguageVisibilityStyles() {
+        const styleId = 'afz-language-visibility-overrides';
+        if (document.getElementById(styleId)) return;
+
+        const style = document.createElement('style');
+        style.id = styleId;
+        style.textContent = `
+            /* Force language control visibility and stacking on mobile */
+            .professional-language-selector { position: fixed !important; top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); z-index: 2147483647 !important; pointer-events: auto !important; }
+            @media (max-width: 768px) {
+                .professional-language-selector { top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); }
+                .language-dropdown-btn { width: 46px; height: 46px; min-height: 46px; border-radius: 50%; background: #ffffff !important; border: 2px solid #DAA520 !important; box-shadow: 0 8px 18px rgba(0,0,0,0.25) !important; padding: 0; display: flex; align-items: center; justify-content: center; }
+                .current-flag { display: block !important; font-size: 1.2rem; line-height: 1; }
+                .language-text, .dropdown-arrow { display: none !important; }
+                .language-dropdown-menu { z-index: 2147483000 !important; width: min(92vw, 340px); max-height: 65vh; overflow: auto; background: #ffffff !important; color: #111827 !important; border: 1px solid rgba(0,0,0,0.12); top: 100% !important; right: 0 !important; margin-top: 8px !important; }
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     // DEBUG: Track all translation requests to identify old code
