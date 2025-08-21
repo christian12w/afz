@@ -7,6 +7,7 @@ class NavigationManager {
     constructor() {
         this.mobileMenuOpen = false;
         this.currentPage = this.getCurrentPage();
+        this.autoHideHeaderEnabled = document.body && document.body.hasAttribute('data-auto-hide-header');
         this.init();
     }
 
@@ -189,11 +190,13 @@ class NavigationManager {
                 header.classList.remove('scrolled');
             }
 
-            // Hide/show header on scroll (optional enhancement)
-            if (currentScrollY > headerHeight && currentScrollY > lastScrollY) {
-                header.classList.add('header-hidden');
-            } else {
-                header.classList.remove('header-hidden');
+            // Hide/show header on scroll only if explicitly enabled via data-auto-hide-header
+            if (this.autoHideHeaderEnabled) {
+                if (currentScrollY > headerHeight && currentScrollY > lastScrollY) {
+                    header.classList.add('header-hidden');
+                } else {
+                    header.classList.remove('header-hidden');
+                }
             }
 
             lastScrollY = currentScrollY;
