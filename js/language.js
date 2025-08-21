@@ -31,12 +31,16 @@ class LanguageManager {
         // DEBUG: Track all translation requests to identify old code
         this.debugTranslationRequests();
         
-        // NUCLEAR OPTION: Force clear all browser caches (run at most once per session)
-        if (!sessionStorage.getItem('langCachesCleared')) {
-            sessionStorage.setItem('langCachesCleared', '1');
-            await this.forceClearAllCaches();
-        } else {
-            console.log('🧨 [Language System] Skipping cache clear (already done this session)');
+        // Optional nuclear cache clear – disabled by default. Enable only for local debugging.
+        // To enable, set in DevTools: localStorage.setItem('afz-force-clear-caches','1')
+        const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+        const shouldForceClear = isLocalhost && localStorage.getItem('afz-force-clear-caches') === '1';
+        if (shouldForceClear) {
+            const alreadyCleared = sessionStorage.getItem('langCachesCleared') === '1';
+            if (!alreadyCleared) {
+                sessionStorage.setItem('langCachesCleared', '1');
+                await this.forceClearAllCaches();
+            }
         }
         
         // Get saved language preference
@@ -121,16 +125,8 @@ class LanguageManager {
             
             console.log('🧨 [Language System] All caches cleared successfully');
             
-            // FORCE RELOAD to eliminate any cached JavaScript
-            console.log('🧨 [Language System] Force reloading page to eliminate cached JavaScript...');
-            if (!sessionStorage.getItem('langForceReloaded')) {
-                sessionStorage.setItem('langForceReloaded', '1');
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
-            } else {
-                console.log('⚠️ [Language System] Skipping reload to prevent loop (langForceReloaded)');
-            }
+            // Do not force reload in production; leave page as-is after clearing
+            console.log('🧨 [Language System] Caches cleared (no reload triggered)');
             
         } catch (error) {
             console.warn('⚠️ [Language System] Some cache clearing failed:', error);
