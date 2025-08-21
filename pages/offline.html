@@ -294,7 +294,7 @@
             updateConnectionStatus();
             
             // Also try to fetch a small resource to double-check connectivity
-            fetch('/manifest.json', {
+            fetch(new URL('manifest.json', window.location.href).toString(), {
                 method: 'HEAD',
                 cache: 'no-cache'
             })

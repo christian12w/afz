@@ -633,8 +633,9 @@ class SecurityManager {
     }
 
     redirectToLogin() {
-        // Redirect to existing auth page
-        window.location.href = '/pages/auth.html';
+        // Redirect to existing auth page (relative-safe)
+        const authUrl = new URL('pages/auth.html', window.location.href).toString();
+        window.location.href = authUrl;
     }
 
     checkSecurityUpdates() {
