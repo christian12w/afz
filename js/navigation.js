@@ -108,7 +108,7 @@ class NavigationManager {
         
         if (nav && toggle) {
             this.mobileMenuOpen = true;
-            nav.classList.add('mobile-menu-open');
+            nav.classList.add('mobile-open');
             toggle.classList.add('mobile-menu-active');
             toggle.setAttribute('aria-expanded', 'true');
             
@@ -129,7 +129,7 @@ class NavigationManager {
         
         if (nav && toggle) {
             this.mobileMenuOpen = false;
-            nav.classList.remove('mobile-menu-open');
+            nav.classList.remove('mobile-open');
             toggle.classList.remove('mobile-menu-active');
             toggle.setAttribute('aria-expanded', 'false');
             
