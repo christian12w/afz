@@ -2,6 +2,8 @@
 
 A professional, modern, and accessible web application designed to mirror the AFZ's mission of advocating for albinism rights in Zambia.
 
+Note: The application registers a service worker at `/sw.js`. Ensure this file exists at the site root in production to avoid 404s, or update the registration paths in `js/pwa.js` and `js/dashboard.js` to match your deployment.
+
 ## 🎯 Project Overview
 
 This application provides a comprehensive platform for the Albinism Foundation Zambia to:
@@ -198,149 +200,19 @@ Using `pages/contact.html` as a template, create:
 1. **About Page** (`pages/about.html`)
    - AFZ history and mission
    - Team member profiles
-   - Organizational achievements
-   - Partnership information
 
 2. **Programs Page** (`pages/programs.html`)
-   - Detailed program descriptions
-   - Success stories
-   - How to apply for services
-   - Program impact statistics
+   - Overview of AFZ programs
+   - Program details and success stories
 
 3. **Resources Page** (`pages/resources.html`)
    - Educational materials
    - Downloadable resources
-   - Links to external resources
-   - Support guides
 
 4. **Advocacy Page** (`pages/advocacy.html`)
-   - Current campaigns
-   - Policy positions
-   - How to get involved in advocacy
-   - Legislative updates
-
-### 🔒 Security Considerations
-
-#### Form Security:
-- Implement CSRF protection
-- Add rate limiting to prevent spam
-- Validate and sanitize all inputs
-- Use HTTPS for all form submissions
-
-#### Content Security:
-- Implement Content Security Policy (CSP)
-- Add proper CORS headers
-- Validate file uploads if implemented
-- Regular security updates
-
-### 📈 Performance Optimizations
-
-#### Immediate Improvements:
-1. **Image Optimization**: Compress all images and use modern formats (WebP with fallbacks)
-2. **CDN**: Consider using a CDN for static assets
-3. **Caching**: Implement proper browser caching headers
-4. **Minification**: Minify CSS and JavaScript for production
-
-#### Advanced Optimizations:
-1. **Service Worker**: For offline functionality
-2. **Critical CSS**: Inline critical CSS for faster rendering
-3. **Image Lazy Loading**: Already implemented in HTML
-4. **Font Optimization**: Consider web font optimization
-
-### 🧪 Testing Requirements
-
-#### Accessibility Testing:
-- Screen reader testing (NVDA, JAWS, VoiceOver)
-- Keyboard navigation testing
-- Color contrast validation
-- WCAG 2.1 AA compliance audit
-
-#### Cross-Browser Testing:
-- Chrome, Firefox, Safari, Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Internet Explorer 11 (if required)
-
-#### Device Testing:
-- Various screen sizes (320px to 1920px+)
-- Touch device functionality
-- Print styles verification
-
-### 🚀 Deployment Checklist
-
-#### Pre-Deployment:
-- [ ] Replace all placeholder images
-- [ ] Update contact information
-- [ ] Review and finalize translations
-- [ ] Configure backend endpoints
-- [ ] Set up domain and hosting
-- [ ] Configure SSL certificate
-- [ ] Set up Google Analytics (if desired)
-
-#### Post-Deployment:
-- [ ] Submit to search engines
-- [ ] Set up monitoring and analytics
-- [ ] Create backup procedures
-- [ ] Plan content update workflow
-- [ ] Train team on content management
-
-### 📞 Support and Maintenance
-
-#### Content Updates:
-The application is designed for easy content updates:
-- News items can be updated in `index.html`
-- Contact information centralized in translation files
-- Statistics can be updated in the mission section
-
-#### Code Maintenance:
-- Regular dependency updates
-- Security patch applications
-- Performance monitoring
-- Browser compatibility updates
-
-## 🤝 Additional Feature Suggestions
-
-### Phase 2 Enhancements:
-1. **Content Management System**: WordPress, Strapi, or custom CMS
-2. **Event Calendar**: For AFZ events and meetings
-3. **Member Portal**: For members to access resources
-4. **Donation Integration**: PayPal, Stripe, or local payment systems
-5. **Blog/News System**: Dynamic news and article management
-6. **Search Functionality**: Site-wide search capability
-7. **Social Media Integration**: Live social media feeds
-8. **Multi-media Gallery**: Photo and video galleries
-9. **Document Library**: Downloadable resources and reports
-10. **Interactive Maps**: Office locations and service areas
-
-## 📊 Analytics and Insights
-
-Consider tracking:
-- Page views and user engagement
-- Contact form submissions
-- Language preferences
-- Geographic distribution of visitors
-- Accessibility feature usage
-- Mobile vs. desktop usage
-
-## 🌍 Internationalization Notes
-
-The current implementation supports:
-- Left-to-right text direction
-- Dynamic language switching
-- Localized content
-- Cultural appropriate imagery (to be implemented)
-
-For future expansion, consider:
-- Additional African languages
-- Regional customizations
-- Cultural adaptations
-- Local currency support (for donations)
+   - Advocacy campaigns
+   - Policy initiatives and calls to action
 
 ---
 
-## 📝 Final Notes
-
-This application provides a solid foundation for AFZ's digital advocacy efforts. The focus on accessibility, multilingual support, and modern design ensures the platform can effectively serve the diverse community of individuals with albinism in Zambia.
-
-For technical support or questions about implementation, please refer to the code comments or contact the development team.
-
-**Built with accessibility, inclusion, and advocacy in mind. 🤝**
+This project aims to provide a comprehensive and professional web presence for AFZ, aligning visual identity with mission-driven goals. Contributions and feedback are welcome to refine and expand functionality.
