@@ -29,6 +29,18 @@ window.AFZ = window.AFZ || {};
     }
 })();
 
+// Global image error fallback: if an image fails to load, hide it or swap to a placeholder
+(function() {
+    window.addEventListener('error', function(e) {
+        const target = e.target || e.srcElement;
+        if (target && target.tagName === 'IMG') {
+            // Basic strategy: if image missing, hide element to prevent layout thrash
+            target.style.visibility = 'hidden';
+            target.style.display = 'none';
+        }
+    }, true);
+})();
+
 // Configuration
 AFZ.config = {
     supportedLanguages: ['en', 'fr', 'es', 'pt', 'ny', 'be', 'to', 'lo', 'sn', 'nd'],
