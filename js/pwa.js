@@ -39,8 +39,10 @@ class AFZPWAManager {
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             try {
-                this.swRegistration = await navigator.serviceWorker.register('/sw.js', {
-                    scope: '/'
+                const swUrl = new URL('sw.js', window.location.origin + window.location.pathname).pathname.replace(/\/[^/]*$/, '/sw.js');
+                const scopeUrl = new URL('./', window.location.href).pathname;
+                this.swRegistration = await navigator.serviceWorker.register(swUrl, {
+                    scope: scopeUrl
                 });
                 
                 console.log('[PWA] Service Worker registered successfully:', this.swRegistration);
@@ -330,7 +332,8 @@ class AFZPWAManager {
     // Check connection with network request
     async checkConnection() {
         try {
-            const response = await fetch('/manifest.json', { 
+            const manifestUrl = new URL('manifest.json', window.location.href).toString();
+            const response = await fetch(manifestUrl, { 
                 method: 'HEAD', 
                 cache: 'no-cache' 
             });

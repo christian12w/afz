@@ -293,11 +293,11 @@ class LanguageManager {
     async loadTranslations(langCode) {
         try {
             // Simplified path resolution - always use root translation folder
-            const translationPath = `/translation/${langCode}.json`;
+            const translationPath = new URL(`translation/${langCode}.json`, window.location.href).toString();
             
             // Add cache-busting parameter for debugging
             const timestamp = Date.now();
-            const translationURL = `${translationPath}?v=${timestamp}`;
+            const translationURL = `${translationPath}${translationPath.includes('?') ? '&' : '?'}v=${timestamp}`;
             
             console.log(`🌐 [Language System] Loading translations for ${langCode} from: ${translationPath}`);
             console.log(`🌐 [Language System] Full request URL with cache-bust: ${translationURL}`);
