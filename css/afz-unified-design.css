@@ -271,17 +271,22 @@ img {
 /* Mobile refinements: make language control compact and non-distracting */
 @media (max-width: 768px) {
     .professional-language-selector {
-        top: auto;
+        top: var(--space-3);
         right: var(--space-3);
-        bottom: var(--space-3);
+        bottom: auto;
     }
 
     .language-dropdown-btn {
-        padding: var(--space-1) var(--space-2);
-        min-height: 36px;
-        font-size: 0.8rem;
-        background: rgba(17, 24, 39, 0.55);
-        border-color: rgba(255, 255, 255, 0.2);
+        padding: 0;
+        width: 42px;
+        height: 42px;
+        min-height: 42px;
+        border-radius: 50%;
+        background: rgba(17, 24, 39, 0.75);
+        border-color: rgba(255, 255, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Hide label text on mobile to reduce visual noise */
@@ -290,14 +295,19 @@ img {
         display: none;
     }
 
+    .current-flag {
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
     /* Open the dropdown upward when docked near the bottom */
     .language-dropdown-menu {
-        top: auto;
-        bottom: 100%;
+        top: 100%;
+        bottom: auto;
         right: 0;
-        margin-top: 0;
-        margin-bottom: var(--space-1);
-        transform: translateY(8px);
+        margin-top: var(--space-1);
+        margin-bottom: 0;
+        transform: translateY(-8px);
     }
 
     .language-dropdown-menu.open {
