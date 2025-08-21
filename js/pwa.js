@@ -39,11 +39,10 @@ class AFZPWAManager {
     async registerServiceWorker() {
         if ('serviceWorker' in navigator) {
             try {
-                const swUrl = new URL('sw.js', window.location.origin + window.location.pathname).pathname.replace(/\/[^/]*$/, '/sw.js');
-                const scopeUrl = new URL('./', window.location.href).pathname;
-                this.swRegistration = await navigator.serviceWorker.register(swUrl, {
-                    scope: scopeUrl
-                });
+                const baseDir = window.location.pathname.replace(/[^/]*$/, '');
+                const swUrl = baseDir + 'sw.js';
+                const scopeUrl = baseDir;
+                this.swRegistration = await navigator.serviceWorker.register(swUrl, { scope: scopeUrl });
                 
                 console.log('[PWA] Service Worker registered successfully:', this.swRegistration);
                 

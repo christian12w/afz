@@ -1228,7 +1228,8 @@ if ('serviceWorker' in navigator) {
         } catch (e) {
             console.warn('Could not check existing SW registrations, attempting register once');
         }
-        const swUrl = new URL('sw.js', window.location.origin + window.location.pathname).pathname.replace(/\/[^/]*$/, '/sw.js');
+        const baseDir = window.location.pathname.replace(/[^/]*$/, '');
+        const swUrl = baseDir + 'sw.js';
         navigator.serviceWorker.register(swUrl)
             .then((registration) => {
                 console.log('SW registered: ', registration);
