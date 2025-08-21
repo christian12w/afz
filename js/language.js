@@ -292,8 +292,8 @@ class LanguageManager {
 
     async loadTranslations(langCode) {
         try {
-            // Simplified path resolution - always use root translations folder
-            const translationPath = `/translations/${langCode}.json`;
+            // Simplified path resolution - always use root translation folder
+            const translationPath = `/translation/${langCode}.json`;
             
             // Add cache-busting parameter for debugging
             const timestamp = Date.now();

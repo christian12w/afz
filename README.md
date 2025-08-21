@@ -110,7 +110,7 @@ Update the following placeholders in HTML files and translations:
 - Phone: `+260 123 456 789` (placeholder number)
 - Email: `info@afz.org.zm` (verify if correct)
 
-**In translation files** (`/translations/*.json`):
+**In translation files** (`/translation/*.json`):
 - Update `"address"` field with actual office address
 - Verify phone and email accuracy
 - Review all translations for accuracy
