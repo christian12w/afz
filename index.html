@@ -804,7 +804,11 @@
                 }
                 
                 function startAutoSlide() {
+                    const disableSlides = document.body.hasAttribute('data-disable-slideshow') || localStorage.getItem('afz-disable-slideshow') === '1';
+                    if (disableSlides) return;
+                    // Pause when tab is hidden to avoid jitter on visibility changes
                     autoSlideTimer = setInterval(() => {
+                        if (document.hidden) return;
                         if (!slideshow.matches(':hover')) {
                             plusSlides(1);
                         }

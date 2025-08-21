@@ -31,12 +31,18 @@ window.AFZ = window.AFZ || {};
 
 // Global image error fallback: if an image fails to load, hide it or swap to a placeholder
 (function() {
+    const placeholderSrc = './images/placeholder.svg';
     window.addEventListener('error', function(e) {
         const target = e.target || e.srcElement;
         if (target && target.tagName === 'IMG') {
-            // Basic strategy: if image missing, hide element to prevent layout thrash
-            target.style.visibility = 'hidden';
-            target.style.display = 'none';
+            // Swap to placeholder once to avoid infinite loop
+            const isAlreadyPlaceholder = (target.src || '').includes('placeholder.svg');
+            if (!isAlreadyPlaceholder) {
+                target.src = placeholderSrc;
+                target.removeAttribute('srcset');
+                target.style.visibility = '';
+                target.style.display = '';
+            }
         }
     }, true);
 })();
