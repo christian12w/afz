@@ -280,22 +280,8 @@ class LanguageManager {
             return;
         }
 
-        // If markup doesn't exist, inject it
-        let selector = document.querySelector('.professional-language-selector');
-        if (!selector) {
-            selector = this.createProfessionalLanguageSelector();
-            if (selector) {
-                const headerContainer = document.querySelector('.site-header .header-container');
-                if (headerContainer) {
-                    headerContainer.appendChild(selector);
-                } else {
-                    document.body.prepend(selector);
-                }
-            }
-        }
-
-        // Bind handlers if not already bound elsewhere
-        this.bindProfessionalLanguageSelector();
+        // Language selector removed as per current requirement
+        return;
     }
 
     createProfessionalLanguageSelector() {
