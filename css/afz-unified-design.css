@@ -193,8 +193,8 @@ img {
     position: fixed;
     top: var(--space-4);
     right: var(--space-4);
-    z-index: 1002; /* above header but non-blocking container */
-    pointer-events: none; /* container doesn't block */
+    z-index: 10050; /* ensure above all UI */
+    pointer-events: auto; /* allow interaction */
 }
 
 .language-dropdown-btn {
@@ -271,30 +271,34 @@ img {
 /* Mobile refinements: make language control compact and non-distracting */
 @media (max-width: 768px) {
     .professional-language-selector {
-        top: var(--space-3);
-        right: var(--space-3);
+        top: max(var(--space-3), env(safe-area-inset-top));
+        right: calc(var(--space-3) + env(safe-area-inset-right));
         bottom: auto;
         pointer-events: auto; /* ensure taps work on mobile */
     }
 
     .language-dropdown-btn {
         padding: 0;
-        width: 42px;
-        height: 42px;
-        min-height: 42px;
+        width: 44px;
+        height: 44px;
+        min-height: 44px;
         border-radius: 50%;
-        background: rgba(17, 24, 39, 0.75);
-        border-color: rgba(255, 255, 255, 0.3);
+        background: #ffffff;
+        border: 2px solid var(--afz-gold);
+        color: #111827;
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    /* Hide label text on mobile to reduce visual noise */
-    .language-text,
-    .dropdown-arrow {
-        display: none;
-    }
+    /* Show concise language code instead of label/flag */
+    .current-language { justify-content: center; }
+    .current-flag { display: none; }
+    .language-text { display: inline-flex !important; }
+    .language-label { display: none; }
+    .current-lang-name { display: block; font-size: 0.8rem; font-weight: 700; color: #111827; line-height: 1; }
+    .dropdown-arrow { display: none; }
 
     .current-flag {
         font-size: 1.2rem;
@@ -309,10 +313,13 @@ img {
         margin-top: var(--space-1);
         margin-bottom: 0;
         transform: translateY(-8px);
-        z-index: 1100; /* above mobile nav */
+        z-index: 11000; /* above mobile nav and overlays */
         width: min(92vw, 320px);
         max-height: 60vh;
         overflow: auto;
+        background: #ffffff;
+        color: #111827;
+        border: 1px solid rgba(0,0,0,0.12);
     }
 
     .language-dropdown-menu.open {
