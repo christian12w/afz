@@ -805,7 +805,8 @@
                 
                 function startAutoSlide() {
                     const disableSlides = document.body.hasAttribute('data-disable-slideshow') || localStorage.getItem('afz-disable-slideshow') === '1';
-                    if (disableSlides) return;
+                    const prefersReducedMotion = (window.AFZ && AFZ.state && AFZ.state.isReducedMotion) || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    if (disableSlides || prefersReducedMotion) return;
                     // Pause when tab is hidden to avoid jitter on visibility changes
                     autoSlideTimer = setInterval(() => {
                         if (document.hidden) return;
