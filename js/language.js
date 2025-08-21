@@ -50,6 +50,9 @@ class LanguageManager {
         // Initialize language
         await this.setLanguage(savedLang);
         
+        // Ensure professional language selector exists on this page
+        this.ensureProfessionalLanguageSelector();
+
         // Setup event listeners
         this.setupEventListeners();
         
@@ -225,6 +228,154 @@ class LanguageManager {
                 languageDropdown.classList.remove('show');
             });
         }
+    }
+
+    // Ensure the professional language selector exists and is wired
+    ensureProfessionalLanguageSelector() {
+        // If markup doesn't exist, inject it
+        let selector = document.querySelector('.professional-language-selector');
+        if (!selector) {
+            selector = this.createProfessionalLanguageSelector();
+            if (selector) {
+                document.body.prepend(selector);
+            }
+        }
+
+        // Bind handlers if not already bound elsewhere
+        this.bindProfessionalLanguageSelector();
+    }
+
+    createProfessionalLanguageSelector() {
+        try {
+            const container = document.createElement('div');
+            container.className = 'professional-language-selector';
+            container.setAttribute('role', 'region');
+            container.setAttribute('aria-label', 'Language selection');
+
+            container.innerHTML = `
+                <button class="language-dropdown-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+                    <div class="current-language">
+                        <span class="current-flag">${this.getLanguageDisplayInfo(this.currentLanguage).flag}</span>
+                        <div class="language-text">
+                            <span class="language-label" data-translate="language.label">Language</span>
+                            <span class="current-lang-name">${this.getLanguageDisplayInfo(this.currentLanguage).shortName}</span>
+                        </div>
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 11l-4-4h8l-4 4z"/></svg>
+                    </div>
+                </button>
+                <div class="language-dropdown-menu" role="listbox" aria-label="Available languages">
+                    <div class="language-section">
+                        <h3 class="section-heading" data-translate="language.international">International</h3>
+                        <div class="language-options">
+                            ${this.renderLanguageOption('en', '🇺🇸', 'English', 'English')}
+                            ${this.renderLanguageOption('fr', '🇫🇷', 'French', 'Français')}
+                            ${this.renderLanguageOption('es', '🇪🇸', 'Spanish', 'Español')}
+                            ${this.renderLanguageOption('pt', '🇵🇹', 'Portuguese', 'Português')}
+                        </div>
+                    </div>
+                    <div class="language-section">
+                        <h3 class="section-heading" data-translate="language.zambia">Zambia & Region</h3>
+                        <div class="language-options">
+                            ${this.renderLanguageOption('ny', '🇿🇲', 'Nyanja', 'Nyanja')}
+                            ${this.renderLanguageOption('be', '🇿🇲', 'Bemba', 'Bemba')}
+                            ${this.renderLanguageOption('to', '🇿🇲', 'Tonga', 'Tonga')}
+                            ${this.renderLanguageOption('lo', '🇿🇲', 'Lozi', 'Lozi')}
+                            ${this.renderLanguageOption('sn', '🇿🇼', 'Shona', 'Shona')}
+                            ${this.renderLanguageOption('nd', '🇿🇼', 'Ndebele', 'Ndebele')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            return container;
+        } catch (error) {
+            console.warn('Failed to create professional language selector:', error);
+            return null;
+        }
+    }
+
+    renderLanguageOption(code, flag, name, nativeName) {
+        const isSelected = this.currentLanguage === code ? ' aria-selected="true"' : '';
+        return `
+            <button class="language-option" data-lang="${code}" role="option"${isSelected}>
+                <span class="flag">${flag}</span>
+                <div class="language-info">
+                    <span class="lang-name">${name}</span>
+                    <span class="lang-native">${nativeName}</span>
+                </div>
+            </button>
+        `;
+    }
+
+    bindProfessionalLanguageSelector() {
+        if (window.languageUIBound) {
+            return; // Already wired by page script
+        }
+
+        const languageDropdownBtn = document.querySelector('.language-dropdown-btn');
+        const languageDropdownMenu = document.querySelector('.language-dropdown-menu');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const currentFlag = document.querySelector('.current-flag');
+        const currentLangName = document.querySelector('.current-lang-name');
+
+        if (!languageDropdownBtn || !languageDropdownMenu) {
+            return;
+        }
+
+        // Guard against double-binding
+        if (languageDropdownBtn.dataset.bound === '1') {
+            return;
+        }
+
+        languageDropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isExpanded = languageDropdownBtn.getAttribute('aria-expanded') === 'true';
+            languageDropdownBtn.setAttribute('aria-expanded', String(!isExpanded));
+            languageDropdownMenu.classList.toggle('open');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.professional-language-selector')) {
+                languageDropdownBtn.setAttribute('aria-expanded', 'false');
+                languageDropdownMenu.classList.remove('open');
+            }
+        });
+
+        languageOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.getAttribute('data-lang');
+                const flag = option.querySelector('.flag')?.textContent || '';
+                const langName = option.querySelector('.lang-name')?.textContent || '';
+
+                if (currentFlag) currentFlag.textContent = flag;
+                if (currentLangName) currentLangName.textContent = langName;
+
+                languageOptions.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+                option.setAttribute('aria-selected', 'true');
+
+                languageDropdownBtn.setAttribute('aria-expanded', 'false');
+                languageDropdownMenu.classList.remove('open');
+
+                localStorage.setItem('afz-language', lang);
+                this.setLanguage(lang);
+            });
+        });
+
+        // Initialize display from saved preference
+        const savedLang = localStorage.getItem('afz-language');
+        if (savedLang) {
+            const savedOption = document.querySelector(`[data-lang="${savedLang}"]`);
+            if (savedOption) {
+                const flag = savedOption.querySelector('.flag')?.textContent || '';
+                const langName = savedOption.querySelector('.lang-name')?.textContent || '';
+                if (currentFlag) currentFlag.textContent = flag;
+                if (currentLangName) currentLangName.textContent = langName;
+                savedOption.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        languageDropdownBtn.dataset.bound = '1';
+        window.languageUIBound = true;
     }
     
     openLanguageModal() {
