@@ -138,6 +138,8 @@
             position: relative;
             overflow: hidden;
             border-bottom: 3px solid var(--primary-gold);
+            box-shadow: 0 0 30px rgba(255, 165, 0, 0.1);
+            margin: 2rem 0;
         }
         
         .founder-section::before {
@@ -151,12 +153,49 @@
             opacity: 0.3;
         }
         
+        .founder-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-gold), var(--primary-blue));
+            background-size: 200% 100%;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
         .founder-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
             position: relative;
             z-index: 2;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-blue));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            z-index: 10;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
         
         .founder-section .section-title {
@@ -903,6 +942,9 @@
         <section class="founder-section" aria-labelledby="founder-heading">
             <div class="container">
                 <div class="founder-content">
+                    <div class="featured-badge">
+                        <span>✨ Featured Story</span>
+                    </div>
                     <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
                     <div class="founder-story-wrapper">
                         <div class="founder-text-content">
@@ -1270,5 +1312,40 @@
     <script src="../js/language.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/pwa.js"></script>
+    <script>
+        // Confirm page has loaded with changes
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('About page loaded successfully!');
+            console.log('Founding story section is now at the top');
+            
+            // Check if founder section exists and is first
+            const founderSection = document.querySelector('.founder-section');
+            const mainContent = document.querySelector('#main-content');
+            
+            if (founderSection && mainContent.firstElementChild === founderSection) {
+                console.log('✅ Founding story is correctly positioned as the first section');
+                // Add a subtle highlight effect
+                founderSection.style.animation = 'fadeInUp 1s ease-out';
+            } else {
+                console.log('❌ Founding story section not found or not first');
+            }
+        });
+        
+        // Add CSS animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
