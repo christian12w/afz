@@ -49,6 +49,9 @@
             background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-gray) 50%, var(--primary-gold) 100%);
             position: relative;
             overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
         }
         
         .about-hero::before {
@@ -62,9 +65,75 @@
             opacity: 0.3;
         }
         
+        .hero-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-2 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-3 {
+            width: 60px;
+            height: 60px;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .about-hero .page-title {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero .page-description {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.3rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
         /* Founder Section Styles */
         .founder-section {
-            padding: 3rem 0;
+            padding: 4rem 0;
             background: var(--gray-50);
             position: relative;
             overflow: hidden;
@@ -82,44 +151,77 @@
         }
         
         .founder-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .founder-story-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        
+        .founder-text-content {
+            order: 1;
         }
         
         .founder-text {
             font-size: 1.1rem;
             color: var(--gray-700);
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
+            text-align: justify;
         }
         
         .founder-image-container {
-            margin: 2rem auto;
+            order: 2;
             text-align: center;
             max-width: 100%;
+            position: relative;
         }
         
         .founder-image {
             max-width: 100%;
             height: auto;
             border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-lg);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 4px solid white;
         }
         
         .founder-image:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-xl);
         }
         
         .founder-caption {
             font-size: 0.875rem;
             color: var(--gray-600);
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             font-style: italic;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            display: inline-block;
         }
         
         @media (max-width: 768px) {
+            .founder-story-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .founder-text-content {
+                order: 2;
+            }
+            
+            .founder-image-container {
+                order: 1;
+            }
+            
             .founder-image {
                 max-width: 90%;
             }
@@ -211,7 +313,15 @@
             font-size: 1rem;
             color: var(--gray-700);
             font-weight: 500;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .management-description {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+            font-style: italic;
+            padding: 0 1rem;
         }
         
         @media (max-width: 768px) {
@@ -309,6 +419,14 @@
             margin-bottom: 1.5rem;
         }
         
+        .board-description {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.5;
+            font-style: italic;
+            padding: 0 1rem;
+        }
+        
         @media (max-width: 768px) {
             .board-grid {
                 grid-template-columns: 1fr;
@@ -317,8 +435,8 @@
         
         /* Statistics Section Styles */
         .stats-section {
-            background: linear-gradient(135deg, var(--secondary-gray-dark), var(--primary-black));
-            color: white;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-gray) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -330,37 +448,376 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)" /></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stats-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23stats-pattern)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .stats-section .section-title {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
         }
         
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
         
         .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius-xl);
             text-align: center;
-            padding: 2rem 1rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
         }
         
         .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
             display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
             margin-bottom: 0.5rem;
-            background: linear-gradient(45deg, #fff, rgba(255,255,255,0.8));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            line-height: 1;
         }
         
         .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            display: block;
+            font-size: 1rem;
+            color: var(--gray-700);
             font-weight: 500;
+        }
+
+        /* Welcome Section Styles */
+        .welcome-section {
+            padding: 4rem 0;
+            background: var(--gray-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="welcome-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23welcome-pattern)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .welcome-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .welcome-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .welcome-title {
+            font-size: 2.5rem;
+            color: var(--primary-black);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .welcome-message {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .welcome-visual {
+            flex: 0.6;
+            text-align: center;
+        }
+        
+        .welcome-icon {
+            background: var(--primary-gold);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+        
+        .welcome-icon svg {
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            .welcome-message {
+                font-size: 1rem;
+            }
+            
+            .about-hero .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero .page-description {
+                font-size: 1.1rem;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+        }
+
+        /* Mission Section Styles */
+        .mission-section {
+            padding: 5rem 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mission-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(43,108,176,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23mission-pattern)" /></svg>');
+            opacity: 0.5;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-gold));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover .value-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .value-description {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        /* Call to Action Section Styles */
+        .cta-section {
+            padding: 5rem 0;
+            background: var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cta-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23cta-pattern)" /></svg>');
+            opacity: 0.3;
+        }
+
+        .cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--gray-700);
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .cta-button {
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button.primary {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background-color: var(--primary-dark-blue);
+            transform: translateY(-3px);
+        }
+
+        .cta-button.secondary {
+            background-color: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--primary-dark-gold);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            .cta-description {
+                font-size: 1.1rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -404,31 +861,6 @@
     </header>
 
     <main id="main-content" role="main">
-        <!-- Our Founding Story Section -->
-        <section class="founder-section" aria-labelledby="founder-heading">
-            <div class="container">
-                <div class="founder-content">
-                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
-                    <p class="founder-text" data-translate="founder-desc-1">
-                        The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
-                    </p>
-                    <p class="founder-text" data-translate="founder-desc-2">
-                        Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia’s most beloved musicians.
-                    </p>
-                    <p class="founder-text" data-translate="founder-desc-3">
-                        While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization’s growth.
-                    </p>
-                    <figure class="founder-image-container">
-                        <img src="../images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
-                        <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
-                    </figure>
-                    <p class="founder-text" data-translate="founder-desc-4">
-                        AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
-                    </p>
-                </div>
-            </div>
-        </section>
-
         <!-- Hero Section -->
         <section class="page-header about-hero" aria-labelledby="about-heading">
             <div class="container">
@@ -436,6 +868,35 @@
                 <p class="page-description" data-translate="about-page-description">
                     Empowering persons with albinism in Zambia through advocacy, awareness, and unwavering support since our founding.
                 </p>
+                <div class="hero-decoration">
+                    <div class="floating-element floating-1"></div>
+                    <div class="floating-element floating-2"></div>
+                    <div class="floating-element floating-3"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Message Section -->
+        <section class="welcome-section">
+            <div class="container">
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <h2 class="welcome-title">Welcome to Our Community</h2>
+                        <p class="welcome-message">
+                            At the Albinism Foundation of Zambia, we believe that every person with albinism deserves to live with dignity, respect, and equal opportunities. Our journey began with a simple yet powerful vision: to create a Zambia where differences are celebrated, not feared.
+                        </p>
+                        <p class="welcome-message">
+                            We're more than just an organization – we're a family, a support network, and a voice for change. Whether you're a person with albinism seeking support, a family member looking for resources, or someone who wants to make a difference, you're welcome here.
+                        </p>
+                    </div>
+                    <div class="welcome-visual">
+                        <div class="welcome-icon">
+                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -482,6 +943,35 @@
             </div>
         </section>
 
+        <!-- Our Founding Story Section -->
+        <section class="founder-section" aria-labelledby="founder-heading">
+            <div class="container">
+                <div class="founder-content">
+                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
+                    <div class="founder-story-wrapper">
+                        <div class="founder-text-content">
+                            <p class="founder-text" data-translate="founder-desc-1">
+                                The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-2">
+                                Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-3">
+                                While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-4">
+                                AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
+                            </p>
+                        </div>
+                        <figure class="founder-image-container">
+                            <img src="../images/john-chiti.jpg.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
+                            <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Management Team Section -->
         <section class="management-section" aria-labelledby="management-heading">
             <div class="container">
@@ -489,17 +979,19 @@
                 <div class="management-grid">
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/executive-director.jpg" alt="Placeholder for Executive Director photo" loading="lazy">
+                            <img src="../images/placeholder.svg" alt="Executive Director - Join our team!" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
-                        <p class="management-name" data-translate="management-executive-name">[Name]</p>
+                        <p class="management-name" data-translate="management-executive-name">Join Our Team!</p>
+                        <p class="management-description">We're looking for passionate leaders to join our mission.</p>
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/accountant.jpg" alt="Placeholder for Accountant photo" loading="lazy">
+                            <img src="../images/placeholder.svg" alt="Accountant - Join our team!" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
-                        <p class="management-name" data-translate="management-accountant-name">[Name]</p>
+                        <p class="management-name" data-translate="management-accountant-name">Join Our Team!</p>
+                        <p class="management-description">Help us maintain financial transparency and accountability.</p>
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
@@ -507,6 +999,7 @@
                         </div>
                         <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
                         <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
+                        <p class="management-description">Leading our community programs and initiatives.</p>
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
@@ -514,6 +1007,7 @@
                         </div>
                         <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
                         <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
+                        <p class="management-description">Ensuring smooth operations and member support.</p>
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
@@ -521,13 +1015,15 @@
                         </div>
                         <h3 class="management-role" data-translate="management-lusaka-coordinator">Lusaka Branch Coordinator</h3>
                         <p class="management-name" data-translate="management-lusaka-name">Susan Phiri</p>
+                        <p class="management-description">Coordinating our Lusaka branch activities.</p>
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/social-media-manager.jpg" alt="Placeholder for Social Media Manager photo" loading="lazy">
+                            <img src="../images/placeholder.svg" alt="Social Media Manager - Join our team!" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-social-media">Social Media Manager</h3>
-                        <p class="management-name" data-translate="management-social-name">[Name]</p>
+                        <p class="management-name" data-translate="management-social-name">Join Our Team!</p>
+                        <p class="management-description">Help us amplify our message and reach more people.</p>
                     </div>
                 </div>
             </div>
@@ -544,6 +1040,7 @@
                         </div>
                         <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
                         <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
+                        <p class="board-description">Founder and visionary leader of AFZ, bringing his musical fame and personal experience to advocate for change.</p>
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
@@ -551,6 +1048,7 @@
                         </div>
                         <h3 class="board-role" data-translate="board-vice-chairperson">Vice Chairperson</h3>
                         <p class="board-name" data-translate="board-vice-chairperson-name">Coretta Meki</p>
+                        <p class="board-description">Supporting our mission with strategic leadership and community engagement expertise.</p>
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
@@ -558,6 +1056,7 @@
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member1-name">Bernadette Tembo</p>
+                        <p class="board-description">Contributing valuable insights and experience to guide our organization's growth.</p>
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
@@ -565,6 +1064,7 @@
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member2-name">Bruce Chooma</p>
+                        <p class="board-description">Providing strategic guidance and supporting our mission to create positive change.</p>
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
@@ -572,13 +1072,15 @@
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member3-name">Thomas Mtonga</p>
+                        <p class="board-description">Bringing diverse perspectives and expertise to strengthen our foundation.</p>
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member4.jpg" alt="Placeholder for Member 4 photo" loading="lazy">
+                            <img src="../images/placeholder.svg" alt="Board Member - Join our board!" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
-                        <p class="board-name" data-translate="board-member4-name">[Name]</p>
+                        <p class="board-name" data-translate="board-member4-name">Join Our Board!</p>
+                        <p class="board-description">We welcome passionate individuals to help guide our mission and vision.</p>
                     </div>
                 </div>
             </div>
@@ -590,20 +1092,58 @@
                 <h2 class="section-title" data-translate="stats-title">Our Impact</h2>
                 <div class="stats-grid">
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 7c0-2.21-1.79-4-4-4S8 4.79 8 7s1.79 4 4 4 4-1.79 4-4zm-4 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8 7v-1c0-2.66-5.33-4-8-4s-8 1.34-8 4v1h16zm-2-1H6c.22-.72 3.31-2 6-2s5.78 1.28 6 2z"/>
+                            </svg>
+                        </div>
                         <span class="stat-number" data-count="500">500+</span>
                         <span class="stat-label" data-translate="stat-members">Members Supported</span>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                            </svg>
+                        </div>
                         <span class="stat-number" data-count="15">15+</span>
                         <span class="stat-label" data-translate="stat-programs">Active Programs</span>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                        </div>
                         <span class="stat-number" data-count="10">10</span>
                         <span class="stat-label" data-translate="stat-provinces">Provinces Reached</span>
                     </div>
                     <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                                <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                        </div>
                         <span class="stat-number" data-count="8">8</span>
                         <span class="stat-label" data-translate="stat-years">Years of Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Join Our Mission</h2>
+                    <p class="cta-description">
+                        Whether you're a person with albinism seeking support, a family member looking for resources, 
+                        or someone who wants to make a difference, we invite you to be part of our community.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                        <a href="donate.html" class="cta-button secondary">Support Our Cause</a>
                     </div>
                 </div>
             </div>
