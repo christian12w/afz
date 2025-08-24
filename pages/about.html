@@ -133,10 +133,11 @@
         
         /* Founder Section Styles */
         .founder-section {
-            padding: 4rem 0;
-            background: var(--gray-50);
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
             position: relative;
             overflow: hidden;
+            border-bottom: 3px solid var(--primary-gold);
         }
         
         .founder-section::before {
@@ -154,12 +155,34 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .founder-section .section-title {
+            font-size: 3rem;
+            color: var(--primary-black);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .founder-section .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-gold));
+            border-radius: 2px;
         }
         
         .founder-story-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: start;
             margin-top: 2rem;
         }
@@ -169,10 +192,10 @@
         }
         
         .founder-text {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--gray-700);
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             text-align: justify;
         }
         
@@ -186,29 +209,39 @@
         .founder-image {
             max-width: 100%;
             height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 4px solid white;
+            border: 6px solid white;
         }
         
         .founder-image:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-2xl);
         }
         
         .founder-caption {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: var(--gray-600);
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             font-style: italic;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.75rem 1.5rem;
             border-radius: var(--radius-md);
             display: inline-block;
+            box-shadow: var(--shadow-sm);
         }
         
         @media (max-width: 768px) {
+            .founder-section {
+                padding: 3rem 0;
+            }
+            
+            .founder-section .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
             .founder-story-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -224,6 +257,11 @@
             
             .founder-image {
                 max-width: 90%;
+            }
+            
+            .founder-text {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
             }
         }
 
@@ -861,6 +899,35 @@
     </header>
 
     <main id="main-content" role="main">
+        <!-- Our Founding Story Section -->
+        <section class="founder-section" aria-labelledby="founder-heading">
+            <div class="container">
+                <div class="founder-content">
+                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
+                    <div class="founder-story-wrapper">
+                        <div class="founder-text-content">
+                            <p class="founder-text" data-translate="founder-desc-1">
+                                The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-2">
+                                Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-3">
+                                While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
+                            </p>
+                            <p class="founder-text" data-translate="founder-desc-4">
+                                AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
+                            </p>
+                        </div>
+                        <figure class="founder-image-container">
+                            <img src="../images/john-chiti.jpg.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
+                            <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="page-header about-hero" aria-labelledby="about-heading">
             <div class="container">
@@ -938,35 +1005,6 @@
                         <p class="value-description" data-translate="values-text">
                             Dignity, Equality, Inclusion, Empowerment, Transparency, Accountability, and Community-centered approach in all our endeavors.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Our Founding Story Section -->
-        <section class="founder-section" aria-labelledby="founder-heading">
-            <div class="container">
-                <div class="founder-content">
-                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
-                    <div class="founder-story-wrapper">
-                        <div class="founder-text-content">
-                            <p class="founder-text" data-translate="founder-desc-1">
-                                The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-2">
-                                Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-3">
-                                While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-4">
-                                AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
-                            </p>
-                        </div>
-                        <figure class="founder-image-container">
-                            <img src="../images/john-chiti.jpg.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
-                            <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
-                        </figure>
                     </div>
                 </div>
             </div>
