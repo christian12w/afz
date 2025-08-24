@@ -379,6 +379,36 @@
             transform: scale(1.1);
         }
         
+        /* Enhanced placeholder styling for missing photos */
+        .management-image.placeholder {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .management-image.placeholder::before {
+            content: '👤';
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+        
+        .management-image.placeholder::after {
+            content: 'Join Our Team!';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            padding: 0 5px;
+        }
+        
         .management-role {
             font-size: 1.25rem;
             font-weight: 700;
@@ -480,6 +510,36 @@
         
         .board-card:hover .board-image img {
             transform: scale(1.1);
+        }
+        
+        /* Enhanced placeholder styling for board members */
+        .board-image.placeholder {
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .board-image.placeholder::before {
+            content: '👥';
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+        
+        .board-image.placeholder::after {
+            content: 'Join Our Board!';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            width: 100%;
+            padding: 0 5px;
         }
         
         .board-role {
@@ -946,13 +1006,6 @@
                         <span>✨ Featured Story</span>
                     </div>
                     
-                    <!-- VERY OBVIOUS INDICATOR -->
-                    <div style="background: red; color: white; padding: 20px; text-align: center; font-size: 24px; font-weight: bold; margin-bottom: 20px; border: 5px solid yellow;">
-                        🎯 THIS IS NOW THE FIRST SECTION! 🎯
-                        <br>
-                        Founding Story moved to the top!
-                    </div>
-                    
                     <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
                     <div class="founder-story-wrapper">
                         <div class="founder-text-content">
@@ -1066,16 +1119,16 @@
                 <h2 id="management-heading" class="section-title" data-translate="management-title">AFZ Senior Management Team</h2>
                 <div class="management-grid">
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/placeholder.svg" alt="Executive Director - Join our team!" loading="lazy">
+                        <div class="management-image placeholder" aria-hidden="true">
+                            <!-- Executive Director - No photo available -->
                         </div>
                         <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
                         <p class="management-name" data-translate="management-executive-name">Join Our Team!</p>
                         <p class="management-description">We're looking for passionate leaders to join our mission.</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/placeholder.svg" alt="Accountant - Join our team!" loading="lazy">
+                        <div class="management-image placeholder" aria-hidden="true">
+                            <!-- Accountant - No photo available -->
                         </div>
                         <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
                         <p class="management-name" data-translate="management-accountant-name">Join Our Team!</p>
@@ -1106,8 +1159,8 @@
                         <p class="management-description">Coordinating our Lusaka branch activities.</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/placeholder.svg" alt="Social Media Manager - Join our team!" loading="lazy">
+                        <div class="management-image placeholder" aria-hidden="true">
+                            <!-- Social Media Manager - No photo available -->
                         </div>
                         <h3 class="management-role" data-translate="management-social-media">Social Media Manager</h3>
                         <p class="management-name" data-translate="management-social-name">Join Our Team!</p>
@@ -1163,8 +1216,8 @@
                         <p class="board-description">Bringing diverse perspectives and expertise to strengthen our foundation.</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/placeholder.svg" alt="Board Member - Join our board!" loading="lazy">
+                        <div class="board-image placeholder" aria-hidden="true">
+                            <!-- Board Member 4 - No photo available -->
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member4-name">Join Our Board!</p>
@@ -1325,9 +1378,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             console.log('About page loaded successfully!');
             console.log('Founding story section is now at the top');
-            
-            // Show an alert to confirm changes are visible
-            alert('🎉 ABOUT PAGE UPDATED! 🎉\n\nFounding Story is now at the TOP!\n\nLook for the red banner with yellow border!');
+            console.log('All photos should now be properly displayed');
             
             // Check if founder section exists and is first
             const founderSection = document.querySelector('.founder-section');
@@ -1340,6 +1391,11 @@
             } else {
                 console.log('❌ Founding story section not found or not first');
             }
+            
+            // Check photo display
+            const photos = document.querySelectorAll('img');
+            const placeholders = document.querySelectorAll('.placeholder');
+            console.log(`📸 Found ${photos.length} photos and ${placeholders.length} placeholders`);
         });
         
         // Add CSS animation
