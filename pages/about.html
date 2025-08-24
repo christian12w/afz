@@ -62,150 +62,260 @@
             opacity: 0.3;
         }
         
-        .timeline {
-            position: relative;
-            padding: 2rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--primary-black), var(--primary-gold));
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .timeline-content {
-            flex: 1;
+        /* Founder Section Styles */
+        .founder-section {
+            padding: 3rem 0;
             background: var(--gray-50);
-            padding: 2rem;
-            border-radius: var(--radius-xl);
-            margin: 0 2rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .timeline-year {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--primary-black);
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            z-index: 10;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .team-member {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .team-member:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-black), var(--primary-gold));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .value-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius-xl);
-            text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .value-card::before {
+        .founder-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-black), var(--primary-gold));
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="founder-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,165,0,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23founder-pattern)" /></svg>');
+            opacity: 0.3;
         }
         
-        .value-card:hover {
-            transform: translateY(-8px);
+        .founder-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .founder-text {
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .founder-image-container {
+            margin: 2rem auto;
+            text-align: center;
+            max-width: 100%;
+        }
+        
+        .founder-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .founder-image:hover {
+            transform: scale(1.02);
             box-shadow: var(--shadow-lg);
         }
         
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary-black), var(--primary-gold-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
+        .founder-caption {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 0.5rem;
+            font-style: italic;
         }
         
+        @media (max-width: 768px) {
+            .founder-image {
+                max-width: 90%;
+            }
+        }
+
+        /* Management Team Section Styles */
+        .management-section {
+            padding: 3rem 0;
+            background: var(--gray-50);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .management-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="management-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(43,108,176,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23management-pattern)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .management-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            perspective: 1000px;
+        }
+        
+        .management-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: managementFadeIn 0.8s ease-out forwards;
+        }
+        
+        .management-card:nth-child(1) { animation-delay: 0.2s; }
+        .management-card:nth-child(2) { animation-delay: 0.4s; }
+        .management-card:nth-child(3) { animation-delay: 0.6s; }
+        .management-card:nth-child(4) { animation-delay: 0.8s; }
+        .management-card:nth-child(5) { animation-delay: 1.0s; }
+        .management-card:nth-child(6) { animation-delay: 1.2s; }
+        
+        @keyframes managementFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .management-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .management-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: var(--radius-xl);
+            border-top-right-radius: var(--radius-xl);
+        }
+        
+        .management-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .management-card:hover .management-image img {
+            transform: scale(1.1);
+        }
+        
+        .management-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .management-name {
+            font-size: 1rem;
+            color: var(--gray-700);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .management-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Board of Directors Section Styles */
+        .board-section {
+            padding: 3rem 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .board-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="board-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,165,0,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23board-pattern)" /></svg>');
+            opacity: 0.3;
+        }
+        
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            perspective: 1000px;
+        }
+        
+        .board-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: boardFadeIn 0.8s ease-out forwards;
+        }
+        
+        .board-card:nth-child(1) { animation-delay: 0.2s; }
+        .board-card:nth-child(2) { animation-delay: 0.4s; }
+        .board-card:nth-child(3) { animation-delay: 0.6s; }
+        .board-card:nth-child(4) { animation-delay: 0.8s; }
+        .board-card:nth-child(5) { animation-delay: 1.0s; }
+        .board-card:nth-child(6) { animation-delay: 1.2s; }
+        
+        @keyframes boardFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .board-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .board-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: var(--radius-xl);
+            border-top-right-radius: var(--radius-xl);
+        }
+        
+        .board-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .board-card:hover .board-image img {
+            transform: scale(1.1);
+        }
+        
+        .board-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .board-name {
+            font-size: 1rem;
+            color: var(--gray-700);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .board-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Statistics Section Styles */
         .stats-section {
             background: linear-gradient(135deg, var(--secondary-gray-dark), var(--primary-black));
             color: white;
@@ -252,43 +362,11 @@
             opacity: 0.9;
             font-weight: 500;
         }
-        
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                flex-direction: row !important;
-                padding-left: 80px;
-            }
-            
-            .timeline-year {
-                left: 30px;
-                width: 60px;
-                height: 60px;
-                font-size: 0.9rem;
-            }
-            
-            .timeline-content {
-                margin-left: 1rem;
-                margin-right: 0;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-
 
     <!-- Header -->
     <header class="site-header" role="banner">
@@ -326,6 +404,31 @@
     </header>
 
     <main id="main-content" role="main">
+        <!-- Our Founding Story Section -->
+        <section class="founder-section" aria-labelledby="founder-heading">
+            <div class="container">
+                <div class="founder-content">
+                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
+                    <p class="founder-text" data-translate="founder-desc-1">
+                        The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
+                    </p>
+                    <p class="founder-text" data-translate="founder-desc-2">
+                        Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia’s most beloved musicians.
+                    </p>
+                    <p class="founder-text" data-translate="founder-desc-3">
+                        While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization’s growth.
+                    </p>
+                    <figure class="founder-image-container">
+                        <img src="../images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
+                        <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
+                    </figure>
+                    <p class="founder-text" data-translate="founder-desc-4">
+                        AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Hero Section -->
         <section class="page-header about-hero" aria-labelledby="about-heading">
             <div class="container">
@@ -379,6 +482,108 @@
             </div>
         </section>
 
+        <!-- Management Team Section -->
+        <section class="management-section" aria-labelledby="management-heading">
+            <div class="container">
+                <h2 id="management-heading" class="section-title" data-translate="management-title">AFZ Senior Management Team</h2>
+                <div class="management-grid">
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/executive-director.jpg" alt="Placeholder for Executive Director photo" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
+                        <p class="management-name" data-translate="management-executive-name">[Name]</p>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/accountant.jpg" alt="Placeholder for Accountant photo" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
+                        <p class="management-name" data-translate="management-accountant-name">[Name]</p>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
+                        <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/administrative-officer.jpg" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
+                        <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/lusaka-coordinator.jpg" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-lusaka-coordinator">Lusaka Branch Coordinator</h3>
+                        <p class="management-name" data-translate="management-lusaka-name">Susan Phiri</p>
+                    </div>
+                    <div class="management-card">
+                        <div class="management-image" aria-hidden="true">
+                            <img src="../images/social-media-manager.jpg" alt="Placeholder for Social Media Manager photo" loading="lazy">
+                        </div>
+                        <h3 class="management-role" data-translate="management-social-media">Social Media Manager</h3>
+                        <p class="management-name" data-translate="management-social-name">[Name]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Board of Directors Section -->
+        <section class="board-section" aria-labelledby="board-heading">
+            <div class="container">
+                <h2 id="board-heading" class="section-title" data-translate="board-title">AFZ Board of Directors</h2>
+                <div class="board-grid">
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-chairperson.jpg" alt="Photo of John Chiti, Chairperson" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
+                        <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-vice-chairperson.jpg" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-vice-chairperson">Vice Chairperson</h3>
+                        <p class="board-name" data-translate="board-vice-chairperson-name">Coretta Meki</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-member1.jpg" alt="Photo of Bernadette Tembo, Board Member" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-member">Member</h3>
+                        <p class="board-name" data-translate="board-member1-name">Bernadette Tembo</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-member2.jpg" alt="Photo of Bruce Chooma, Board Member" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-member">Member</h3>
+                        <p class="board-name" data-translate="board-member2-name">Bruce Chooma</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-member3.jpg" alt="Photo of Thomas Mtonga, Board Member" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-member">Member</h3>
+                        <p class="board-name" data-translate="board-member3-name">Thomas Mtonga</p>
+                    </div>
+                    <div class="board-card">
+                        <div class="board-image" aria-hidden="true">
+                            <img src="../images/board-member4.jpg" alt="Placeholder for Member 4 photo" loading="lazy">
+                        </div>
+                        <h3 class="board-role" data-translate="board-member">Member</h3>
+                        <p class="board-name" data-translate="board-member4-name">[Name]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Statistics Section -->
         <section class="stats-section">
             <div class="container">
@@ -399,108 +604,6 @@
                     <div class="stat-card">
                         <span class="stat-number" data-count="8">8</span>
                         <span class="stat-label" data-translate="stat-years">Years of Service</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- History Timeline -->
-        <section class="mission-section">
-            <div class="container">
-                <h2 class="section-title" data-translate="history-title">Our Journey</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2016</div>
-                        <div class="timeline-content">
-                            <h3 data-translate="timeline-2016-title">Foundation Established</h3>
-                            <p data-translate="timeline-2016-desc">
-                                AFZ was founded by passionate advocates to address the challenges faced by persons with albinism in Zambia and create a unified voice for change.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2018</div>
-                        <div class="timeline-content">
-                            <h3 data-translate="timeline-2018-title">First Major Campaign</h3>
-                            <p data-translate="timeline-2018-desc">
-                                Launched our first nationwide awareness campaign, reaching over 50,000 people across Zambia and starting crucial conversations about albinism.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2020</div>
-                        <div class="timeline-content">
-                            <h3 data-translate="timeline-2020-title">Policy Advocacy Success</h3>
-                            <p data-translate="timeline-2020-desc">
-                                Successfully advocated for policy changes that improved access to healthcare and education for persons with albinism in Zambia.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2022</div>
-                        <div class="timeline-content">
-                            <h3 data-translate="timeline-2022-title">Program Expansion</h3>
-                            <p data-translate="timeline-2022-desc">
-                                Expanded our programs to include vocational training, entrepreneurship support, and comprehensive healthcare initiatives.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <div class="timeline-content">
-                            <h3 data-translate="timeline-2024-title">Digital Transformation</h3>
-                            <p data-translate="timeline-2024-desc">
-                                Launched our digital platform to better serve our community and expand our reach through technology and online advocacy.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Leadership Team -->
-        <section class="mission-section">
-            <div class="container">
-                <h2 class="section-title" data-translate="team-title">Leadership Team</h2>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="team-avatar">JP</div>
-                        <h3 class="team-name">John Phiri</h3>
-                        <p class="team-role" data-translate="team-ceo-role">Chief Executive Officer</p>
-                        <p class="team-bio" data-translate="team-ceo-bio">
-                            Leading AFZ with over 10 years of experience in advocacy and community development, dedicated to advancing albinism rights in Zambia.
-                        </p>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="team-avatar">SM</div>
-                        <h3 class="team-name">Sarah Mwansa</h3>
-                        <p class="team-role" data-translate="team-program-role">Programs Director</p>
-                        <p class="team-bio" data-translate="team-program-bio">
-                            Oversees all AFZ programs and initiatives, ensuring effective implementation and maximum impact for our community members.
-                        </p>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="team-avatar">DK</div>
-                        <h3 class="team-name">David Kabwe</h3>
-                        <p class="team-role" data-translate="team-advocacy-role">Advocacy Coordinator</p>
-                        <p class="team-bio" data-translate="team-advocacy-bio">
-                            Leads our policy advocacy efforts and works directly with government and civil society organizations to drive systemic change.
-                        </p>
-                    </div>
-
-                    <div class="team-member">
-                        <div class="team-avatar">MN</div>
-                        <h3 class="team-name">Mary Nyirenda</h3>
-                        <p class="team-role" data-translate="team-community-role">Community Outreach Manager</p>
-                        <p class="team-bio" data-translate="team-community-bio">
-                            Manages community engagement and awareness programs, building bridges between AFZ and local communities across Zambia.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -574,7 +677,7 @@
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    <span data-translate="footer-copyright">&copy; 2024 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
+                    <span data-translate="footer-copyright">&copy; 2025 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
                 </p>
                 <div class="footer-legal">
                     <a href="#" data-translate="footer-privacy">Privacy Policy</a>
