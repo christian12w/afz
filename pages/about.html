@@ -84,6 +84,19 @@
         .founder-content {
             max-width: 800px;
             margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 0.5rem;
+            }
         }
         
         .founder-text {
@@ -97,31 +110,38 @@
             margin: 2rem auto;
             text-align: center;
             max-width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
         }
         
         .founder-image {
-            max-width: 100%;
+            width: 100%;
+            max-width: 500px;
             height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
         }
         
         .founder-image:hover {
             transform: scale(1.02);
-            box-shadow: var(--shadow-lg);
         }
         
         .founder-caption {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-            margin-top: 0.5rem;
+            margin-top: 1rem;
             font-style: italic;
+            color: var(--gray-600);
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
             .founder-image {
                 max-width: 90%;
+            }
+            
+            .founder-content {
+                padding: 0 0.5rem;
             }
         }
 
@@ -187,6 +207,10 @@
             overflow: hidden;
             border-top-left-radius: var(--radius-xl);
             border-top-right-radius: var(--radius-xl);
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .management-image img {
@@ -194,6 +218,13 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+        }
+        
+        .management-image img[src*="placeholder"] {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            opacity: 0.6;
         }
         
         .management-card:hover .management-image img {
@@ -217,6 +248,11 @@
         @media (max-width: 768px) {
             .management-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .management-card {
+                margin: 0 1rem;
             }
         }
 
@@ -282,6 +318,10 @@
             overflow: hidden;
             border-top-left-radius: var(--radius-xl);
             border-top-right-radius: var(--radius-xl);
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .board-image img {
@@ -289,6 +329,13 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
+        }
+        
+        .board-image img[src*="placeholder"] {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            opacity: 0.6;
         }
         
         .board-card:hover .board-image img {
@@ -312,6 +359,11 @@
         @media (max-width: 768px) {
             .board-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .board-card {
+                margin: 0 1rem;
             }
         }
         
@@ -339,6 +391,28 @@
             gap: 2rem;
             position: relative;
             z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .stat-label {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
         
         .stat-card {
@@ -404,6 +478,16 @@
     </header>
 
     <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="page-header about-hero" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading" class="page-title" data-translate="about-page-title">About AFZ</h2>
+                <p class="page-description" data-translate="about-page-description">
+                    Empowering persons with albinism in Zambia through advocacy, awareness, and unwavering support since our founding.
+                </p>
+            </div>
+        </section>
+
         <!-- Our Founding Story Section -->
         <section class="founder-section" aria-labelledby="founder-heading">
             <div class="container">
@@ -413,29 +497,19 @@
                         The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
                     </p>
                     <p class="founder-text" data-translate="founder-desc-2">
-                        Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia’s most beloved musicians.
+                        Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
                     </p>
                     <p class="founder-text" data-translate="founder-desc-3">
-                        While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization’s growth.
+                        While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
                     </p>
                     <figure class="founder-image-container">
-                        <img src="../images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
+                        <img src="../images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
                     </figure>
                     <p class="founder-text" data-translate="founder-desc-4">
                         AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Hero Section -->
-        <section class="page-header about-hero" aria-labelledby="about-heading">
-            <div class="container">
-                <h2 id="about-heading" class="page-title" data-translate="about-page-title">About AFZ</h2>
-                <p class="page-description" data-translate="about-page-description">
-                    Empowering persons with albinism in Zambia through advocacy, awareness, and unwavering support since our founding.
-                </p>
             </div>
         </section>
 
@@ -488,43 +562,43 @@
                 <h2 id="management-heading" class="section-title" data-translate="management-title">AFZ Senior Management Team</h2>
                 <div class="management-grid">
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/executive-director.jpg" alt="Placeholder for Executive Director photo" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/placeholder.svg" alt="Placeholder for Executive Director photo" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
                         <p class="management-name" data-translate="management-executive-name">[Name]</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/accountant.jpg" alt="Placeholder for Accountant photo" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/placeholder.svg" alt="Placeholder for Accountant photo" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
                         <p class="management-name" data-translate="management-accountant-name">[Name]</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
                         <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/administrative-officer.jpg" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/administrative-officer.jpg" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
                         <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/lusaka-coordinator.jpg" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/lusaka-coordinator.jpg" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="management-role" data-translate="management-lusaka-coordinator">Lusaka Branch Coordinator</h3>
                         <p class="management-name" data-translate="management-lusaka-name">Susan Phiri</p>
                     </div>
                     <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../images/social-media-manager.jpg" alt="Placeholder for Social Media Manager photo" loading="lazy">
+                        <div class="management-image">
+                            <img src="../images/placeholder.svg" alt="Placeholder for Social Media Manager photo" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-social-media">Social Media Manager</h3>
                         <p class="management-name" data-translate="management-social-name">[Name]</p>
@@ -539,43 +613,43 @@
                 <h2 id="board-heading" class="section-title" data-translate="board-title">AFZ Board of Directors</h2>
                 <div class="board-grid">
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-chairperson.jpg" alt="Photo of John Chiti, Chairperson" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/board-chairperson.jpg" alt="Photo of John Chiti, Chairperson" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
                         <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-vice-chairperson.jpg" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/board-vice-chairperson.jpg" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="board-role" data-translate="board-vice-chairperson">Vice Chairperson</h3>
                         <p class="board-name" data-translate="board-vice-chairperson-name">Coretta Meki</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member1.jpg" alt="Photo of Bernadette Tembo, Board Member" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/board-member1.jpg" alt="Photo of Bernadette Tembo, Board Member" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member1-name">Bernadette Tembo</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member2.jpg" alt="Photo of Bruce Chooma, Board Member" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/board-member2.jpg" alt="Photo of Bruce Chooma, Board Member" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member2-name">Bruce Chooma</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member3.jpg" alt="Photo of Thomas Mtonga, Board Member" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/board-member3.jpg" alt="Photo of Thomas Mtonga, Board Member" loading="lazy" onerror="this.src='../images/placeholder.svg'">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member3-name">Thomas Mtonga</p>
                     </div>
                     <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member4.jpg" alt="Placeholder for Member 4 photo" loading="lazy">
+                        <div class="board-image">
+                            <img src="../images/placeholder.svg" alt="Placeholder for Member 4 photo" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member4-name">[Name]</p>
@@ -602,7 +676,7 @@
                         <span class="stat-label" data-translate="stat-provinces">Provinces Reached</span>
                     </div>
                     <div class="stat-card">
-                        <span class="stat-number" data-count="8">8</span>
+                        <span class="stat-number" data-count="17">17</span>
                         <span class="stat-label" data-translate="stat-years">Years of Service</span>
                     </div>
                 </div>
@@ -692,5 +766,21 @@
     <script src="../js/language.js"></script>
     <script src="../js/navigation.js"></script>
     <script src="../js/pwa.js"></script>
+    
+    <!-- Image Error Handling -->
+    <script>
+        // Handle image loading errors gracefully
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    if (!this.src.includes('placeholder.svg')) {
+                        this.src = '../images/placeholder.svg';
+                        this.alt = 'Image unavailable';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
