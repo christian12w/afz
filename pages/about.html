@@ -62,7 +62,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
-            opacity: 0.2; /* Reduced opacity for less distraction */
+            opacity: 0.2;
         }
         
         .about-hero::after {
@@ -72,7 +72,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3); /* Dark overlay for better text contrast */
+            background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         
@@ -123,23 +123,23 @@
         }
         
         .about-hero .page-title {
-            color: #f5f5f5; /* Changed from white to off-white for better contrast */
+            color: #f5f5f5;
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
         }
         
         .about-hero .page-description {
-            color: #f5f5f5; /* Changed from white */
+            color: #f5f5f5;
             font-size: 1.3rem;
             font-weight: 500;
             line-height: 1.6;
             max-width: 600px;
             margin: 0 auto;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
         }
@@ -160,7 +160,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="founder-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,165,0,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23founder-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
         
         .founder-content {
@@ -183,7 +183,7 @@
         
         .founder-text {
             font-size: 1.1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 500;
             line-height: 1.8;
             margin-bottom: 1.5rem;
@@ -202,18 +202,12 @@
             height: auto;
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-lg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 4px solid white;
-        }
-        
-        .founder-image:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-xl);
         }
         
         .founder-caption {
             font-size: 0.875rem;
-            color: var(--gray-700); /* Darker for clarity */
+            color: var(--gray-700);
             font-weight: 500;
             margin-top: 1rem;
             font-style: italic;
@@ -258,7 +252,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="management-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(43,108,176,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23management-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
         
         .management-grid {
@@ -266,7 +260,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
-            perspective: 1000px;
         }
         
         .management-card {
@@ -275,25 +268,10 @@
             text-align: center;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--gray-200);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            animation: managementFadeIn 0.8s ease-out forwards;
-        }
-        
-        .management-card:nth-child(1) { animation-delay: 0.2s; }
-        .management-card:nth-child(2) { animation-delay: 0.4s; }
-        .management-card:nth-child(3) { animation-delay: 0.6s; }
-        .management-card:nth-child(4) { animation-delay: 0.8s; }
-        .management-card:nth-child(5) { animation-delay: 1.0s; }
-        .management-card:nth-child(6) { animation-delay: 1.2s; }
-        
-        @keyframes managementFadeIn {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .management-card:hover {
-            transform: translateY(-10px) scale(1.03);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
         
@@ -309,11 +287,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .management-card:hover .management-image img {
-            transform: scale(1.1);
         }
         
         .management-role {
@@ -325,14 +298,14 @@
         
         .management-name {
             font-size: 1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 600;
             margin-bottom: 1rem;
         }
         
         .management-description {
-            font-size: 0.95rem; /* Slightly larger */
-            color: var(--gray-700); /* Darker for clarity */
+            font-size: 0.95rem;
+            color: var(--gray-700);
             font-weight: 500;
             line-height: 1.5;
             font-style: italic;
@@ -361,7 +334,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="board-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,165,0,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23board-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
         
         .board-grid {
@@ -369,7 +342,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
-            perspective: 1000px;
         }
         
         .board-card {
@@ -378,25 +350,10 @@
             text-align: center;
             box-shadow: var(--shadow-md);
             border: 1px solid var(--gray-200);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            animation: boardFadeIn 0.8s ease-out forwards;
-        }
-        
-        .board-card:nth-child(1) { animation-delay: 0.2s; }
-        .board-card:nth-child(2) { animation-delay: 0.4s; }
-        .board-card:nth-child(3) { animation-delay: 0.6s; }
-        .board-card:nth-child(4) { animation-delay: 0.8s; }
-        .board-card:nth-child(5) { animation-delay: 1.0s; }
-        .board-card:nth-child(6) { animation-delay: 1.2s; }
-        
-        @keyframes boardFadeIn {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         .board-card:hover {
-            transform: translateY(-10px) scale(1.03);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
         
@@ -412,11 +369,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-        
-        .board-card:hover .board-image img {
-            transform: scale(1.1);
         }
         
         .board-role {
@@ -428,14 +380,14 @@
         
         .board-name {
             font-size: 1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 600;
             margin-bottom: 1rem;
         }
         
         .board-description {
-            font-size: 0.95rem; /* Slightly larger */
-            color: var(--gray-700); /* Darker for clarity */
+            font-size: 0.95rem;
+            color: var(--gray-700);
             font-weight: 500;
             line-height: 1.5;
             font-style: italic;
@@ -464,7 +416,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stats-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23stats-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
         
         .stats-section::after {
@@ -474,16 +426,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3); /* Dark overlay for contrast */
+            background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         
         .stats-section .section-title {
-            color: #f5f5f5; /* Changed from white */
+            color: #f5f5f5;
             font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
         }
@@ -540,12 +492,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f5f5f5; /* Changed from white */
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-card:hover .stat-icon {
-            transform: scale(1.1);
+            color: #f5f5f5;
         }
         
         .stat-number {
@@ -560,7 +507,7 @@
         .stat-label {
             display: block;
             font-size: 1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 600;
         }
 
@@ -580,7 +527,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="welcome-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="10" height="10" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23welcome-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
 
         .welcome-content {
@@ -608,7 +555,7 @@
         
         .welcome-message {
             font-size: 1.1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 500;
             line-height: 1.8;
             margin-bottom: 1.5rem;
@@ -633,7 +580,7 @@
         .welcome-icon svg {
             width: 50px;
             height: 50px;
-            color: #f5f5f5; /* Changed from white */
+            color: #f5f5f5;
         }
         
         @media (max-width: 768px) {
@@ -680,7 +627,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mission-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="2" fill="rgba(43,108,176,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23mission-pattern)" /></svg>');
-            opacity: 0.3; /* Reduced opacity */
+            opacity: 0.3;
         }
         
         .values-grid {
@@ -736,12 +683,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f5f5f5; /* Changed from white */
-            transition: transform 0.3s ease;
-        }
-        
-        .value-card:hover .value-icon {
-            transform: scale(1.1) rotate(5deg);
+            color: #f5f5f5;
         }
         
         .value-title {
@@ -753,7 +695,7 @@
         
         .value-description {
             font-size: 1.1rem;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 500;
             line-height: 1.7;
         }
@@ -774,7 +716,7 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cta-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23cta-pattern)" /></svg>');
-            opacity: 0.2; /* Reduced opacity */
+            opacity: 0.2;
         }
 
         .cta-section::after {
@@ -784,7 +726,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.2); /* Dark overlay for contrast */
+            background: rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
 
@@ -800,18 +742,18 @@
         .cta-title {
             font-size: 3rem;
             font-weight: 700;
-            color: #f5f5f5; /* Changed from white */
+            color: #f5f5f5;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .cta-description {
             font-size: 1.3rem;
             line-height: 1.8;
-            color: var(--gray-800); /* Darker for clarity */
+            color: var(--gray-800);
             font-weight: 500;
             margin-bottom: 2.5rem;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         .cta-buttons {
@@ -831,7 +773,7 @@
 
         .cta-button.primary {
             background-color: var(--primary-blue);
-            color: #f5f5f5; /* Changed from white */
+            color: #f5f5f5;
         }
 
         .cta-button.primary:hover {
