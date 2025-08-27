@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -9,7 +8,7 @@
     <title>About Us - AFZ | Albinism Foundation of Zambia</title>
     
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#005A9C">
+    <meta name="theme-color" content="#1A1A1A">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="manifest" href="../manifest.json">
@@ -21,6 +20,9 @@
     <meta property="og:url" content="https://christian12w.github.io/afz/pages/about.html">
     <meta property="og:image" content="/afz/images/favicon.jpg">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <!-- AFZ Unified Design System -->
     <link rel="stylesheet" href="../css/afz-unified-design.css?v=f274f2f4">
     
@@ -31,41 +33,53 @@
     <!-- Styles -->
     <style>
         :root {
-            --primary-blue: #005A9C;
-            --primary-dark-blue: #003D6B;
-            --primary-gold: #D4A017;
-            --primary-dark-gold: #B58900;
-            --gray-50: #F8FAFC;
-            --gray-100: #F1F5F9;
-            --gray-200: #E2E8F0;
-            --gray-700: #374151;
-            --gray-800: #1F2A44;
+            --primary-black: #1A1A1A;
+            --gold-orange: #F5A623;
+            --gold-orange-dark: #D48F1B;
+            --white: #FFFFFF;
+            --light-gray: #E5E5E5;
+            --dark-gray: #333333;
             --radius-md: 8px;
             --radius-lg: 12px;
-            --radius-xl: 16px;
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-            --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Open Sans', Arial, Helvetica, sans-serif;
             line-height: 1.6;
-            color: var(--gray-800);
-            background: var(--gray-50);
+            color: var(--dark-gray);
+            background: var(--white);
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold-orange);
+            text-align: center;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
         }
 
         .skip-link {
             position: absolute;
             top: -40px;
             left: 6px;
-            background: var(--primary-blue);
-            color: white;
+            background: var(--gold-orange);
+            color: var(--primary-black);
             padding: 8px 16px;
             z-index: 1000;
             text-decoration: none;
             border-radius: var(--radius-md);
-            font-weight: 500;
+            font-weight: 600;
         }
         .skip-link:focus {
             top: 6px;
@@ -73,115 +87,73 @@
 
         /* Hero Section */
         .about-hero {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark-blue));
-            min-height: 50vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('/afz/images/hero-background.jpg') center/cover no-repeat;
+            padding: 3rem 0;
             display: flex;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .hero-decoration {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .floating-1 { width: 80px; height: 80px; top: 15%; left: 10%; animation-delay: 0s; }
-        .floating-2 { width: 120px; height: 120px; top: 50%; right: 10%; animation-delay: 2s; }
-        .floating-3 { width: 60px; height: 60px; bottom: 20%; left: 20%; animation-delay: 4s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-30px) scale(1.1); }
+            text-align: center;
+            min-height: 50vh;
         }
 
         .about-hero .page-title {
-            color: white;
-            font-size: 3rem;
+            color: var(--white);
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-out forwards;
         }
 
         .about-hero .page-description {
-            color: white;
-            font-size: 1.2rem;
+            color: var(--white);
+            font-size: 0.9rem;
             font-weight: 400;
-            line-height: 1.7;
+            line-height: 1.8;
             max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            opacity: 0;
+        }
+
+        .about-hero .hero-divider {
+            width: 100px;
+            height: 4px;
+            background: var(--gold-orange);
             margin: 0 auto;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out 0.3s forwards;
+            border-radius: var(--radius-md);
+            animation: fadeInUp 1s ease-out 0.4s forwards;
             opacity: 0;
         }
 
         /* Founder Section */
         .founder-section {
-            padding: 4rem 0;
-            background: var(--gray-50);
-        }
-
-        .founder-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            padding: 3rem 0;
+            background: var(--light-gray);
         }
 
         .founder-story-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            align-items: start;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .founder-text-content {
-            order: 1;
             animation: fadeInUp 1s ease-out 0.2s forwards;
             opacity: 0;
         }
 
         .founder-text {
-            font-size: 1.1rem;
-            color: var(--gray-800);
+            font-size: 0.9rem;
+            color: var(--dark-gray);
             font-weight: 400;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             text-align: justify;
         }
 
         .founder-image-container {
-            order: 2;
             text-align: center;
-            max-width: 100%;
             animation: fadeInUp 1s ease-out 0.4s forwards;
             opacity: 0;
         }
@@ -189,18 +161,18 @@
         .founder-image {
             max-width: 100%;
             height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            border: 3px solid var(--gray-100);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--gold-orange);
         }
 
         .founder-caption {
             font-size: 0.9rem;
-            color: var(--gray-700);
+            color: var(--dark-gray);
             font-weight: 400;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
             font-style: italic;
-            background: var(--gray-50);
+            background: var(--white);
             padding: 0.5rem 1rem;
             border-radius: var(--radius-md);
             display: inline-block;
@@ -208,18 +180,15 @@
 
         /* Welcome Section */
         .welcome-section {
-            padding: 4rem 0;
-            background: var(--gray-100);
+            padding: 3rem 0;
+            background: var(--white);
         }
 
         .welcome-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            gap: 1.5rem;
             animation: fadeInUp 1s ease-out forwards;
         }
 
@@ -229,21 +198,20 @@
         }
 
         .welcome-title {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 1.2rem;
-            line-height: 1.3;
+            color: var(--gold-orange);
+            margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out 0.2s forwards;
             opacity: 0;
         }
 
         .welcome-message {
-            font-size: 1.1rem;
-            color: var(--gray-800);
+            font-size: 0.9rem;
+            color: var(--dark-gray);
             font-weight: 400;
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             animation: fadeInUp 1s ease-out 0.4s forwards;
             opacity: 0;
         }
@@ -251,8 +219,8 @@
         .welcome-cta {
             display: inline-block;
             padding: 0.8rem 2rem;
-            background: var(--primary-gold);
-            color: var(--gray-800);
+            background: var(--gold-orange);
+            color: var(--primary-black);
             font-weight: 600;
             border-radius: var(--radius-md);
             text-decoration: none;
@@ -262,8 +230,8 @@
         }
 
         .welcome-cta:hover {
-            background: var(--primary-dark-gold);
-            transform: translateY(-3px);
+            background: var(--gold-orange-dark);
+            transform: translateY(-2px);
         }
 
         .welcome-visual {
@@ -272,43 +240,42 @@
         }
 
         .welcome-icon {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            background: var(--gold-orange);
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem;
             animation: fadeInUp 1s ease-out 0.8s forwards;
             opacity: 0;
         }
 
         .welcome-icon svg {
-            width: 50px;
-            height: 50px;
-            color: white;
+            width: 30px;
+            height: 30px;
+            color: var(--primary-black);
         }
 
         /* Management Team Section */
         .management-section {
-            padding: 4rem 0;
-            background: var(--gray-50);
+            padding: 3rem 0;
+            background: var(--light-gray);
         }
 
         .management-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .management-card {
-            background: white;
-            border-radius: var(--radius-lg);
+            background: var(--white);
+            border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
@@ -323,15 +290,15 @@
 
         .management-card:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
 
         .management-image {
             width: 100%;
-            height: 180px;
+            height: 160px;
             overflow: hidden;
-            border-top-left-radius: var(--radius-lg);
-            border-top-right-radius: var(--radius-lg);
+            border-top-left-radius: var(--radius-md);
+            border-top-right-radius: var(--radius-md);
         }
 
         .management-image img {
@@ -341,47 +308,45 @@
         }
 
         .management-role {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin: 1.2rem 0 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin: 1rem 0 0.5rem;
         }
 
         .management-name {
             font-size: 1rem;
-            color: var(--gray-800);
             font-weight: 600;
-            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.8rem;
         }
 
         .management-description {
             font-size: 0.9rem;
-            color: var(--gray-700);
+            color: var(--dark-gray);
             font-weight: 400;
             line-height: 1.6;
-            font-style: italic;
-            padding: 0 1rem 1.2rem;
+            padding: 0 1rem 1rem;
         }
 
         /* Board of Directors Section */
         .board-section {
-            padding: 4rem 0;
-            background: var(--gray-100);
+            padding: 3rem 0;
+            background: var(--white);
         }
 
         .board-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .board-card {
-            background: white;
-            border-radius: var(--radius-lg);
+            background: var(--white);
+            border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
@@ -396,15 +361,15 @@
 
         .board-card:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
 
         .board-image {
             width: 100%;
-            height: 180px;
+            height: 160px;
             overflow: hidden;
-            border-top-left-radius: var(--radius-lg);
-            border-top-right-radius: var(--radius-lg);
+            border-top-left-radius: var(--radius-md);
+            border-top-right-radius: var(--radius-md);
         }
 
         .board-image img {
@@ -414,50 +379,46 @@
         }
 
         .board-role {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin: 1.2rem 0 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin: 1rem 0 0.5rem;
         }
 
         .board-name {
             font-size: 1rem;
-            color: var(--gray-800);
             font-weight: 600;
-            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.8rem;
         }
 
         .board-description {
             font-size: 0.9rem;
-            color: var(--gray-700);
+            color: var(--dark-gray);
             font-weight: 400;
             line-height: 1.6;
-            font-style: italic;
-            padding: 0 1rem 1.2rem;
+            padding: 0 1rem 1rem;
         }
 
         /* Mission Section */
         .mission-section {
-            padding: 4rem 0;
-            background: var(--gray-50);
+            padding: 3rem 0;
+            background: var(--light-gray);
         }
 
         .values-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .value-card {
-            background: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-200);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
@@ -469,81 +430,54 @@
 
         .value-card:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
 
         .value-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 0.8rem;
+            background: var(--gold-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary-black);
         }
 
         .value-title {
-            font-size: 1.4rem;
-            color: var(--primary-blue);
-            font-weight: 700;
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--gold-orange);
+            margin-bottom: 0.6rem;
         }
 
         .value-description {
-            font-size: 1rem;
-            color: var(--gray-800);
+            font-size: 0.9rem;
+            color: var(--dark-gray);
             font-weight: 400;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         /* Statistics Section */
         .stats-section {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
-        }
-
-        .stats-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-
-        .stats-section .section-title {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out forwards;
+            padding: 3rem 0;
+            background: var(--primary-black);
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .stat-card {
-            background: white;
+            background: var(--white);
             padding: 1.5rem;
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-md);
             text-align: center;
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow-sm);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: fadeInUp 1s ease-out forwards;
             opacity: 0;
@@ -556,64 +490,66 @@
 
         .stat-card:hover {
             transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-md);
         }
 
         .stat-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             margin: 0 auto 0.8rem;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            background: var(--gold-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary-black);
+        }
+
+        .stat-icon svg {
+            width: 30px;
+            height: 30px;
         }
 
         .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold-orange);
             margin-bottom: 0.5rem;
             line-height: 1;
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: var(--gray-800);
+            color: var(--dark-gray);
             font-weight: 600;
         }
 
         /* Call to Action Section */
         .cta-section {
-            padding: 4rem 0;
-            background: var(--primary-gold);
+            padding: 3rem 0;
+            background: var(--gold-orange);
         }
 
         .cta-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
             text-align: center;
             animation: fadeInUp 1s ease-out forwards;
         }
 
         .cta-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            color: var(--gray-800);
-            margin-bottom: 1.2rem;
+            color: var(--primary-black);
+            margin-bottom: 1rem;
             animation: fadeInUp 1s ease-out 0.2s forwards;
             opacity: 0;
         }
 
         .cta-description {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             line-height: 1.8;
-            color: var(--gray-800);
+            color: var(--primary-black);
             font-weight: 400;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease-out 0.4s forwards;
             opacity: 0;
         }
@@ -636,24 +572,24 @@
         }
 
         .cta-button.primary {
-            background: var(--primary-blue);
-            color: white;
+            background: var(--primary-black);
+            color: var(--white);
         }
 
         .cta-button.primary:hover {
-            background: var(--primary-dark-blue);
-            transform: translateY(-3px);
+            background: var(--gold-orange-dark);
+            transform: translateY(-2px);
         }
 
         .cta-button.secondary {
-            background: white;
-            color: var(--primary-blue);
-            border: 2px solid var(--primary-blue);
+            background: var(--white);
+            color: var(--primary-black);
+            border: 2px solid var(--primary-black);
         }
 
         .cta-button.secondary:hover {
-            background: var(--gray-100);
-            transform: translateY(-3px);
+            background: var(--light-gray);
+            transform: translateY(-2px);
         }
 
         /* Animations */
@@ -664,19 +600,20 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .about-hero .page-title { font-size: 2rem; }
-            .about-hero .page-description { font-size: 1rem; }
-            .welcome-title { font-size: 2rem; }
-            .welcome-message { font-size: 1rem; }
-            .cta-title { font-size: 2rem; }
-            .cta-description { font-size: 1rem; }
+            .about-hero { min-height: 40vh; padding: 2rem 0; }
+            .about-hero .page-title { font-size: 1.8rem; }
+            .about-hero .page-description { font-size: 0.8rem; }
+            .section-title { font-size: 1.8rem; }
+            .welcome-title { font-size: 1.8rem; }
+            .welcome-message { font-size: 0.8rem; }
+            .cta-title { font-size: 1.8rem; }
+            .cta-description { font-size: 0.8rem; }
             .cta-buttons { flex-direction: column; gap: 1rem; }
             .founder-story-wrapper { grid-template-columns: 1fr; gap: 1.5rem; }
             .founder-text-content { order: 2; }
             .founder-image-container { order: 1; }
             .founder-image { max-width: 80%; }
-            .management-grid, .board-grid { grid-template-columns: 1fr; }
-            .floating-element { display: none; }
+            .management-grid, .board-grid, .values-grid, .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -685,13 +622,13 @@
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header class="site-header" role="banner">
-        <div class="header-container">
+    <header class="site-header" role="banner" style="background: var(--primary-black);">
+        <div class="container">
             <div class="logo-section">
                 <img src="/afz/images/favicon.jpg" alt="Albinism Foundation of Zambia - AFZ Logo" class="logo">
                 <div class="organization-info">
-                    <h1 class="org-name" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
-                    <p class="org-tagline" data-translate="org-tagline">Breaking the Silence on Albinism</p>
+                    <h1 class="org-name" style="color: var(--white);" data-translate="org-name">Albinism Foundation of Zambia - AFZ</h1>
+                    <p class="org-tagline" style="color: var(--gold-orange);" data-translate="org-tagline">Breaking the Silence on Albinism</p>
                 </div>
             </div>
             <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-navigation">
@@ -702,15 +639,15 @@
             </button>
             <nav class="main-nav" id="main-navigation" role="navigation" aria-label="Main navigation">
                 <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link" data-translate="nav-home">Home</a></li>
-                    <li><a href="about.html" class="nav-link active" data-translate="nav-about">About Us</a></li>
-                    <li><a href="programs.html" class="nav-link" data-translate="nav-programs">Programs</a></li>
-                    <li><a href="resources.html" class="nav-link" data-translate="nav-resources">Resources</a></li>
-                    <li><a href="advocacy.html" class="nav-link" data-translate="nav-advocacy">Advocacy</a></li>
-                    <li><a href="events.html" class="nav-link" data-translate="nav-events">Events</a></li>
-                    <li><a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a></li>
-                    <li><a href="member-hub.html" class="nav-link" data-translate="nav-member-portal">Member Hub</a></li>
-                    <li><a href="donate.html" class="nav-link" data-translate="nav-donate">Donate</a></li>
+                    <li><a href="../index.html" class="nav-link" style="color: var(--white);" data-translate="nav-home">Home</a></li>
+                    <li><a href="about.html" class="nav-link active" style="color: var(--gold-orange);" data-translate="nav-about">About Us</a></li>
+                    <li><a href="programs.html" class="nav-link" style="color: var(--white);" data-translate="nav-programs">Programs</a></li>
+                    <li><a href="resources.html" class="nav-link" style="color: var(--white);" data-translate="nav-resources">Resources</a></li>
+                    <li><a href="advocacy.html" class="nav-link" style="color: var(--white);" data-translate="nav-advocacy">Advocacy</a></li>
+                    <li><a href="events.html" class="nav-link" style="color: var(--white);" data-translate="nav-events">Events</a></li>
+                    <li><a href="contact.html" class="nav-link" style="color: var(--white);" data-translate="nav-contact">Contact</a></li>
+                    <li><a href="member-hub.html" class="nav-link" style="color: var(--white);" data-translate="nav-member-portal">Member Hub</a></li>
+                    <li><a href="donate.html" class="nav-link" style="color: var(--white);" data-translate="nav-donate">Donate</a></li>
                 </ul>
             </nav>
         </div>
@@ -724,39 +661,33 @@
                 <p class="page-description" data-translate="about-page-description">
                     Join us in empowering persons with albinism through advocacy, support, and community since 2008.
                 </p>
-                <div class="hero-decoration">
-                    <div class="floating-element floating-1"></div>
-                    <div class="floating-element floating-2"></div>
-                    <div class="floating-element floating-3"></div>
-                </div>
+                <div class="hero-divider" aria-hidden="true"></div>
             </div>
         </section>
 
         <!-- Our Founding Story Section -->
         <section class="founder-section" aria-labelledby="founder-heading">
             <div class="container">
-                <div class="founder-content">
-                    <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
-                    <div class="founder-story-wrapper">
-                        <div class="founder-text-content">
-                            <p class="founder-text" data-translate="founder-desc-1">
-                                The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-2">
-                                Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-3">
-                                While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
-                            </p>
-                            <p class="founder-text" data-translate="founder-desc-4">
-                                AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
-                            </p>
-                        </div>
-                        <figure class="founder-image-container">
-                            <img src="/afz/images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
-                            <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
-                        </figure>
+                <h2 id="founder-heading" class="section-title" data-translate="founder-title">Our Founding Story</h2>
+                <div class="founder-story-wrapper">
+                    <div class="founder-text-content">
+                        <p class="founder-text" data-translate="founder-desc-1">
+                            The Albinism Foundation of Zambia (AFZ) was established in 2008, becoming the first organization in the country dedicated to advocating for persons with albinism. This pioneering initiative was founded by the renowned musician Mr. John Chiti, who also holds the distinction of being the first person with albinism to gain prominence in Zambia.
+                        </p>
+                        <p class="founder-text" data-translate="founder-desc-2">
+                            Mr. Chiti rose to prominence in the Zambian music industry between 2007 and 2008 with his debut album <em>Ifindingile</em>, featuring the popular hit song <em>Nga Uleya</em>. During his nationwide tours, performances, and media appearances to launch the album, he shared his personal experiences of rejection, discrimination, bullying, and mistreatment due to his condition. His journey from adversity to success through musical talent transformed him into a household name and one of Zambia's most beloved musicians.
+                        </p>
+                        <p class="founder-text" data-translate="founder-desc-3">
+                            While touring, Mr. Chiti connected with other individuals with albinism who attended his shows and shared similar stories of struggle, including rejection, discrimination, and attacks targeting their body parts. Inspired by these encounters and the absence of any prior organization addressing these issues, he leveraged his celebrity influence to organize volunteers and utilized his personal resources from his music career to establish AFZ. Additional partners and donors joined at a later stage to support the organization's growth.
+                        </p>
+                        <p class="founder-text" data-translate="founder-desc-4">
+                            AFZ was warmly received as the first organization of its kind, attracting numerous individuals with albinism eager to join. Mr. Chiti served as the founding Executive Director, leading the organization until 2022, after which he transitioned to the Board of Directors, where he now serves as Chairman. To date, AFZ remains the largest, most active, and most influential albinism organization in Zambia.
+                        </p>
                     </div>
+                    <figure class="founder-image-container">
+                        <img src="/afz/images/john-chiti.jpg" alt="Mr. John Chiti, founder of the Albinism Foundation of Zambia, photographed during his music career in 2008." class="founder-image" loading="lazy">
+                        <figcaption class="founder-caption" data-translate="founder-caption">Mr. John Chiti, founder of AFZ, during his music career in 2008.</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -764,9 +695,9 @@
         <!-- Welcome Section -->
         <section class="welcome-section" aria-labelledby="welcome-heading">
             <div class="container">
+                <h2 id="welcome-heading" class="section-title" data-translate="welcome-title">You Are Part of Our Family</h2>
                 <div class="welcome-content">
                     <div class="welcome-text">
-                        <h2 id="welcome-heading" class="welcome-title">You Are Part of Our Family</h2>
                         <p class="welcome-message">
                             At the Albinism Foundation of Zambia (AFZ), we’re committed to creating a world where persons with albinism are celebrated, supported, and empowered. Whether you’re seeking resources, looking to connect, or eager to make a difference, you’re warmly welcomed into our community.
                         </p>
@@ -777,7 +708,7 @@
                     </div>
                     <div class="welcome-visual">
                         <div class="welcome-icon">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                             </svg>
                         </div>
@@ -793,7 +724,7 @@
                 <div class="values-grid">
                     <div class="value-card">
                         <div class="value-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                         </div>
@@ -804,7 +735,7 @@
                     </div>
                     <div class="value-card">
                         <div class="value-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                             </svg>
                         </div>
@@ -815,7 +746,7 @@
                     </div>
                     <div class="value-card">
                         <div class="value-icon" aria-hidden="true">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
                             </svg>
                         </div>
@@ -932,11 +863,11 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="/afz/images/placeholder.svg" alt="Board Member - Join our board!" loading="lazy">
+                            <img src="/afz/images/board-member4.jpg" alt="Photo of Johans Mtonga, Board Member" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
-                        <p class="board-name" data-translate="board-member4-name">Join Our Board!</p>
-                        <p class="board-description">We welcome passionate individuals to help guide our mission and vision.</p>
+                        <p class="board-name" data-translate="board-member4-name">Johans Mtonga</p>
+                        <p class="board-description">Leveraging expertise in advocacy and community engagement to advance AFZ’s mission.</p>
                     </div>
                 </div>
             </div>
@@ -949,7 +880,7 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M16 7c0-2.21-1.79-4-4-4S8 4.79 8 7s1.79 4 4 4 4-1.79 4-4zm-4 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8 7v-1c0-2.66-5.33-4-8-4s-8 1.34-8 4v1h16zm-2-1H6c.22-.72 3.31-2 6-2s5.78 1.28 6 2z"/>
                             </svg>
                         </div>
@@ -958,7 +889,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
                             </svg>
                         </div>
@@ -967,7 +898,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                             </svg>
                         </div>
@@ -976,7 +907,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
                                 <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                             </svg>
@@ -991,8 +922,8 @@
         <!-- Call to Action Section -->
         <section class="cta-section" aria-labelledby="cta-heading">
             <div class="container">
+                <h2 id="cta-heading" class="section-title" data-translate="cta-title">Join Our Mission</h2>
                 <div class="cta-content">
-                    <h2 id="cta-heading" class="cta-title">Join Our Mission</h2>
                     <p class="cta-description">
                         Be part of our community to support, advocate, and empower persons with albinism in Zambia. Together, we can make a lasting impact.
                     </p>
@@ -1006,71 +937,71 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer" style="background: var(--primary-black);">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 class="footer-title" data-translate="footer-about-title">Albinism Foundation of Zambia - AFZ</h3>
-                    <p class="footer-text" data-translate="footer-about-desc">
+                    <h3 class="footer-title" data-translate="footer-about-title" style="color: var(--white);">Albinism Foundation of Zambia - AFZ</h3>
+                    <p class="footer-text" data-translate="footer-about-desc" style="color: var(--white);">
                         Advocating for the rights and inclusion of persons with albinism in Zambia through education, support, and policy reform.
                     </p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/albinism.zambia" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-orange)">
                                 <path d="M18.77 7.46H15.5v-1.9c0-.9.6-1.1 1-1.1h2.2V2.5h-3.1c-3.44 0-4.1 2.46-4.1 4.03v.93h-2.5v2.7h2.5V22h4.1v-11.84h2.6l.37-2.7z"/>
                             </svg>
                         </a>
                         <a href="https://x.com/AlbinismZambia1" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.60v.06c0 2.33 1.66 4.28 3.86 4.72-.4.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-orange)">
+                                <path d="M23.32 4.56c-.85.38-1.78.64-2.75.76 1-.6 1.76-1.55 2.12-2.68-.93.55-1.96.95-3.06 1.17-.88-.94-2.13-1.53-3.51-1.53-2.66 0-4.81 2.16-4.81 4.81 0 .38.04.75.13 1.1-4-.2-7.57-2.11-9.96-5.02-.42.72-.66 1.55-.66 2.44 0 1.67.85 3.14 2.14 4-.79-.03-1.53-.24-2.18-.60v.06c0 2.33 1.66 4.28 3.86 4.72-.40.11-.83.17-1.27.17-.31 0-.62-.03-.92-.08.62 1.94 2.42 3.35 4.55 3.39-1.67 1.31-3.77 2.09-6.05 2.09-.39 0-.78-.02-1.17-.07 2.18 1.4 4.77 2.21 7.55 2.21 9.06 0 14.01-7.5 14.01-14.01 0-.21 0-.42-.01-.63.96-.69 1.8-1.56 2.46-2.55z"/>
                             </svg>
                         </a>
                         <a href="https://linkedin.com/in/Albinism%20Zambia%20of%20zambia" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-orange)">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
                         <a href="https://www.youtube.com/@albinismfoundationofzambia5849" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold-orange)">
                                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                             </svg>
                         </a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-title" data-translate="footer-quick-links-title">Quick Links</h4>
+                    <h4 class="footer-title" data-translate="footer-quick-links-title" style="color: var(--white);">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="../index.html" class="footer-link" data-translate="nav-home">Home</a></li>
-                        <li><a href="about.html" class="footer-link" data-translate="nav-about">About Us</a></li>
-                        <li><a href="programs.html" class="footer-link" data-translate="nav-programs">Programs</a></li>
-                        <li><a href="advocacy.html" class="footer-link" data-translate="nav-advocacy">Advocacy</a></li>
-                        <li><a href="events.html" class="footer-link" data-translate="nav-events">Events</a></li>
-                        <li><a href="contact.html" class="footer-link" data-translate="nav-contact">Contact</a></li>
+                        <li><a href="../index.html" class="footer-link" style="color: var(--white);" data-translate="nav-home">Home</a></li>
+                        <li><a href="about.html" class="footer-link" style="color: var(--gold-orange);" data-translate="nav-about">About Us</a></li>
+                        <li><a href="programs.html" class="footer-link" style="color: var(--white);" data-translate="nav-programs">Programs</a></li>
+                        <li><a href="advocacy.html" class="footer-link" style="color: var(--white);" data-translate="nav-advocacy">Advocacy</a></li>
+                        <li><a href="events.html" class="footer-link" style="color: var(--white);" data-translate="nav-events">Events</a></li>
+                        <li><a href="contact.html" class="footer-link" style="color: var(--white);" data-translate="nav-contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-title" data-translate="footer-contact-title">Contact Info</h4>
-                    <div class="contact-info">
+                    <h4 class="footer-title" data-translate="footer-contact-title" style="color: var(--white);">Contact Info</h4>
+                    <div class="contact-info" style="color: var(--white);">
                         <p><strong>Email:</strong> info@afz.org.zm</p>
                         <p><strong>Phone:</strong> +260 97 7977026</p>
                         <p><strong>Address:</strong> AFZ ZAMBIA, LOTI HOUSE, Cairo Road, Room G, 4th Floor, 10101 Lusaka, Zambia (opposite Kwacha House)</p>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4 class="footer-title" data-translate="footer-support-title">Support Our Cause</h4>
-                    <p class="footer-text" data-translate="footer-support-desc">
+                    <h4 class="footer-title" data-translate="footer-support-title" style="color: var(--white);">Support Our Cause</h4>
+                    <p class="footer-text" data-translate="footer-support-desc" style="color: var(--white);">
                         Help us advocate for persons with albinism in Zambia.
                     </p>
                     <a href="donate.html" class="cta-button primary" data-translate="footer-donate-btn">Donate Now</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copyright">
+                <p class="copyright" style="color: var(--white);">
                     <span data-translate="footer-copyright">&copy; 2025 Albinism Foundation of Zambia - AFZ. All rights reserved.</span>
                 </p>
                 <div class="footer-legal">
-                    <a href="#" data-translate="footer-privacy">Privacy Policy</a>
-                    <a href="#" data-translate="footer-terms">Terms of Service</a>
+                    <a href="#" style="color: var(--white);" data-translate="footer-privacy">Privacy Policy</a>
+                    <a href="#" style="color: var(--white);" data-translate="footer-terms">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -1083,4 +1014,3 @@
     <script src="../js/pwa.js"></script>
 </body>
 </html>
-```
