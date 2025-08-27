@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="26" viewBox="0 0 80 26" role="img" aria-label="Mastercard">
+  <rect width="80" height="26" rx="4" fill="#111827"/>
+  <g transform="translate(28,5)">
+    <circle cx="9" cy="8" r="8" fill="#EB001B"/>
+    <circle cx="17" cy="8" r="8" fill="#F79E1B" fill-opacity="0.9"/>
+  </g>
+</svg>
+
