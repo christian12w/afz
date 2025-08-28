@@ -45,10 +45,36 @@
         return (urlRes && urlRes.data && urlRes.data.publicUrl) || null;
     }
 
+    // Realtime subscription to profile changes
+    function onProfileChange(callback) {
+        if (!window.sb || !window.sb.channel) return function(){};
+        var channel = window.sb.channel('profiles-changes')
+            .on('postgres_changes', { event: '*', schema: 'public', table: PROFILES_TABLE }, function(payload) {
+                callback && callback(payload);
+            })
+            .subscribe();
+        return function() { try { window.sb.removeChannel(channel); } catch (e) {} };
+    }
+
+    async function updateEmail(newEmail) {
+        var res = await window.sb.auth.updateUser({ email: newEmail });
+        if (res.error) throw res.error;
+        return res.data;
+    }
+
+    async function updatePassword(newPassword) {
+        var res = await window.sb.auth.updateUser({ password: newPassword });
+        if (res.error) throw res.error;
+        return res.data;
+    }
+
     window.afzProfileApi = {
         fetchProfile: fetchProfile,
         upsertProfile: upsertProfile,
-        uploadAvatar: uploadAvatar
+        uploadAvatar: uploadAvatar,
+        onProfileChange: onProfileChange,
+        updateEmail: updateEmail,
+        updatePassword: updatePassword
     };
 })();
 
