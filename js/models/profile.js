@@ -693,8 +693,9 @@ class ProfileManager {
         const tabButtons = document.querySelectorAll('.tab-btn');
         tabButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const tabName = e.target.getAttribute('data-tab');
-                this.switchTab(tabName);
+                const button = e.currentTarget || (e.target && e.target.closest('.tab-btn'));
+                const tabName = button ? button.getAttribute('data-tab') : null;
+                if (tabName) this.switchTab(tabName);
             });
         });
 
@@ -1407,7 +1408,7 @@ class ProfileManager {
         styles.id = 'profile-styles';
         styles.textContent = `
             .profile-interface {
-                background: var(--surface-color);
+                background: var(--surface);
                 border-radius: 16px;
                 overflow: hidden;
                 height: 100%;
@@ -1489,7 +1490,7 @@ class ProfileManager {
                 height: 100%;
                 border-radius: 50%;
                 border: 4px solid white;
-                background: var(--surface-color);
+                background: var(--surface);
                 object-fit: cover;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             }
@@ -1540,7 +1541,7 @@ class ProfileManager {
             }
 
             .status-indicator.online {
-                background: var(--success-color);
+                background: var(--success);
             }
 
             .profile-basic-info {
@@ -1593,7 +1594,7 @@ class ProfileManager {
                 display: flex;
                 border-bottom: 1px solid var(--border-color);
                 padding: 0 32px;
-                background: var(--surface-color);
+                background: var(--surface);
             }
 
             .tab-btn {
@@ -1807,7 +1808,7 @@ class ProfileManager {
             .form-group input,
             .form-group select,
             .form-group textarea {
-                background: var(--surface-color);
+                background: var(--surface);
                 border: 1px solid var(--border-color);
                 border-radius: 8px;
                 padding: 12px 16px;
@@ -1830,7 +1831,7 @@ class ProfileManager {
             }
 
             .form-error {
-                color: var(--error-color);
+                color: var(--error);
                 font-size: 13px;
                 margin-top: 4px;
                 display: none;
@@ -1919,7 +1920,7 @@ class ProfileManager {
             }
 
             .privacy-option select {
-                background: var(--surface-color);
+                background: var(--surface);
                 border: 1px solid var(--border-color);
                 border-radius: 6px;
                 padding: 8px 12px;
@@ -2092,7 +2093,7 @@ class ProfileManager {
             }
 
             .image-upload-modal .modal-content {
-                background: var(--surface-color);
+                background: var(--surface);
                 border-radius: 16px;
                 width: 100%;
                 max-width: 500px;
