@@ -6,18 +6,18 @@
 class ProfileManager {
     constructor() {
         this.currentUser = {
-            id: 'user_123',
-            name: 'John Doe',
-            email: 'john.doe@email.com',
-            phone: '+260-123-456789',
-            location: 'Lusaka, Zambia',
-            bio: 'Passionate advocate for albinism awareness and community support. Working to create a more inclusive society for all.',
-            avatar: 'assets/avatars/john-doe.jpg',
-            coverImage: 'assets/images/cover-default.jpg',
-            dateOfBirth: '1990-05-15',
-            gender: 'Male',
-            occupation: 'Community Advocate',
-            interests: ['Advocacy', 'Healthcare', 'Education', 'Community Building'],
+            id: '',
+            name: '',
+            email: '',
+            phone: '',
+            location: '',
+            bio: '',
+            avatar: '../images/placeholder.svg',
+            coverImage: '../images/placeholder.svg',
+            dateOfBirth: '',
+            gender: '',
+            occupation: '',
+            interests: [],
             socialLinks: {
                 facebook: '',
                 twitter: '',
@@ -31,7 +31,7 @@ class ProfileManager {
                 allowMessages: true,
                 allowConnectionRequests: true
             },
-            joinDate: '2023-01-15',
+            joinDate: '',
             lastActive: new Date()
         };
         
@@ -48,6 +48,7 @@ class ProfileManager {
         this.loadUserData();
         this.setupImageUploads();
         this.setupFormValidation();
+        this.setupRealtime();
     }
 
     setupProfileInterface() {
@@ -126,6 +127,18 @@ class ProfileManager {
                             <i class="fas fa-history"></i>
                             Activity
                         </button>
+                        <button class="tab-btn" data-tab="security" id="tab-security">
+                            <i class="fas fa-lock"></i>
+                            Security
+                        </button>
+                        <button class="tab-btn" data-tab="preferences" id="tab-preferences">
+                            <i class="fas fa-sliders-h"></i>
+                            Preferences
+                        </button>
+                        <button class="tab-btn" data-tab="notifications" id="tab-notifications">
+                            <i class="fas fa-bell"></i>
+                            Notifications
+                        </button>
                     </div>
 
                     <div class="profile-tab-content">
@@ -147,6 +160,18 @@ class ProfileManager {
                         <!-- Activity Tab -->
                         <div class="tab-panel" id="panel-activity">
                             ${this.renderActivityPanel()}
+                        </div>
+                        <!-- Security Tab -->
+                        <div class="tab-panel" id="panel-security">
+                            ${this.renderSecurityPanel()}
+                        </div>
+                        <!-- Preferences Tab -->
+                        <div class="tab-panel" id="panel-preferences">
+                            ${this.renderPreferencesPanel()}
+                        </div>
+                        <!-- Notifications Tab -->
+                        <div class="tab-panel" id="panel-notifications">
+                            ${this.renderNotificationsPanel()}
                         </div>
                     </div>
                 </div>
@@ -579,6 +604,90 @@ class ProfileManager {
         `).join('');
     }
 
+    renderSecurityPanel() {
+        return `
+            <form id="security-form" class="security-form">
+                <div class="form-section">
+                    <h3>Change Email</h3>
+                    <div class="form-group">
+                        <label for="sec-email">New Email</label>
+                        <input type="email" id="sec-email" placeholder="you@example.com">
+                        <div class="form-error" id="err-sec-email"></div>
+                    </div>
+                    <button type="button" id="btn-update-email" class="btn btn-secondary">Update Email</button>
+                </div>
+                <div class="form-section">
+                    <h3>Change Password</h3>
+                    <div class="form-group">
+                        <label for="sec-pass">New Password</label>
+                        <input type="password" id="sec-pass" placeholder="New password">
+                        <div class="form-error" id="err-sec-pass"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sec-pass2">Confirm Password</label>
+                        <input type="password" id="sec-pass2" placeholder="Confirm new password">
+                        <div class="form-error" id="err-sec-pass2"></div>
+                    </div>
+                    <button type="button" id="btn-update-pass" class="btn btn-secondary">Update Password</button>
+                </div>
+            </form>
+        `;
+    }
+
+    renderPreferencesPanel() {
+        return `
+            <form id="preferences-form" class="prefs-form">
+                <div class="form-section">
+                    <h3>General Preferences</h3>
+                    <div class="form-group">
+                        <label for="pref-language">Language</label>
+                        <select id="pref-language">
+                            <option value="en">English</option>
+                            <option value="fr">French</option>
+                            <option value="pt">Portuguese</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pref-theme">Theme</label>
+                        <select id="pref-theme">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="system">System</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="save-preferences" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        `;
+    }
+
+    renderNotificationsPanel() {
+        return `
+            <form id="notifications-form" class="prefs-form">
+                <div class="form-section">
+                    <h3>Email Notifications</h3>
+                    <label class="checkbox">
+                        <input type="checkbox" id="notif-news" ${this.currentUser.notifications?.news !== false ? 'checked' : ''}>
+                        <span>News and updates</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="notif-events" ${this.currentUser.notifications?.events !== false ? 'checked' : ''}>
+                        <span>Event reminders</span>
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="notif-messages" ${this.currentUser.notifications?.messages !== false ? 'checked' : ''}>
+                        <span>Messages and mentions</span>
+                    </label>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="save-notifications" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        `;
+    }
+
     setupEventListeners() {
         // Tab navigation
         const tabButtons = document.querySelectorAll('.tab-btn');
@@ -644,6 +753,19 @@ class ProfileManager {
                 return '';
             }
         });
+
+        // Save buttons in new panels
+        setTimeout(() => {
+            const btnEmail = document.getElementById('btn-update-email');
+            const btnPass = document.getElementById('btn-update-pass');
+            const btnPrefs = document.getElementById('save-preferences');
+            const btnNotifs = document.getElementById('save-notifications');
+
+            if (btnEmail) btnEmail.onclick = () => this.handleEmailUpdate();
+            if (btnPass) btnPass.onclick = () => this.handlePasswordUpdate();
+            if (btnPrefs) btnPrefs.onclick = () => this.handlePreferencesSave();
+            if (btnNotifs) btnNotifs.onclick = () => this.handleNotificationsSave();
+        }, 0);
     }
 
     setupInterestManagement() {
@@ -874,23 +996,37 @@ class ProfileManager {
         
         if (!file || !uploadType) return;
 
-        // Simulate upload process
-        this.hideImageUploadModal();
-        
-        const reader = new FileReader();
-        reader.onload = (e) => {
+        const finishSuccess = (url) => {
             if (uploadType === 'avatar') {
-                this.updateAvatar(e.target.result);
+                this.updateAvatar(url);
             } else {
-                this.updateCoverImage(e.target.result);
+                this.updateCoverImage(url);
+            }
+            this.hideImageUploadModal();
+            if (window.afzDashboard) {
+                window.afzDashboard.showNotification(`${uploadType === 'avatar' ? 'Profile picture' : 'Cover photo'} updated successfully!`, 'success');
             }
         };
-        reader.readAsDataURL(file);
 
-        // Show success notification
-        if (window.afzDashboard) {
-            window.afzDashboard.showNotification(`${uploadType === 'avatar' ? 'Profile picture' : 'Cover photo'} updated successfully!`, 'success');
+        if (uploadType === 'avatar' && window.afzProfileApi && window.afzProfileApi.uploadAvatar) {
+            window.afzProfileApi.uploadAvatar(file)
+                .then((publicUrl) => {
+                    finishSuccess(publicUrl || this.currentUser.avatar);
+                })
+                .catch((err) => {
+                    console.error('Upload failed:', err);
+                    // Fallback to local preview
+                    const reader = new FileReader();
+                    reader.onload = (e) => finishSuccess(e.target.result);
+                    reader.readAsDataURL(file);
+                });
+            return;
         }
+
+        // Fallback to local preview if no storage integration
+        const reader = new FileReader();
+        reader.onload = (e) => finishSuccess(e.target.result);
+        reader.readAsDataURL(file);
     }
 
     updateAvatar(newAvatar) {
@@ -1034,35 +1170,59 @@ class ProfileManager {
         }
     }
 
-    saveProfile() {
+    async saveProfile() {
         const formData = new FormData(document.getElementById('edit-profile-form'));
         
-        // Update user data
+        // Update user data from form fields
         for (let [key, value] of formData.entries()) {
             if (key in this.currentUser) {
                 this.currentUser[key] = value;
-            } else if (key.startsWith('social-')) {
-                const socialPlatform = key.replace('social-', '');
-                this.currentUser.socialLinks[socialPlatform] = value;
             }
         }
-
-        // Update social links from individual fields
         this.currentUser.socialLinks.facebook = document.getElementById('edit-facebook').value;
         this.currentUser.socialLinks.twitter = document.getElementById('edit-twitter').value;
         this.currentUser.socialLinks.linkedin = document.getElementById('edit-linkedin').value;
         this.currentUser.socialLinks.instagram = document.getElementById('edit-instagram').value;
 
-        // Simulate API call
-        setTimeout(() => {
+        const payload = {
+            name: this.currentUser.name,
+            phone: this.currentUser.phone,
+            location: this.currentUser.location,
+            date_of_birth: this.currentUser.dateOfBirth,
+            gender: this.currentUser.gender,
+            occupation: this.currentUser.occupation,
+            bio: this.currentUser.bio,
+            social_links: {
+                facebook: this.currentUser.socialLinks.facebook,
+                twitter: this.currentUser.socialLinks.twitter,
+                linkedin: this.currentUser.socialLinks.linkedin,
+                instagram: this.currentUser.socialLinks.instagram
+            },
+            interests: this.currentUser.interests
+        };
+
+        const finishSuccess = () => {
             this.markAsSaved();
             this.updateProfileDisplay();
             this.switchTab('overview');
-            
             if (window.afzDashboard) {
                 window.afzDashboard.showNotification('Profile updated successfully!', 'success');
             }
-        }, 1000);
+        };
+
+        if (window.afzProfileApi && window.afzProfileApi.upsertProfile) {
+            window.afzProfileApi.upsertProfile(payload)
+                .then(() => finishSuccess())
+                .catch((err) => {
+                    console.error('Failed to save profile:', err);
+                    if (window.afzDashboard) {
+                        window.afzDashboard.showNotification('Failed to save profile: ' + (err.message || 'Unknown error'), 'error');
+                    }
+                });
+        } else {
+            // Fallback: local update only
+            setTimeout(finishSuccess, 500);
+        }
     }
 
     savePrivacySettings() {
@@ -1149,9 +1309,48 @@ class ProfileManager {
         this.loadUserData(); // Reload original data
     }
 
-    loadUserData() {
-        // In a real application, this would fetch from an API
-        // For now, we just refresh the display with current data
+    async loadUserData() {
+        try {
+            if (window.sb && window.sb.auth) {
+                const sessionRes = await window.sb.auth.getUser();
+                const authedUser = sessionRes && sessionRes.data ? sessionRes.data.user : null;
+                if (authedUser) {
+                    this.currentUser.id = authedUser.id;
+                    this.currentUser.email = authedUser.email || '';
+                    const meta = authedUser.user_metadata || {};
+                    const fullName = [meta.first_name, meta.last_name].filter(Boolean).join(' ').trim();
+                    this.currentUser.name = fullName || authedUser.email || '';
+                }
+            }
+
+            if (window.afzProfileApi && window.afzProfileApi.fetchProfile) {
+                const profile = await window.afzProfileApi.fetchProfile();
+                if (profile) {
+                    this.currentUser = Object.assign({}, this.currentUser, {
+                        name: profile.name || this.currentUser.name,
+                        phone: profile.phone || '',
+                        location: profile.location || '',
+                        bio: profile.bio || '',
+                        avatar: profile.avatar_url || this.currentUser.avatar,
+                        coverImage: profile.cover_url || this.currentUser.coverImage,
+                        dateOfBirth: profile.date_of_birth || '',
+                        gender: profile.gender || '',
+                        occupation: profile.occupation || '',
+                        interests: Array.isArray(profile.interests) ? profile.interests : [],
+                        socialLinks: {
+                            facebook: (profile.social_links && profile.social_links.facebook) || '',
+                            twitter: (profile.social_links && profile.social_links.twitter) || '',
+                            linkedin: (profile.social_links && profile.social_links.linkedin) || '',
+                            instagram: (profile.social_links && profile.social_links.instagram) || ''
+                        },
+                        privacySettings: Object.assign({}, this.currentUser.privacySettings, profile.privacy_settings || {})
+                    });
+                }
+            }
+        } catch (err) {
+            console.error('Failed to load profile:', err);
+        }
+
         this.updateProfileDisplay();
     }
 
@@ -1168,6 +1367,37 @@ class ProfileManager {
             month: 'long',
             day: 'numeric'
         });
+    }
+
+    setupRealtime() {
+        if (window.afzProfileApi && window.afzProfileApi.onProfileChange) {
+            if (this._unsubscribeProfile) this._unsubscribeProfile();
+            this._unsubscribeProfile = window.afzProfileApi.onProfileChange((payload) => {
+                if (!payload || !payload.new) return;
+                if (this.currentUser && payload.new.id === this.currentUser.id) {
+                    const p = payload.new;
+                    this.currentUser = Object.assign({}, this.currentUser, {
+                        name: p.name || this.currentUser.name,
+                        phone: p.phone || this.currentUser.phone,
+                        location: p.location || this.currentUser.location,
+                        bio: p.bio || this.currentUser.bio,
+                        avatar: p.avatar_url || this.currentUser.avatar,
+                        coverImage: p.cover_url || this.currentUser.coverImage,
+                        dateOfBirth: p.date_of_birth || this.currentUser.dateOfBirth,
+                        gender: p.gender || this.currentUser.gender,
+                        occupation: p.occupation || this.currentUser.occupation,
+                        interests: Array.isArray(p.interests) ? p.interests : this.currentUser.interests,
+                        socialLinks: {
+                            facebook: (p.social_links && p.social_links.facebook) || this.currentUser.socialLinks.facebook,
+                            twitter: (p.social_links && p.social_links.twitter) || this.currentUser.socialLinks.twitter,
+                            linkedin: (p.social_links && p.social_links.linkedin) || this.currentUser.socialLinks.linkedin,
+                            instagram: (p.social_links && p.social_links.instagram) || this.currentUser.socialLinks.instagram
+                        }
+                    });
+                    this.updateProfileDisplay();
+                }
+            });
+        }
     }
 
     injectProfileStyles() {
@@ -2066,6 +2296,70 @@ class ProfileManager {
             }
         `;
         document.head.appendChild(styles);
+    }
+
+    async handleEmailUpdate() {
+        const input = document.getElementById('sec-email');
+        const err = document.getElementById('err-sec-email');
+        if (!input) return;
+        const email = input.value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            if (err) { err.textContent = 'Enter a valid email'; err.style.display = 'block'; }
+            return;
+        }
+        if (err) { err.textContent = ''; err.style.display = 'none'; }
+        try {
+            await window.afzProfileApi.updateEmail(email);
+            if (window.afzDashboard) window.afzDashboard.showNotification('Email update requested. Check your inbox to confirm.', 'success');
+        } catch (e) {
+            if (window.afzDashboard) window.afzDashboard.showNotification('Failed to update email: ' + (e.message || 'Unknown error'), 'error');
+        }
+    }
+
+    async handlePasswordUpdate() {
+        const p1 = document.getElementById('sec-pass');
+        const p2 = document.getElementById('sec-pass2');
+        const e1 = document.getElementById('err-sec-pass');
+        const e2 = document.getElementById('err-sec-pass2');
+        if (!p1 || !p2) return;
+        const v1 = p1.value;
+        const v2 = p2.value;
+        let valid = true;
+        if (!v1 || v1.length < 8) { if (e1) { e1.textContent = 'Password must be at least 8 characters'; e1.style.display = 'block'; } valid = false; }
+        else { if (e1) { e1.textContent = ''; e1.style.display = 'none'; } }
+        if (v1 !== v2) { if (e2) { e2.textContent = 'Passwords do not match'; e2.style.display = 'block'; } valid = false; }
+        else { if (e2) { e2.textContent = ''; e2.style.display = 'none'; } }
+        if (!valid) return;
+        try {
+            await window.afzProfileApi.updatePassword(v1);
+            p1.value = ''; p2.value = '';
+            if (window.afzDashboard) window.afzDashboard.showNotification('Password updated.', 'success');
+        } catch (e) {
+            if (window.afzDashboard) window.afzDashboard.showNotification('Failed to update password: ' + (e.message || 'Unknown error'), 'error');
+        }
+    }
+
+    async handlePreferencesSave() {
+        const lang = document.getElementById('pref-language')?.value || 'en';
+        const theme = document.getElementById('pref-theme')?.value || 'light';
+        try {
+            await window.afzProfileApi.upsertProfile({ preferences: { language: lang, theme: theme } });
+            if (window.afzDashboard) window.afzDashboard.showNotification('Preferences saved.', 'success');
+        } catch (e) {
+            if (window.afzDashboard) window.afzDashboard.showNotification('Failed to save preferences: ' + (e.message || 'Unknown error'), 'error');
+        }
+    }
+
+    async handleNotificationsSave() {
+        const news = document.getElementById('notif-news')?.checked !== false;
+        const events = document.getElementById('notif-events')?.checked !== false;
+        const messages = document.getElementById('notif-messages')?.checked !== false;
+        try {
+            await window.afzProfileApi.upsertProfile({ notifications: { news: news, events: events, messages: messages } });
+            if (window.afzDashboard) window.afzDashboard.showNotification('Notification settings saved.', 'success');
+        } catch (e) {
+            if (window.afzDashboard) window.afzDashboard.showNotification('Failed to save notifications: ' + (e.message || 'Unknown error'), 'error');
+        }
     }
 }
 
