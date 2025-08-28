@@ -48,6 +48,7 @@ class AFZMemberHub {
         this.loadUserData();
         this.setupAccessibility();
         this.checkBrowserCompatibility();
+        this.bindLogout();
     }
 
     // ============================================
@@ -69,6 +70,21 @@ class AFZMemberHub {
                 }, 600);
             }
         }, 2000);
+    }
+
+    bindLogout() {
+        document.addEventListener('click', (e) => {
+            const el = e.target.closest('[data-action="logout"]');
+            if (!el) return;
+            e.preventDefault();
+            if (window.sb && window.sb.auth && window.sb.auth.signOut) {
+                window.sb.auth.signOut().finally(() => {
+                    window.location.href = './auth.html';
+                });
+            } else {
+                window.location.href = './auth.html';
+            }
+        });
     }
 
     animatePageEntrance() {

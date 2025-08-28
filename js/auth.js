@@ -231,34 +231,36 @@
         showLoadingState(submitButton);
         
         try {
-            // Simulate API call (replace with actual authentication)
-            const response = await simulateLogin(loginData);
-            
-            if (response.success) {
-                // Store authentication data
+            if (!window.sb || !window.sb.auth) {
+                throw new Error('Authentication service not initialized');
+            }
+
+            const { data, error } = await window.sb.auth.signInWithPassword({
+                email: loginData.email,
+                password: loginData.password
+            });
+
+            if (error) {
+                showAuthError(error.message || 'Login failed. Please check your credentials.');
+            } else if (data && data.user) {
                 authState.isLoggedIn = true;
-                authState.user = response.user;
-                authState.token = response.token;
-                
-                // Store in localStorage if remember me is checked
-                if (loginData.rememberMe) {
-                    localStorage.setItem('afz_auth_token', response.token);
-                    localStorage.setItem('afz_user', JSON.stringify(response.user));
+                authState.user = data.user;
+                authState.token = (data.session && data.session.access_token) || null;
+
+                if (loginData.rememberMe && data.session && data.session.access_token) {
+                    localStorage.setItem('afz_auth_token', data.session.access_token);
+                    localStorage.setItem('afz_user', JSON.stringify(data.user));
                 }
-                
-                // Show success message
-                showAuthSuccess('Login successful! Welcome back.', () => {
-                    // Redirect to member hub or return URL
+
+                showAuthSuccess('Login successful! Welcome back.', function() {
                     window.location.href = './member-hub.html';
                 });
-                
             } else {
-                showAuthError(response.message || 'Login failed. Please check your credentials.');
+                showAuthError('Login failed. Please try again.');
             }
-            
         } catch (error) {
             console.error('Login error:', error);
-            showAuthError('Network error. Please check your connection and try again.');
+            showAuthError(error.message || 'Network error. Please check your connection and try again.');
         } finally {
             hideLoadingState(submitButton);
         }
@@ -298,26 +300,39 @@
         showLoadingState(submitButton);
         
         try {
-            // Simulate API call (replace with actual registration)
-            const response = await simulateRegistration(registrationData);
-            
-            if (response.success) {
-                // Show success message
-                showAuthSuccess('Account created successfully! Please check your email to verify your account.', () => {
-                    // Switch to login tab
-                    document.getElementById('login-tab').click();
-                });
-                
-                // Clear form
-                form.reset();
-                
-            } else {
-                showAuthError(response.message || 'Registration failed. Please try again.');
+            if (!window.sb || !window.sb.auth) {
+                throw new Error('Authentication service not initialized');
             }
-            
+
+            // Create account
+            var signUpOptions = {
+                email: registrationData.email,
+                password: registrationData.password,
+                options: {
+                    data: {
+                        first_name: registrationData.firstName,
+                        last_name: registrationData.lastName,
+                        phone: registrationData.phone || null,
+                        location: registrationData.location || null,
+                        newsletter_opt_in: !!registrationData.subscribeNewsletter
+                    }
+                }
+            };
+
+            const { data, error } = await window.sb.auth.signUp(signUpOptions);
+
+            if (error) {
+                showAuthError(error.message || 'Registration failed. Please try again.');
+            } else {
+                showAuthSuccess('Account created successfully! Please check your email to verify your account.', function() {
+                    var loginTab = document.getElementById('login-tab');
+                    if (loginTab) loginTab.click();
+                });
+                form.reset();
+            }
         } catch (error) {
             console.error('Registration error:', error);
-            showAuthError('Network error. Please check your connection and try again.');
+            showAuthError(error.message || 'Network error. Please check your connection and try again.');
         } finally {
             hideLoadingState(submitButton);
         }
@@ -383,22 +398,30 @@
         const form = modal.querySelector('#forgotPasswordForm');
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const email = form.querySelector('#forgot-email').value;
             const submitButton = form.querySelector('button[type="submit"]');
-            
+
             showLoadingState(submitButton);
-            
+
             try {
-                // Simulate password reset request
-                await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                showAuthSuccess('Password reset link sent! Check your email for instructions.', () => {
-                    closeModal(modal);
+                if (!window.sb || !window.sb.auth) {
+                    throw new Error('Authentication service not initialized');
+                }
+
+                const { error } = await window.sb.auth.resetPasswordForEmail(email, {
+                    redirectTo: window.location.origin + '/pages/auth.html'
                 });
-                
+
+                if (error) {
+                    showAuthError(error.message || 'Failed to send reset link. Please try again.');
+                } else {
+                    showAuthSuccess('Password reset link sent! Check your email for instructions.', function() {
+                        closeModal(modal);
+                    });
+                }
             } catch (error) {
-                showAuthError('Failed to send reset link. Please try again.');
+                showAuthError(error.message || 'Failed to send reset link. Please try again.');
             } finally {
                 hideLoadingState(submitButton);
             }
