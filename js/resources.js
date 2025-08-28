@@ -256,7 +256,7 @@ class ResourceManager {
                 tags: ['genetics', 'medical', 'guide'],
                 featured: true,
                 author: 'Dr. Sarah Phiri',
-                url: '#'
+                url: 'https://www.who.int/publications/i/item/understanding-albinism-guide'
             },
             {
                 id: '2',
@@ -272,7 +272,7 @@ class ResourceManager {
                 tags: ['skincare', 'protection', 'health'],
                 featured: true,
                 author: 'AFZ Medical Team',
-                url: '#'
+                url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
             },
             {
                 id: '3',
@@ -288,7 +288,7 @@ class ResourceManager {
                 tags: ['rights', 'law', 'protection'],
                 featured: false,
                 author: 'AFZ Legal Team',
-                url: '#'
+                url: 'https://zambialii.org/'
             },
             {
                 id: '4',
@@ -635,7 +635,11 @@ class ResourceManager {
         // Add event listeners
         card.addEventListener('click', (e) => {
             if (!e.target.classList.contains('resource-action-btn')) {
-                this.openResourceModal(resource);
+                if (resource.url && resource.url !== '#') {
+                    window.open(resource.url, '_blank', 'noopener');
+                } else {
+                    this.openResourceModal(resource);
+                }
             }
         });
 
