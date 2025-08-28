@@ -6,18 +6,18 @@
 class ProfileManager {
     constructor() {
         this.currentUser = {
-            id: 'user_123',
-            name: 'John Doe',
-            email: 'john.doe@email.com',
-            phone: '+260-123-456789',
-            location: 'Lusaka, Zambia',
-            bio: 'Passionate advocate for albinism awareness and community support. Working to create a more inclusive society for all.',
-            avatar: 'assets/avatars/john-doe.jpg',
-            coverImage: 'assets/images/cover-default.jpg',
-            dateOfBirth: '1990-05-15',
-            gender: 'Male',
-            occupation: 'Community Advocate',
-            interests: ['Advocacy', 'Healthcare', 'Education', 'Community Building'],
+            id: '',
+            name: '',
+            email: '',
+            phone: '',
+            location: '',
+            bio: '',
+            avatar: '../images/placeholder.svg',
+            coverImage: '../images/placeholder.svg',
+            dateOfBirth: '',
+            gender: '',
+            occupation: '',
+            interests: [],
             socialLinks: {
                 facebook: '',
                 twitter: '',
@@ -31,7 +31,7 @@ class ProfileManager {
                 allowMessages: true,
                 allowConnectionRequests: true
             },
-            joinDate: '2023-01-15',
+            joinDate: '',
             lastActive: new Date()
         };
         
@@ -874,23 +874,37 @@ class ProfileManager {
         
         if (!file || !uploadType) return;
 
-        // Simulate upload process
-        this.hideImageUploadModal();
-        
-        const reader = new FileReader();
-        reader.onload = (e) => {
+        const finishSuccess = (url) => {
             if (uploadType === 'avatar') {
-                this.updateAvatar(e.target.result);
+                this.updateAvatar(url);
             } else {
-                this.updateCoverImage(e.target.result);
+                this.updateCoverImage(url);
+            }
+            this.hideImageUploadModal();
+            if (window.afzDashboard) {
+                window.afzDashboard.showNotification(`${uploadType === 'avatar' ? 'Profile picture' : 'Cover photo'} updated successfully!`, 'success');
             }
         };
-        reader.readAsDataURL(file);
 
-        // Show success notification
-        if (window.afzDashboard) {
-            window.afzDashboard.showNotification(`${uploadType === 'avatar' ? 'Profile picture' : 'Cover photo'} updated successfully!`, 'success');
+        if (uploadType === 'avatar' && window.afzProfileApi && window.afzProfileApi.uploadAvatar) {
+            window.afzProfileApi.uploadAvatar(file)
+                .then((publicUrl) => {
+                    finishSuccess(publicUrl || this.currentUser.avatar);
+                })
+                .catch((err) => {
+                    console.error('Upload failed:', err);
+                    // Fallback to local preview
+                    const reader = new FileReader();
+                    reader.onload = (e) => finishSuccess(e.target.result);
+                    reader.readAsDataURL(file);
+                });
+            return;
         }
+
+        // Fallback to local preview if no storage integration
+        const reader = new FileReader();
+        reader.onload = (e) => finishSuccess(e.target.result);
+        reader.readAsDataURL(file);
     }
 
     updateAvatar(newAvatar) {
@@ -1034,35 +1048,59 @@ class ProfileManager {
         }
     }
 
-    saveProfile() {
+    async saveProfile() {
         const formData = new FormData(document.getElementById('edit-profile-form'));
         
-        // Update user data
+        // Update user data from form fields
         for (let [key, value] of formData.entries()) {
             if (key in this.currentUser) {
                 this.currentUser[key] = value;
-            } else if (key.startsWith('social-')) {
-                const socialPlatform = key.replace('social-', '');
-                this.currentUser.socialLinks[socialPlatform] = value;
             }
         }
-
-        // Update social links from individual fields
         this.currentUser.socialLinks.facebook = document.getElementById('edit-facebook').value;
         this.currentUser.socialLinks.twitter = document.getElementById('edit-twitter').value;
         this.currentUser.socialLinks.linkedin = document.getElementById('edit-linkedin').value;
         this.currentUser.socialLinks.instagram = document.getElementById('edit-instagram').value;
 
-        // Simulate API call
-        setTimeout(() => {
+        const payload = {
+            name: this.currentUser.name,
+            phone: this.currentUser.phone,
+            location: this.currentUser.location,
+            date_of_birth: this.currentUser.dateOfBirth,
+            gender: this.currentUser.gender,
+            occupation: this.currentUser.occupation,
+            bio: this.currentUser.bio,
+            social_links: {
+                facebook: this.currentUser.socialLinks.facebook,
+                twitter: this.currentUser.socialLinks.twitter,
+                linkedin: this.currentUser.socialLinks.linkedin,
+                instagram: this.currentUser.socialLinks.instagram
+            },
+            interests: this.currentUser.interests
+        };
+
+        const finishSuccess = () => {
             this.markAsSaved();
             this.updateProfileDisplay();
             this.switchTab('overview');
-            
             if (window.afzDashboard) {
                 window.afzDashboard.showNotification('Profile updated successfully!', 'success');
             }
-        }, 1000);
+        };
+
+        if (window.afzProfileApi && window.afzProfileApi.upsertProfile) {
+            window.afzProfileApi.upsertProfile(payload)
+                .then(() => finishSuccess())
+                .catch((err) => {
+                    console.error('Failed to save profile:', err);
+                    if (window.afzDashboard) {
+                        window.afzDashboard.showNotification('Failed to save profile: ' + (err.message || 'Unknown error'), 'error');
+                    }
+                });
+        } else {
+            // Fallback: local update only
+            setTimeout(finishSuccess, 500);
+        }
     }
 
     savePrivacySettings() {
@@ -1149,9 +1187,48 @@ class ProfileManager {
         this.loadUserData(); // Reload original data
     }
 
-    loadUserData() {
-        // In a real application, this would fetch from an API
-        // For now, we just refresh the display with current data
+    async loadUserData() {
+        try {
+            if (window.sb && window.sb.auth) {
+                const sessionRes = await window.sb.auth.getUser();
+                const authedUser = sessionRes && sessionRes.data ? sessionRes.data.user : null;
+                if (authedUser) {
+                    this.currentUser.id = authedUser.id;
+                    this.currentUser.email = authedUser.email || '';
+                    const meta = authedUser.user_metadata || {};
+                    const fullName = [meta.first_name, meta.last_name].filter(Boolean).join(' ').trim();
+                    this.currentUser.name = fullName || authedUser.email || '';
+                }
+            }
+
+            if (window.afzProfileApi && window.afzProfileApi.fetchProfile) {
+                const profile = await window.afzProfileApi.fetchProfile();
+                if (profile) {
+                    this.currentUser = Object.assign({}, this.currentUser, {
+                        name: profile.name || this.currentUser.name,
+                        phone: profile.phone || '',
+                        location: profile.location || '',
+                        bio: profile.bio || '',
+                        avatar: profile.avatar_url || this.currentUser.avatar,
+                        coverImage: profile.cover_url || this.currentUser.coverImage,
+                        dateOfBirth: profile.date_of_birth || '',
+                        gender: profile.gender || '',
+                        occupation: profile.occupation || '',
+                        interests: Array.isArray(profile.interests) ? profile.interests : [],
+                        socialLinks: {
+                            facebook: (profile.social_links && profile.social_links.facebook) || '',
+                            twitter: (profile.social_links && profile.social_links.twitter) || '',
+                            linkedin: (profile.social_links && profile.social_links.linkedin) || '',
+                            instagram: (profile.social_links && profile.social_links.instagram) || ''
+                        },
+                        privacySettings: Object.assign({}, this.currentUser.privacySettings, profile.privacy_settings || {})
+                    });
+                }
+            }
+        } catch (err) {
+            console.error('Failed to load profile:', err);
+        }
+
         this.updateProfileDisplay();
     }
 
