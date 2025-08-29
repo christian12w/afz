@@ -730,18 +730,20 @@
         <section class="mission-section" aria-labelledby="mission-heading">
             <div class="container">
                 <h2 id="mission-heading" class="section-title" data-translate="mission-heading">Our Mission & Vision</h2>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon" aria-hidden="true">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                <div class="values-grid" role="list" aria-label="AFZ Mission, Vision, and Values">
+                    <article class="value-card" role="listitem">
+                        <div class="value-content">
+                            <div class="value-icon" aria-hidden="true">
+                                <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="value-title" data-translate="mission-title">Our Mission</h3>
+                            <p class="value-description" data-translate="mission-text">
+                                To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs.
+                            </p>
                         </div>
-                        <h3 class="value-title" data-translate="mission-title">Our Mission</h3>
-                        <p class="value-description" data-translate="mission-text">
-                            To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs.
-                        </p>
-                    </div>
+                    </article>
                     <div class="value-card">
                         <div class="value-icon" aria-hidden="true">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
@@ -772,39 +774,63 @@
         <section class="management-section" aria-labelledby="management-heading">
             <div class="container">
                 <h2 id="management-heading" class="section-title" data-translate="management-title">Meet Our Leadership Team</h2>
-                <div class="management-grid">
-                    <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../executive-director.jpg" alt="Photo of Jessica Dayal, Executive Director" loading="lazy">
+                <div class="management-grid" role="list" aria-label="AFZ Leadership Team Members">
+                    <article class="management-card" role="listitem">
+                        <div class="management-image">
+                            <img src="../executive-director.jpg" 
+                                 alt="Photo of Jessica Dayal, Executive Director" 
+                                 loading="lazy"
+                                 width="200"
+                                 height="200">
                         </div>
-                        <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
-                        <p class="management-name" data-translate="management-executive-name">Jessica Dayal</p>
-                        <p class="management-description">Leading the strategic vision and operations of AFZ to advance advocacy and support for persons with albinism.</p>
-                    </div>
-                    <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../accountant.jpg" alt="Photo of Ngandwe Kabuka, Accountant" loading="lazy">
+                        <div class="management-content">
+                            <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
+                            <p class="management-name" data-translate="management-executive-name">Jessica Dayal</p>
+                            <p class="management-description">Leading the strategic vision and operations of AFZ to advance advocacy and support for persons with albinism.</p>
                         </div>
-                        <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
-                        <p class="management-name" data-translate="management-accountant-name">Ngandwe Kabuka</p>
-                        <p class="management-description">Ensuring financial transparency, accountability, and effective resource management for AFZ’s initiatives.</p>
-                    </div>
-                    <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy">
+                    </article>
+                    <article class="management-card" role="listitem">
+                        <div class="management-image">
+                            <img src="../accountant.jpg" 
+                                 alt="Photo of Ngandwe Kabuka, AFZ Accountant" 
+                                 loading="lazy"
+                                 width="200"
+                                 height="200">
                         </div>
-                        <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
-                        <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
-                        <p class="management-description">Leading our community programs and initiatives.</p>
-                    </div>
-                    <div class="management-card">
-                        <div class="management-image" aria-hidden="true">
-                            <img src="../administrative-officer.jpg" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy">
+                        <div class="management-content">
+                            <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
+                            <p class="management-name" data-translate="management-accountant-name">Ngandwe Kabuka</p>
+                            <p class="management-description">Ensuring financial transparency, accountability, and effective resource management for AFZ's initiatives.</p>
                         </div>
-                        <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
-                        <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
-                        <p class="management-description">Ensuring smooth operations and member support.</p>
-                    </div>
+                    </article>
+                    <article class="management-card" role="listitem">
+                        <div class="management-image">
+                            <img src="../programs-coordinator.jpg" 
+                                 alt="Photo of John Mwanza, Programs Coordinator" 
+                                 loading="lazy"
+                                 width="200"
+                                 height="200">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
+                            <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
+                            <p class="management-description">Leading our community programs and initiatives.</p>
+                        </div>
+                    </article>
+                    <article class="management-card" role="listitem">
+                        <div class="management-image">
+                            <img src="../administrative-officer.jpg" 
+                                 alt="Photo of Emily Mbuzi, Administrative Officer" 
+                                 loading="lazy"
+                                 width="200"
+                                 height="200">
+                        </div>
+                        <div class="management-content">
+                            <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
+                            <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
+                            <p class="management-description">Ensuring smooth operations and member support.</p>
+                        </div>
+                    </article>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
                             <img src="../lusaka-coordinator.jpg" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy">
@@ -829,15 +855,21 @@
         <section class="board-section" aria-labelledby="board-heading">
             <div class="container">
                 <h2 id="board-heading" class="section-title" data-translate="board-title">Our Board of Directors</h2>
-                <div class="board-grid">
-                    <div class="board-card">
-                        <div class="board-image" aria-hidden="true">
-                            <img src="../board-chairperson.jpg" alt="Photo of John Chiti, Chairperson" loading="lazy">
+                <div class="board-grid" role="list" aria-label="AFZ Board of Directors Members">
+                    <article class="board-card" role="listitem">
+                        <div class="board-image">
+                            <img src="../board-chairperson.jpg" 
+                                 alt="Photo of John Chiti, Chairperson of AFZ Board" 
+                                 loading="lazy"
+                                 width="200"
+                                 height="200">
                         </div>
-                        <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
-                        <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
-                        <p class="board-description">Founder and visionary leader of AFZ, bringing his musical fame and personal experience to advocate for change.</p>
-                    </div>
+                        <div class="board-content">
+                            <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
+                            <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
+                            <p class="board-description">Founder and visionary leader of AFZ, bringing his musical fame and personal experience to advocate for change.</p>
+                        </div>
+                    </article>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
                             <img src="../board-vice-chairperson.jpg" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy">
@@ -886,16 +918,16 @@
         <section class="stats-section" aria-labelledby="stats-heading">
             <div class="container">
                 <h2 id="stats-heading" class="section-title" data-translate="stats-title">Our Impact</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
+                <div class="impact-stats-grid" role="region" aria-label="AFZ Impact Statistics">
+                    <article class="stat-item" role="article">
+                        <div class="stat-icon" aria-hidden="true">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M16 7c0-2.21-1.79-4-4-4S8 4.79 8 7s1.79 4 4 4 4-1.79 4-4zm-4 2c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm8 7v-1c0-2.66-5.33-4-8-4s-8 1.34-8 4v1h16zm-2-1H6c.22-.72 3.31-2 6-2s5.78 1.28 6 2z"/>
                             </svg>
                         </div>
-                        <span class="stat-number" data-count="500">500+</span>
-                        <span class="stat-label" data-translate="stat-members">Members Supported</span>
-                    </div>
+                        <p class="stat-number" aria-label="Number of members supported">500+</p>
+                        <p class="stat-description">Members Supported</p>
+                    </article>
                     <div class="stat-card">
                         <div class="stat-icon">
                             <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
@@ -953,9 +985,17 @@
                     <div class="partners-header">
                         <h2 id="funding-partners-title" class="partners-title">Funding Partners</h2>
                     </div>
-                    <div class="partners-logos" role="list">
-                        <a href="https://zafod.org.zm" target="_blank" rel="noopener" role="listitem" aria-label="ZAFOD - Zambia Federation of Disability Organisations">
-                            <img src="../images/partners/zafod.svg" alt="ZAFOD logo">
+                    <div class="partners-logos" role="list" aria-label="Our funding partners and supporters">
+                        <a href="https://zafod.org.zm" 
+                           target="_blank" 
+                           rel="noopener" 
+                           class="partner-link"
+                           aria-label="Visit ZAFOD - Zambia Federation of Disability Organisations website">
+                            <img src="../images/partners/zafod.svg" 
+                                 alt="ZAFOD - Zambia Federation of Disability Organisations"
+                                 width="200"
+                                 height="100"
+                                 loading="lazy">
                         </a>
                         <a href="https://www.zambia.gov.zm/" target="_blank" rel="noopener" role="listitem" aria-label="GRZ - Government of the Republic of Zambia">
                             <img src="../images/partners/grz.svg" alt="GRZ crest">
