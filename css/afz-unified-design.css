@@ -695,6 +695,60 @@ img {
 }
 
 /* ========================================
+   FUNDING PARTNERS STRIP
+   ======================================== */
+.funding-partners {
+    padding: var(--space-12) 0;
+    background: var(--gray-50);
+}
+
+.funding-partners .partners-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.funding-partners .partners-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gray-700);
+    margin: 0;
+}
+
+.partners-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--space-6);
+    align-items: center;
+}
+
+.partners-logos a,
+.partners-logos span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    background: var(--afz-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+}
+
+.partners-logos img {
+    max-height: 40px;
+    width: auto;
+    border-radius: 0;
+}
+
+@media (max-width: 768px) {
+    .funding-partners {
+        padding: var(--space-8) 0;
+    }
+    .partners-logos img {
+        max-height: 32px;
+    }
+}
+
+/* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 
