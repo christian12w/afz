@@ -18,7 +18,7 @@
     <meta property="og:description" content="Discover our mission to advocate for the rights and inclusion of persons with albinism in Zambia.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://christian12w.github.io/afz/pages/about.html">
-    <meta property="og:image" content="{{ site.baseurl }}/images/favicon.jpg">
+    <meta property="og:image" content="../favicon.jpg">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -87,7 +87,7 @@
 
         /* Hero Section */
         .about-hero {
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('{{ site.baseurl }}/images/hero-background.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('../favicon.jpg') center/cover no-repeat;
             padding: 3rem 0;
             display: flex;
             align-items: center;
@@ -160,9 +160,11 @@
         .founder-image {
             max-width: 100%;
             height: auto;
+            object-fit: contain;
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-md);
             border: 2px solid var(--gold-orange);
+            display: block;
         }
 
         .founder-caption {
@@ -294,7 +296,6 @@
 
         .management-image {
             width: 100%;
-            height: 160px;
             overflow: hidden;
             border-top-left-radius: var(--radius-md);
             border-top-right-radius: var(--radius-md);
@@ -302,8 +303,9 @@
 
         .management-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .management-role {
@@ -365,7 +367,6 @@
 
         .board-image {
             width: 100%;
-            height: 160px;
             overflow: hidden;
             border-top-left-radius: var(--radius-md);
             border-top-right-radius: var(--radius-md);
@@ -373,8 +374,9 @@
 
         .board-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
+            display: block;
         }
 
         .board-role {
@@ -711,7 +713,7 @@
                         <p class="welcome-message">
                             Together, we’re breaking barriers, fostering inclusion, and building a brighter future for all. Join us today and be part of our mission!
                         </p>
-                        <a href="{{ site.baseurl }}/pages/contact.html" class="welcome-cta">Get Involved</a>
+                        <a href="contact.html" class="welcome-cta">Get Involved</a>
                     </div>
                     <div class="welcome-visual">
                         <div class="welcome-icon">
@@ -773,7 +775,7 @@
                 <div class="management-grid">
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/executive-director.jpg" alt="Photo of Jessica Dayal, Executive Director" loading="lazy">
+                            <img src="../executive-director.jpg" alt="Photo of Jessica Dayal, Executive Director" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-executive-director">Executive Director</h3>
                         <p class="management-name" data-translate="management-executive-name">Jessica Dayal</p>
@@ -781,7 +783,7 @@
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/accountant.jpg" alt="Photo of Ngandwe Kabuka, Accountant" loading="lazy">
+                            <img src="../accountant.jpg" alt="Photo of Ngandwe Kabuka, Accountant" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-accountant">Accountant</h3>
                         <p class="management-name" data-translate="management-accountant-name">Ngandwe Kabuka</p>
@@ -789,7 +791,7 @@
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy">
+                            <img src="../programs-coordinator.jpg" alt="Photo of John Mwanza, Programs Coordinator" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-programs-coordinator">Programs Coordinator</h3>
                         <p class="management-name" data-translate="management-programs-name">John Mwanza</p>
@@ -797,7 +799,7 @@
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/administrative-officer" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy">
+                            <img src="../administrative-officer.jpg" alt="Photo of Emily Mbuzi, Administrative Officer" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-admin-officer">Administrative Officer</h3>
                         <p class="management-name" data-translate="management-admin-name">Emily Mbuzi</p>
@@ -805,7 +807,7 @@
                     </div>
                     <div class="management-card">
                         <div class="management-image" aria-hidden="true">
-                            <img src="../images/lusaka-coordinator" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy">
+                            <img src="../lusaka-coordinator.jpg" alt="Photo of Susan Phiri, Lusaka Branch Coordinator" loading="lazy">
                         </div>
                         <h3 class="management-role" data-translate="management-lusaka-coordinator">Lusaka Branch Coordinator</h3>
                         <p class="management-name" data-translate="management-lusaka-name">Susan Phiri</p>
@@ -830,7 +832,7 @@
                 <div class="board-grid">
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-chairperson" alt="Photo of John Chiti, Chairperson" loading="lazy">
+                            <img src="../board-chairperson.jpg" alt="Photo of John Chiti, Chairperson" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-chairperson">Chairperson</h3>
                         <p class="board-name" data-translate="board-chairperson-name">John Chiti</p>
@@ -838,7 +840,7 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-vice-chairperson" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy">
+                            <img src="../board-vice-chairperson.jpg" alt="Photo of Coretta Meki, Vice Chairperson" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-vice-chairperson">Vice Chairperson</h3>
                         <p class="board-name" data-translate="board-vice-chairperson-name">Coretta Meki</p>
@@ -846,7 +848,7 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member1" alt="Photo of Bernadette Tembo, Board Member" loading="lazy">
+                            <img src="../board-member1.jpg" alt="Photo of Bernadette Tembo, Board Member" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member1-name">Bernadette Tembo</p>
@@ -854,7 +856,7 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member2" alt="Photo of Bruce Chooma, Board Member" loading="lazy">
+                            <img src="../board-member2.jpg" alt="Photo of Bruce Chooma, Board Member" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member2-name">Bruce Chooma</p>
@@ -862,7 +864,7 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member3" alt="Photo of Thomas Mtonga, Board Member" loading="lazy">
+                            <img src="../board-member3.jpg" alt="Photo of Thomas Mtonga, Board Member" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member3-name">Thomas Mtonga</p>
@@ -870,7 +872,7 @@
                     </div>
                     <div class="board-card">
                         <div class="board-image" aria-hidden="true">
-                            <img src="../images/board-member4" alt="Photo of Johans Mtonga, Board Member" loading="lazy">
+                            <img src="../board-member4.jpg" alt="Photo of Johans Mtonga, Board Member" loading="lazy">
                         </div>
                         <h3 class="board-role" data-translate="board-member">Member</h3>
                         <p class="board-name" data-translate="board-member4-name">Johans Mtonga</p>
@@ -935,8 +937,8 @@
                         Be part of our community to support, advocate, and empower persons with albinism in Zambia. Together, we can make a lasting impact.
                     </p>
                     <div class="cta-buttons">
-                        <a href="{{ site.baseurl }}/pages/contact.html" class="cta-button primary">Get in Touch</a>
-                        <a href="{{ site.baseurl }}/pages/donate.html" class="cta-button secondary">Support Our Cause</a>
+                        <a href="contact.html" class="cta-button primary">Get in Touch</a>
+                        <a href="donate.html" class="cta-button secondary">Support Our Cause</a>
                     </div>
                 </div>
             </div>
@@ -1004,10 +1006,10 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="{{ site.baseurl }}/js/main.js"></script>
-    <script src="{{ site.baseurl }}/js/language.js"></script>
-    <script src="{{ site.baseurl }}/js/navigation.js"></script>
-    <script src="{{ site.baseurl }}/js/pwa.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/language.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/pwa.js"></script>
 </body>
 </html>
-```
+ 
