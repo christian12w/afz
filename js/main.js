@@ -29,9 +29,21 @@ window.AFZ = window.AFZ || {};
     }
 })();
 
-// Global image error fallback: if an image fails to load, hide it or swap to a placeholder
+// Global image error fallback: if an image fails to load, swap to a reachable placeholder
 (function() {
-    const placeholderSrc = './images/placeholder.svg';
+    const placeholderSrc = (function() {
+        try {
+            const path = window.location.pathname || '';
+            // If we are under /pages/, step up one level
+            if (path.includes('/pages/')) {
+                return '../images/placeholder.svg';
+            }
+            // Otherwise we are likely at root (e.g., index.html)
+            return './images/placeholder.svg';
+        } catch (e) {
+            return './images/placeholder.svg';
+        }
+    })();
     window.addEventListener('error', function(e) {
         const target = e.target || e.srcElement;
         if (target && target.tagName === 'IMG') {
