@@ -319,14 +319,14 @@
                 <div class="container">
                     <h3>Raising Awareness on Albinism</h3>
                     <p>Together, we break the silence and shatter misconceptions about albinism. Through education, advocacy, and community support, we create a world where every person with albinism can live with dignity, equality, and hope.</p>
-                    <div class="stats-grid">
-                        <div>
-                            <p>1 in 20,000</p>
-                            <p>People worldwide are born with albinism</p>
+                    <div class="stats-grid" aria-label="Key Statistics" role="region">
+                        <div class="stat-item">
+                            <p class="stat-number" aria-label="Global prevalence of albinism">1 in 20,000</p>
+                            <p class="stat-description">People worldwide are born with albinism</p>
                         </div>
-                        <div>
-                            <p>30,000+</p>
-                            <p>Zambians living with albinism</p>
+                        <div class="stat-item">
+                            <p class="stat-number" aria-label="Number of Zambians with albinism">30,000+</p>
+                            <p class="stat-description">Zambians living with albinism</p>
                         </div>
                     </div>
                     <div class="cta-buttons">
@@ -340,10 +340,19 @@
                 <div class="container">
                     <h2>Our Mission</h2>
                     <p>To advocate for the rights, dignity, and inclusion of persons with albinism in Zambia through awareness campaigns, policy advocacy, support services, and community empowerment programs.</p>
-                    <div class="stats-grid">
-                        <p>500+ Members Supported</p>
-                        <p>15+ Active Programs</p>
-                        <p>8 Provinces Reached</p>
+                    <div class="impact-stats-grid" aria-label="Mission Impact Statistics" role="region">
+                        <div class="stat-item">
+                            <p class="stat-number" aria-label="Number of members supported">500+</p>
+                            <p class="stat-description">Members Supported</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number" aria-label="Number of active programs">15+</p>
+                            <p class="stat-description">Active Programs</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-number" aria-label="Number of provinces reached">8</p>
+                            <p class="stat-description">Provinces Reached</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -351,23 +360,47 @@
             <section class="focus-areas">
                 <div class="container">
                     <h2>Our Focus Areas</h2>
-                    <div class="focus-grid">
-                        <div>
-                            <h3>Rights Advocacy</h3>
-                            <p>Championing policy changes and legal protections to ensure equal rights and opportunities for all persons with albinism.</p>
-                        </div>
-                        <div>
-                            <h3>Awareness Campaigns</h3>
-                            <p>Educating communities about albinism to combat myths, misconceptions, and discrimination through targeted outreach programs.</p>
-                        </div>
-                        <div>
-                            <h3>Support Services</h3>
-                            <p>Providing essential services including sunscreen distribution, protective clothing, and healthcare access coordination.</p>
-                        </div>
-                        <div>
-                            <h3>Education Access</h3>
-                            <p>Ensuring children with albinism have access to quality education with appropriate accommodations and support systems.</p>
-                        </div>
+                    <div class="focus-grid" role="list" aria-label="Our key focus areas and initiatives">
+                        <article class="focus-area" role="listitem">
+                            <div class="focus-content">
+                                <h3 class="focus-title">Rights Advocacy</h3>
+                                <p class="focus-description">Championing policy changes and legal protections to ensure equal rights and opportunities for all persons with albinism.</p>
+                                <a href="./pages/advocacy.html" class="focus-link" aria-label="Learn more about our rights advocacy work">
+                                    <span>Learn More</span>
+                                    <span class="sr-only"> about our rights advocacy work</span>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="focus-area" role="listitem">
+                            <div class="focus-content">
+                                <h3 class="focus-title">Awareness Campaigns</h3>
+                                <p class="focus-description">Educating communities about albinism to combat myths, misconceptions, and discrimination through targeted outreach programs.</p>
+                                <a href="./pages/programs.html#awareness" class="focus-link" aria-label="Learn more about our awareness campaigns">
+                                    <span>Learn More</span>
+                                    <span class="sr-only"> about our awareness campaigns</span>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="focus-area" role="listitem">
+                            <div class="focus-content">
+                                <h3 class="focus-title">Support Services</h3>
+                                <p class="focus-description">Providing essential services including sunscreen distribution, protective clothing, and healthcare access coordination.</p>
+                                <a href="./pages/programs.html#support" class="focus-link" aria-label="Learn more about our support services">
+                                    <span>Learn More</span>
+                                    <span class="sr-only"> about our support services</span>
+                                </a>
+                            </div>
+                        </article>
+                        <article class="focus-area" role="listitem">
+                            <div class="focus-content">
+                                <h3 class="focus-title">Education Access</h3>
+                                <p class="focus-description">Ensuring children with albinism have access to quality education with appropriate accommodations and support systems.</p>
+                                <a href="./pages/programs.html#education" class="focus-link" aria-label="Learn more about our education access initiatives">
+                                    <span>Learn More</span>
+                                    <span class="sr-only"> about our education access initiatives</span>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -375,10 +408,40 @@
             <section class="event-calendar">
                 <div class="container">
                     <h2>Upcoming Events</h2>
-                    <ul>
-                        <li><strong>Sep 10, 2025</strong> - Awareness Walk in Lusaka</li>
-                        <li><strong>Oct 15, 2025</strong> - Advocacy Workshop</li>
-                        <li><strong>Nov 20, 2025</strong> - Community Health Fair</li>
+                    <ul class="events-list" role="list">
+                        <li class="event-item" role="listitem">
+                            <time datetime="2025-09-10" class="event-date">Sep 10, 2025</time>
+                            <div class="event-details">
+                                <h3 class="event-title">Awareness Walk in Lusaka</h3>
+                                <p class="event-description">Join us for our annual awareness walk to raise visibility and understanding about albinism in our community.</p>
+                                <a href="./pages/events.html#awareness-walk" class="event-link" aria-label="Learn more about the Awareness Walk in Lusaka on September 10, 2025">
+                                    Event Details
+                                    <span class="sr-only"> about Awareness Walk in Lusaka</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="event-item" role="listitem">
+                            <time datetime="2025-10-15" class="event-date">Oct 15, 2025</time>
+                            <div class="event-details">
+                                <h3 class="event-title">Advocacy Workshop</h3>
+                                <p class="event-description">A workshop focused on empowering advocates and community leaders with effective advocacy tools and strategies.</p>
+                                <a href="./pages/events.html#advocacy-workshop" class="event-link" aria-label="Learn more about the Advocacy Workshop on October 15, 2025">
+                                    Event Details
+                                    <span class="sr-only"> about Advocacy Workshop</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="event-item" role="listitem">
+                            <time datetime="2025-11-20" class="event-date">Nov 20, 2025</time>
+                            <div class="event-details">
+                                <h3 class="event-title">Community Health Fair</h3>
+                                <p class="event-description">A comprehensive health fair providing free skin screenings, eye examinations, and health education resources.</p>
+                                <a href="./pages/events.html#health-fair" class="event-link" aria-label="Learn more about the Community Health Fair on November 20, 2025">
+                                    Event Details
+                                    <span class="sr-only"> about Community Health Fair</span>
+                                </a>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>
@@ -386,28 +449,89 @@
             <section class="funding-partners" aria-labelledby="funding-partners-title">
                 <div class="container">
                     <div class="partners-header">
-                        <h2 id="funding-partners-title" class="partners-title">Funding Partners</h2>
+                        <h2 id="funding-partners-title" class="partners-title">Our Funding Partners</h2>
+                        <p class="partners-description">Organizations supporting our mission to advocate for persons with albinism in Zambia</p>
                     </div>
-                    <div class="partners-logos" role="list">
-                        <a href="https://zafod.org.zm" target="_blank" rel="noopener" role="listitem" aria-label="ZAFOD - Zambia Federation of Disability Organisations">
-                            <img src="./images/partners/zafod.svg" alt="ZAFOD logo">
-                        </a>
-                        <a href="https://www.zambia.gov.zm/" target="_blank" rel="noopener" role="listitem" aria-label="GRZ - Government of the Republic of Zambia">
-                            <img src="./images/partners/grz.svg" alt="GRZ crest">
-                        </a>
-                        <a href="https://zapd.org.zm" target="_blank" rel="noopener" role="listitem" aria-label="ZAPD - Zambia Agency for Persons with Disabilities">
-                            <img src="./images/partners/zapd.png" alt="ZAPD logo">
-                        </a>
-                        <a href="https://disabilityrightswatch.net" target="_blank" rel="noopener" role="listitem" aria-label="Disability Rights Watch">
-                            <img src="./images/partners/disability-rights-watch.png" alt="Disability Rights Watch logo">
-                        </a>
-                        <a href="https://steps.org.za" target="_blank" rel="noopener" role="listitem" aria-label="STEPS Clubfoot Care">
-                            <img src="./images/partners/steps.svg" alt="STEPS logo">
-                        </a>
-                        <a href="https://www.sightsavers.org/" target="_blank" rel="noopener" role="listitem" aria-label="Sightsavers">
-                            <img src="./images/partners/sightsavers.svg" alt="Sightsavers logo">
-                        </a>
-                    </div>
+                    <ul class="partners-logos" role="list">
+                        <li>
+                            <a href="https://zafod.org.zm" 
+                               target="_blank" 
+                               rel="noopener" 
+                               class="partner-link"
+                               aria-label="Visit ZAFOD - Zambia Federation of Disability Organisations website">
+                                <img src="./images/partners/zafod.svg" 
+                                     alt="ZAFOD - Zambia Federation of Disability Organisations"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.zambia.gov.zm/" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="partner-link" 
+                               aria-label="Visit Government of the Republic of Zambia website">
+                                <img src="./images/partners/grz.svg" 
+                                     alt="GRZ - Government of the Republic of Zambia"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://zapd.org.zm" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="partner-link" 
+                               aria-label="Visit ZAPD - Zambia Agency for Persons with Disabilities website">
+                                <img src="./images/partners/zapd.png" 
+                                     alt="ZAPD - Zambia Agency for Persons with Disabilities"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://disabilityrightswatch.net" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="partner-link" 
+                               aria-label="Visit Disability Rights Watch website">
+                                <img src="./images/partners/disability-rights-watch.png" 
+                                     alt="Disability Rights Watch - Advocating for disability rights"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://steps.org.za" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="partner-link" 
+                               aria-label="Visit STEPS Clubfoot Care website">
+                                <img src="./images/partners/steps.svg" 
+                                     alt="STEPS Clubfoot Care - Supporting mobility and accessibility"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.sightsavers.org/" 
+                               target="_blank" 
+                               rel="noopener"
+                               class="partner-link" 
+                               aria-label="Visit Sightsavers website">
+                                <img src="./images/partners/sightsavers.svg" 
+                                     alt="Sightsavers - Working to prevent avoidable blindness"
+                                     width="200"
+                                     height="100"
+                                     loading="lazy">
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -415,24 +539,24 @@
                 <div class="container">
                     <h2>Latest News & Updates</h2>
                     <div class="news-grid">
-                        <div>
+                        <article>
                             <h3>August 1, 2024</h3>
                             <h4>AFZ Launches Nationwide Awareness Campaign</h4>
                             <p>Our comprehensive awareness campaign reaches rural communities across Zambia to combat discrimination and promote understanding.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                        <div>
+                            <a href="#" class="read-more">Read More<span class="sr-only"> about Nationwide Awareness Campaign</span></a>
+                        </article>
+                        <article>
                             <h3>July 15, 2024</h3>
                             <h4>Policy Victory: New Protection Measures Approved</h4>
                             <p>Government approves new legislative measures to protect persons with albinism from violence and discrimination.</p>
-                            <a href="#">Read More</a>
-                        </div>
-                        <div>
+                            <a href="#" class="read-more">Read More<span class="sr-only"> about New Protection Measures</span></a>
+                        </article>
+                        <article>
                             <h3>June 30, 2024</h3>
                             <h4>Educational Support Program Expansion</h4>
                             <p>AFZ extends educational support programs to include 200 additional students with albinism across all provinces.</p>
-                            <a href="#">Read More</a>
-                        </div>
+                            <a href="#" class="read-more">Read More<span class="sr-only"> about Educational Support Program</span></a>
+                        </article>
                     </div>
                 </div>
             </section>

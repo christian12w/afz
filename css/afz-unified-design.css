@@ -383,7 +383,8 @@ img {
     position: sticky;
     top: 0;
     z-index: 999;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header-container {
@@ -408,6 +409,8 @@ img {
     object-fit: cover;
     border-radius: 50%; /* rounded logo */
     border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .organization-info {
@@ -468,20 +471,24 @@ img {
 .nav-link {
     color: var(--afz-white);
     font-weight: 500;
-    padding: var(--space-2) 0;
-    border-bottom: 2px solid transparent;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
     transition: all 0.2s ease;
+    position: relative;
 }
 
 .nav-link:hover {
     color: var(--afz-gold-light);
-    border-bottom-color: var(--afz-gold-light);
+    background: rgba(218, 165, 32, 0.1);
+    border: 1px solid var(--afz-gold-light);
     text-decoration: none;
 }
 
 .nav-link.active {
     color: var(--afz-gold);
-    border-bottom-color: var(--afz-gold);
+    background: rgba(218, 165, 32, 0.15);
+    border: 1px solid var(--afz-gold);
 }
 
 /* Mobile Navigation */
@@ -524,6 +531,73 @@ img {
 }
 
 /* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, var(--afz-black) 0%, var(--gray-900) 100%);
+    padding: var(--space-20) 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/hero-pattern.svg') center/cover;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--afz-white);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-4);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: var(--afz-white);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+    color: var(--gray-300);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: var(--space-12) 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+/* ========================================
    BUTTONS & CALL-TO-ACTION
    ======================================== */
 
@@ -532,15 +606,19 @@ img {
     align-items: center;
     justify-content: center;
     gap: var(--space-2);
-    padding: var(--space-3) var(--space-6);
-    font-size: 1rem;
+    padding: var(--space-3) var(--space-8);
+    font-size: 1.125rem;
     font-weight: 600;
     text-decoration: none;
     border-radius: var(--radius-lg);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: all 0.2s ease;
-    min-height: 44px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 48px;
+    letter-spacing: 0.025em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .cta-button.primary {
@@ -549,25 +627,70 @@ img {
     border-color: var(--afz-gold);
 }
 
-.cta-button.primary:hover {
+.cta-button.primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: var(--afz-gold-dark);
-    border-color: var(--afz-gold-dark);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.cta-button.primary:hover {
     color: var(--afz-white);
     text-decoration: none;
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(218, 165, 32, 0.3);
+}
+
+.cta-button.primary:hover::after {
+    transform: scaleX(1);
+}
+
+.cta-button.primary:active {
+    transform: translateY(0);
 }
 
 .cta-button.secondary {
     background: transparent;
     color: #8C6A00; /* improved contrast */
     border-color: #8C6A00; /* improved contrast */
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button.secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, var(--afz-gold) 50%, var(--afz-gold-light) 100%);
+    background-size: 250% 100%;
+    transition: background-position 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
 }
 
 .cta-button.secondary:hover {
-    background: var(--afz-gold);
     color: var(--afz-black);
+    border-color: var(--afz-gold);
     text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
+}
+
+.cta-button.secondary:hover::before {
+    background-position: -100% 0;
+}
+
+.cta-button.secondary:active {
+    transform: translateY(0);
 }
 
 .cta-buttons {
@@ -1380,13 +1503,34 @@ img {
     padding: var(--space-8);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-left: 4px solid var(--afz-gold);
+    position: relative;
+    overflow: hidden;
+    background-image: linear-gradient(180deg, var(--afz-white) 0%, var(--gray-50) 100%);
+}
+
+.focus-grid div::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(0deg, var(--afz-gold) 0%, var(--afz-gold-light) 100%);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .focus-grid div:hover {
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.02);
     box-shadow: var(--shadow-lg);
+    background-image: linear-gradient(180deg, var(--afz-white) 0%, var(--gray-100) 100%);
+}
+
+.focus-grid div:hover::before {
+    transform: scaleY(1);
 }
 
 .focus-grid h3 {
@@ -1410,20 +1554,42 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-6);
     margin-top: var(--space-8);
-}
+    perspective: 1000px; /* Add depth effect */
 
 .news-grid div {
     background: var(--afz-white);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-top: 3px solid var(--afz-gold);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    background-image: linear-gradient(180deg, var(--afz-white) 0%, var(--gray-50) 100%);
 }
 
 .news-grid div:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px) rotateX(2deg);
+    box-shadow: var(--shadow-lg);
+    background-image: linear-gradient(180deg, var(--afz-white) 0%, var(--gray-100) 100%);
+}
+
+.news-grid div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--afz-gold) 0%, var(--afz-gold-light) 100%);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.news-grid div:hover::before {
+    transform: scaleX(1);
 }
 
 .news-grid h3 {
